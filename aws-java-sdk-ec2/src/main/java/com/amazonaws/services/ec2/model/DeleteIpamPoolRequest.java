@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,19 @@ public class DeleteIpamPoolRequest extends AmazonWebServiceRequest implements Se
      * </p>
      */
     private String ipamPoolId;
+    /**
+     * <p>
+     * Enables you to quickly delete an IPAM pool and all resources within that pool, including provisioned CIDRs,
+     * allocations, and other pools.
+     * </p>
+     * <important>
+     * <p>
+     * You can only use this option to delete pools in the private scope or pools in the public scope with a source
+     * resource. A source resource is a resource used to provision CIDRs to a resource planning pool.
+     * </p>
+     * </important>
+     */
+    private Boolean cascade;
 
     /**
      * <p>
@@ -73,6 +86,106 @@ public class DeleteIpamPoolRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
+     * <p>
+     * Enables you to quickly delete an IPAM pool and all resources within that pool, including provisioned CIDRs,
+     * allocations, and other pools.
+     * </p>
+     * <important>
+     * <p>
+     * You can only use this option to delete pools in the private scope or pools in the public scope with a source
+     * resource. A source resource is a resource used to provision CIDRs to a resource planning pool.
+     * </p>
+     * </important>
+     * 
+     * @param cascade
+     *        Enables you to quickly delete an IPAM pool and all resources within that pool, including provisioned
+     *        CIDRs, allocations, and other pools.</p> <important>
+     *        <p>
+     *        You can only use this option to delete pools in the private scope or pools in the public scope with a
+     *        source resource. A source resource is a resource used to provision CIDRs to a resource planning pool.
+     *        </p>
+     */
+
+    public void setCascade(Boolean cascade) {
+        this.cascade = cascade;
+    }
+
+    /**
+     * <p>
+     * Enables you to quickly delete an IPAM pool and all resources within that pool, including provisioned CIDRs,
+     * allocations, and other pools.
+     * </p>
+     * <important>
+     * <p>
+     * You can only use this option to delete pools in the private scope or pools in the public scope with a source
+     * resource. A source resource is a resource used to provision CIDRs to a resource planning pool.
+     * </p>
+     * </important>
+     * 
+     * @return Enables you to quickly delete an IPAM pool and all resources within that pool, including provisioned
+     *         CIDRs, allocations, and other pools.</p> <important>
+     *         <p>
+     *         You can only use this option to delete pools in the private scope or pools in the public scope with a
+     *         source resource. A source resource is a resource used to provision CIDRs to a resource planning pool.
+     *         </p>
+     */
+
+    public Boolean getCascade() {
+        return this.cascade;
+    }
+
+    /**
+     * <p>
+     * Enables you to quickly delete an IPAM pool and all resources within that pool, including provisioned CIDRs,
+     * allocations, and other pools.
+     * </p>
+     * <important>
+     * <p>
+     * You can only use this option to delete pools in the private scope or pools in the public scope with a source
+     * resource. A source resource is a resource used to provision CIDRs to a resource planning pool.
+     * </p>
+     * </important>
+     * 
+     * @param cascade
+     *        Enables you to quickly delete an IPAM pool and all resources within that pool, including provisioned
+     *        CIDRs, allocations, and other pools.</p> <important>
+     *        <p>
+     *        You can only use this option to delete pools in the private scope or pools in the public scope with a
+     *        source resource. A source resource is a resource used to provision CIDRs to a resource planning pool.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteIpamPoolRequest withCascade(Boolean cascade) {
+        setCascade(cascade);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enables you to quickly delete an IPAM pool and all resources within that pool, including provisioned CIDRs,
+     * allocations, and other pools.
+     * </p>
+     * <important>
+     * <p>
+     * You can only use this option to delete pools in the private scope or pools in the public scope with a source
+     * resource. A source resource is a resource used to provision CIDRs to a resource planning pool.
+     * </p>
+     * </important>
+     * 
+     * @return Enables you to quickly delete an IPAM pool and all resources within that pool, including provisioned
+     *         CIDRs, allocations, and other pools.</p> <important>
+     *         <p>
+     *         You can only use this option to delete pools in the private scope or pools in the public scope with a
+     *         source resource. A source resource is a resource used to provision CIDRs to a resource planning pool.
+     *         </p>
+     */
+
+    public Boolean isCascade() {
+        return this.cascade;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -96,7 +209,9 @@ public class DeleteIpamPoolRequest extends AmazonWebServiceRequest implements Se
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIpamPoolId() != null)
-            sb.append("IpamPoolId: ").append(getIpamPoolId());
+            sb.append("IpamPoolId: ").append(getIpamPoolId()).append(",");
+        if (getCascade() != null)
+            sb.append("Cascade: ").append(getCascade());
         sb.append("}");
         return sb.toString();
     }
@@ -115,6 +230,10 @@ public class DeleteIpamPoolRequest extends AmazonWebServiceRequest implements Se
             return false;
         if (other.getIpamPoolId() != null && other.getIpamPoolId().equals(this.getIpamPoolId()) == false)
             return false;
+        if (other.getCascade() == null ^ this.getCascade() == null)
+            return false;
+        if (other.getCascade() != null && other.getCascade().equals(this.getCascade()) == false)
+            return false;
         return true;
     }
 
@@ -124,6 +243,7 @@ public class DeleteIpamPoolRequest extends AmazonWebServiceRequest implements Se
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getIpamPoolId() == null) ? 0 : getIpamPoolId().hashCode());
+        hashCode = prime * hashCode + ((getCascade() == null) ? 0 : getCascade().hashCode());
         return hashCode;
     }
 

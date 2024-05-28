@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class TFIModelPerformanceMarshaller {
 
     private static final MarshallingInfo<Float> AUC_BINDING = MarshallingInfo.builder(MarshallingType.FLOAT).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("auc").build();
+    private static final MarshallingInfo<StructuredPojo> UNCERTAINTYRANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("uncertaintyRange").build();
 
     private static final TFIModelPerformanceMarshaller instance = new TFIModelPerformanceMarshaller();
 
@@ -47,6 +49,7 @@ public class TFIModelPerformanceMarshaller {
 
         try {
             protocolMarshaller.marshall(tFIModelPerformance.getAuc(), AUC_BINDING);
+            protocolMarshaller.marshall(tFIModelPerformance.getUncertaintyRange(), UNCERTAINTYRANGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

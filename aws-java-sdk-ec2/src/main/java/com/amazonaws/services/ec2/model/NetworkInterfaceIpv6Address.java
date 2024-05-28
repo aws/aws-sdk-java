@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,16 @@ public class NetworkInterfaceIpv6Address implements Serializable, Cloneable {
      * </p>
      */
     private String ipv6Address;
+    /**
+     * <p>
+     * Determines if an IPv6 address associated with a network interface is the primary IPv6 address. When you enable an
+     * IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the
+     * instance is terminated or the network interface is detached. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyNetworkInterfaceAttribute.html"
+     * >ModifyNetworkInterfaceAttribute</a>.
+     * </p>
+     */
+    private Boolean isPrimaryIpv6;
 
     /**
      * <p>
@@ -74,6 +84,90 @@ public class NetworkInterfaceIpv6Address implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Determines if an IPv6 address associated with a network interface is the primary IPv6 address. When you enable an
+     * IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the
+     * instance is terminated or the network interface is detached. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyNetworkInterfaceAttribute.html"
+     * >ModifyNetworkInterfaceAttribute</a>.
+     * </p>
+     * 
+     * @param isPrimaryIpv6
+     *        Determines if an IPv6 address associated with a network interface is the primary IPv6 address. When you
+     *        enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address
+     *        until the instance is terminated or the network interface is detached. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyNetworkInterfaceAttribute.html"
+     *        >ModifyNetworkInterfaceAttribute</a>.
+     */
+
+    public void setIsPrimaryIpv6(Boolean isPrimaryIpv6) {
+        this.isPrimaryIpv6 = isPrimaryIpv6;
+    }
+
+    /**
+     * <p>
+     * Determines if an IPv6 address associated with a network interface is the primary IPv6 address. When you enable an
+     * IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the
+     * instance is terminated or the network interface is detached. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyNetworkInterfaceAttribute.html"
+     * >ModifyNetworkInterfaceAttribute</a>.
+     * </p>
+     * 
+     * @return Determines if an IPv6 address associated with a network interface is the primary IPv6 address. When you
+     *         enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address
+     *         until the instance is terminated or the network interface is detached. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyNetworkInterfaceAttribute.html"
+     *         >ModifyNetworkInterfaceAttribute</a>.
+     */
+
+    public Boolean getIsPrimaryIpv6() {
+        return this.isPrimaryIpv6;
+    }
+
+    /**
+     * <p>
+     * Determines if an IPv6 address associated with a network interface is the primary IPv6 address. When you enable an
+     * IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the
+     * instance is terminated or the network interface is detached. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyNetworkInterfaceAttribute.html"
+     * >ModifyNetworkInterfaceAttribute</a>.
+     * </p>
+     * 
+     * @param isPrimaryIpv6
+     *        Determines if an IPv6 address associated with a network interface is the primary IPv6 address. When you
+     *        enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address
+     *        until the instance is terminated or the network interface is detached. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyNetworkInterfaceAttribute.html"
+     *        >ModifyNetworkInterfaceAttribute</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInterfaceIpv6Address withIsPrimaryIpv6(Boolean isPrimaryIpv6) {
+        setIsPrimaryIpv6(isPrimaryIpv6);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Determines if an IPv6 address associated with a network interface is the primary IPv6 address. When you enable an
+     * IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the
+     * instance is terminated or the network interface is detached. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyNetworkInterfaceAttribute.html"
+     * >ModifyNetworkInterfaceAttribute</a>.
+     * </p>
+     * 
+     * @return Determines if an IPv6 address associated with a network interface is the primary IPv6 address. When you
+     *         enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address
+     *         until the instance is terminated or the network interface is detached. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyNetworkInterfaceAttribute.html"
+     *         >ModifyNetworkInterfaceAttribute</a>.
+     */
+
+    public Boolean isPrimaryIpv6() {
+        return this.isPrimaryIpv6;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -86,7 +180,9 @@ public class NetworkInterfaceIpv6Address implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIpv6Address() != null)
-            sb.append("Ipv6Address: ").append(getIpv6Address());
+            sb.append("Ipv6Address: ").append(getIpv6Address()).append(",");
+        if (getIsPrimaryIpv6() != null)
+            sb.append("IsPrimaryIpv6: ").append(getIsPrimaryIpv6());
         sb.append("}");
         return sb.toString();
     }
@@ -105,6 +201,10 @@ public class NetworkInterfaceIpv6Address implements Serializable, Cloneable {
             return false;
         if (other.getIpv6Address() != null && other.getIpv6Address().equals(this.getIpv6Address()) == false)
             return false;
+        if (other.getIsPrimaryIpv6() == null ^ this.getIsPrimaryIpv6() == null)
+            return false;
+        if (other.getIsPrimaryIpv6() != null && other.getIsPrimaryIpv6().equals(this.getIsPrimaryIpv6()) == false)
+            return false;
         return true;
     }
 
@@ -114,6 +214,7 @@ public class NetworkInterfaceIpv6Address implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getIpv6Address() == null) ? 0 : getIpv6Address().hashCode());
+        hashCode = prime * hashCode + ((getIsPrimaryIpv6() == null) ? 0 : getIsPrimaryIpv6().hashCode());
         return hashCode;
     }
 

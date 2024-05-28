@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,8 +29,25 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The name of the log group.
      * </p>
+     * <note>
+     * <p>
+     * You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     * </p>
+     * </note>
      */
     private String logGroupName;
+    /**
+     * <p>
+     * Specify either the name or ARN of the log group to view events from. If the log group is in a source account and
+     * you are using a monitoring account, you must use the log group ARN.
+     * </p>
+     * <note>
+     * <p>
+     * You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     * </p>
+     * </note>
+     */
+    private String logGroupIdentifier;
     /**
      * <p>
      * The name of the log stream.
@@ -39,16 +56,16 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String logStreamName;
     /**
      * <p>
-     * The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with
-     * a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this
-     * time are not included.
+     * The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
+     * Events with a timestamp equal to this time or later than this time are included. Events with a timestamp earlier
+     * than this time are not included.
      * </p>
      */
     private Long startTime;
     /**
      * <p>
-     * The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a
-     * timestamp equal to or later than this time are not included.
+     * The end of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
+     * Events with a timestamp equal to or later than this time are not included.
      * </p>
      */
     private Long endTime;
@@ -60,8 +77,8 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String nextToken;
     /**
      * <p>
-     * The maximum number of log events returned. If you don't specify a value, the maximum is as many log events as can
-     * fit in a response size of 1 MB, up to 10,000 log events.
+     * The maximum number of log events returned. If you don't specify a limit, the default is as many log events as can
+     * fit in a response size of 1 MB (up to 10,000 log events).
      * </p>
      */
     private Integer limit;
@@ -76,6 +93,17 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private Boolean startFromHead;
+    /**
+     * <p>
+     * Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The
+     * default is <code>false</code>.
+     * </p>
+     * <p>
+     * To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code>
+     * permission.
+     * </p>
+     */
+    private Boolean unmask;
 
     /**
      * Default constructor for GetLogEventsRequest object. Callers should use the setter or fluent setter (with...)
@@ -89,7 +117,10 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * initialize any additional object members.
      * 
      * @param logGroupName
-     *        The name of the log group.
+     *        The name of the log group.</p> <note>
+     *        <p>
+     *        You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     *        </p>
      * @param logStreamName
      *        The name of the log stream.
      */
@@ -102,9 +133,17 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The name of the log group.
      * </p>
+     * <note>
+     * <p>
+     * You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     * </p>
+     * </note>
      * 
      * @param logGroupName
-     *        The name of the log group.
+     *        The name of the log group.</p> <note>
+     *        <p>
+     *        You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     *        </p>
      */
 
     public void setLogGroupName(String logGroupName) {
@@ -115,8 +154,16 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The name of the log group.
      * </p>
+     * <note>
+     * <p>
+     * You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     * </p>
+     * </note>
      * 
-     * @return The name of the log group.
+     * @return The name of the log group.</p> <note>
+     *         <p>
+     *         You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     *         </p>
      */
 
     public String getLogGroupName() {
@@ -127,14 +174,92 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The name of the log group.
      * </p>
+     * <note>
+     * <p>
+     * You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     * </p>
+     * </note>
      * 
      * @param logGroupName
-     *        The name of the log group.
+     *        The name of the log group.</p> <note>
+     *        <p>
+     *        You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetLogEventsRequest withLogGroupName(String logGroupName) {
         setLogGroupName(logGroupName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify either the name or ARN of the log group to view events from. If the log group is in a source account and
+     * you are using a monitoring account, you must use the log group ARN.
+     * </p>
+     * <note>
+     * <p>
+     * You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     * </p>
+     * </note>
+     * 
+     * @param logGroupIdentifier
+     *        Specify either the name or ARN of the log group to view events from. If the log group is in a source
+     *        account and you are using a monitoring account, you must use the log group ARN.</p> <note>
+     *        <p>
+     *        You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     *        </p>
+     */
+
+    public void setLogGroupIdentifier(String logGroupIdentifier) {
+        this.logGroupIdentifier = logGroupIdentifier;
+    }
+
+    /**
+     * <p>
+     * Specify either the name or ARN of the log group to view events from. If the log group is in a source account and
+     * you are using a monitoring account, you must use the log group ARN.
+     * </p>
+     * <note>
+     * <p>
+     * You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     * </p>
+     * </note>
+     * 
+     * @return Specify either the name or ARN of the log group to view events from. If the log group is in a source
+     *         account and you are using a monitoring account, you must use the log group ARN.</p> <note>
+     *         <p>
+     *         You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     *         </p>
+     */
+
+    public String getLogGroupIdentifier() {
+        return this.logGroupIdentifier;
+    }
+
+    /**
+     * <p>
+     * Specify either the name or ARN of the log group to view events from. If the log group is in a source account and
+     * you are using a monitoring account, you must use the log group ARN.
+     * </p>
+     * <note>
+     * <p>
+     * You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     * </p>
+     * </note>
+     * 
+     * @param logGroupIdentifier
+     *        Specify either the name or ARN of the log group to view events from. If the log group is in a source
+     *        account and you are using a monitoring account, you must use the log group ARN.</p> <note>
+     *        <p>
+     *        You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetLogEventsRequest withLogGroupIdentifier(String logGroupIdentifier) {
+        setLogGroupIdentifier(logGroupIdentifier);
         return this;
     }
 
@@ -180,15 +305,15 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with
-     * a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this
-     * time are not included.
+     * The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
+     * Events with a timestamp equal to this time or later than this time are included. Events with a timestamp earlier
+     * than this time are not included.
      * </p>
      * 
      * @param startTime
-     *        The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
-     *        Events with a timestamp equal to this time or later than this time are included. Events with a timestamp
-     *        earlier than this time are not included.
+     *        The start of the time range, expressed as the number of milliseconds after
+     *        <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to this time or later than this time
+     *        are included. Events with a timestamp earlier than this time are not included.
      */
 
     public void setStartTime(Long startTime) {
@@ -197,14 +322,14 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with
-     * a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this
-     * time are not included.
+     * The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
+     * Events with a timestamp equal to this time or later than this time are included. Events with a timestamp earlier
+     * than this time are not included.
      * </p>
      * 
-     * @return The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
-     *         Events with a timestamp equal to this time or later than this time are included. Events with a timestamp
-     *         earlier than this time are not included.
+     * @return The start of the time range, expressed as the number of milliseconds after
+     *         <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to this time or later than this time
+     *         are included. Events with a timestamp earlier than this time are not included.
      */
 
     public Long getStartTime() {
@@ -213,15 +338,15 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with
-     * a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this
-     * time are not included.
+     * The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
+     * Events with a timestamp equal to this time or later than this time are included. Events with a timestamp earlier
+     * than this time are not included.
      * </p>
      * 
      * @param startTime
-     *        The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
-     *        Events with a timestamp equal to this time or later than this time are included. Events with a timestamp
-     *        earlier than this time are not included.
+     *        The start of the time range, expressed as the number of milliseconds after
+     *        <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to this time or later than this time
+     *        are included. Events with a timestamp earlier than this time are not included.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -232,13 +357,14 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a
-     * timestamp equal to or later than this time are not included.
+     * The end of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
+     * Events with a timestamp equal to or later than this time are not included.
      * </p>
      * 
      * @param endTime
-     *        The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events
-     *        with a timestamp equal to or later than this time are not included.
+     *        The end of the time range, expressed as the number of milliseconds after
+     *        <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to or later than this time are not
+     *        included.
      */
 
     public void setEndTime(Long endTime) {
@@ -247,12 +373,13 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a
-     * timestamp equal to or later than this time are not included.
+     * The end of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
+     * Events with a timestamp equal to or later than this time are not included.
      * </p>
      * 
-     * @return The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events
-     *         with a timestamp equal to or later than this time are not included.
+     * @return The end of the time range, expressed as the number of milliseconds after
+     *         <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to or later than this time are not
+     *         included.
      */
 
     public Long getEndTime() {
@@ -261,13 +388,14 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a
-     * timestamp equal to or later than this time are not included.
+     * The end of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
+     * Events with a timestamp equal to or later than this time are not included.
      * </p>
      * 
      * @param endTime
-     *        The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events
-     *        with a timestamp equal to or later than this time are not included.
+     *        The end of the time range, expressed as the number of milliseconds after
+     *        <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to or later than this time are not
+     *        included.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -318,13 +446,13 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The maximum number of log events returned. If you don't specify a value, the maximum is as many log events as can
-     * fit in a response size of 1 MB, up to 10,000 log events.
+     * The maximum number of log events returned. If you don't specify a limit, the default is as many log events as can
+     * fit in a response size of 1 MB (up to 10,000 log events).
      * </p>
      * 
      * @param limit
-     *        The maximum number of log events returned. If you don't specify a value, the maximum is as many log events
-     *        as can fit in a response size of 1 MB, up to 10,000 log events.
+     *        The maximum number of log events returned. If you don't specify a limit, the default is as many log events
+     *        as can fit in a response size of 1 MB (up to 10,000 log events).
      */
 
     public void setLimit(Integer limit) {
@@ -333,12 +461,12 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The maximum number of log events returned. If you don't specify a value, the maximum is as many log events as can
-     * fit in a response size of 1 MB, up to 10,000 log events.
+     * The maximum number of log events returned. If you don't specify a limit, the default is as many log events as can
+     * fit in a response size of 1 MB (up to 10,000 log events).
      * </p>
      * 
-     * @return The maximum number of log events returned. If you don't specify a value, the maximum is as many log
-     *         events as can fit in a response size of 1 MB, up to 10,000 log events.
+     * @return The maximum number of log events returned. If you don't specify a limit, the default is as many log
+     *         events as can fit in a response size of 1 MB (up to 10,000 log events).
      */
 
     public Integer getLimit() {
@@ -347,13 +475,13 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The maximum number of log events returned. If you don't specify a value, the maximum is as many log events as can
-     * fit in a response size of 1 MB, up to 10,000 log events.
+     * The maximum number of log events returned. If you don't specify a limit, the default is as many log events as can
+     * fit in a response size of 1 MB (up to 10,000 log events).
      * </p>
      * 
      * @param limit
-     *        The maximum number of log events returned. If you don't specify a value, the maximum is as many log events
-     *        as can fit in a response size of 1 MB, up to 10,000 log events.
+     *        The maximum number of log events returned. If you don't specify a limit, the default is as many log events
+     *        as can fit in a response size of 1 MB (up to 10,000 log events).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -451,6 +579,94 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The
+     * default is <code>false</code>.
+     * </p>
+     * <p>
+     * To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code>
+     * permission.
+     * </p>
+     * 
+     * @param unmask
+     *        Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible.
+     *        The default is <code>false</code>.</p>
+     *        <p>
+     *        To use this operation with this parameter, you must be signed into an account with the
+     *        <code>logs:Unmask</code> permission.
+     */
+
+    public void setUnmask(Boolean unmask) {
+        this.unmask = unmask;
+    }
+
+    /**
+     * <p>
+     * Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The
+     * default is <code>false</code>.
+     * </p>
+     * <p>
+     * To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code>
+     * permission.
+     * </p>
+     * 
+     * @return Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible.
+     *         The default is <code>false</code>.</p>
+     *         <p>
+     *         To use this operation with this parameter, you must be signed into an account with the
+     *         <code>logs:Unmask</code> permission.
+     */
+
+    public Boolean getUnmask() {
+        return this.unmask;
+    }
+
+    /**
+     * <p>
+     * Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The
+     * default is <code>false</code>.
+     * </p>
+     * <p>
+     * To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code>
+     * permission.
+     * </p>
+     * 
+     * @param unmask
+     *        Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible.
+     *        The default is <code>false</code>.</p>
+     *        <p>
+     *        To use this operation with this parameter, you must be signed into an account with the
+     *        <code>logs:Unmask</code> permission.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetLogEventsRequest withUnmask(Boolean unmask) {
+        setUnmask(unmask);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The
+     * default is <code>false</code>.
+     * </p>
+     * <p>
+     * To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code>
+     * permission.
+     * </p>
+     * 
+     * @return Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible.
+     *         The default is <code>false</code>.</p>
+     *         <p>
+     *         To use this operation with this parameter, you must be signed into an account with the
+     *         <code>logs:Unmask</code> permission.
+     */
+
+    public Boolean isUnmask() {
+        return this.unmask;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -464,6 +680,8 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
         sb.append("{");
         if (getLogGroupName() != null)
             sb.append("LogGroupName: ").append(getLogGroupName()).append(",");
+        if (getLogGroupIdentifier() != null)
+            sb.append("LogGroupIdentifier: ").append(getLogGroupIdentifier()).append(",");
         if (getLogStreamName() != null)
             sb.append("LogStreamName: ").append(getLogStreamName()).append(",");
         if (getStartTime() != null)
@@ -475,7 +693,9 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getLimit() != null)
             sb.append("Limit: ").append(getLimit()).append(",");
         if (getStartFromHead() != null)
-            sb.append("StartFromHead: ").append(getStartFromHead());
+            sb.append("StartFromHead: ").append(getStartFromHead()).append(",");
+        if (getUnmask() != null)
+            sb.append("Unmask: ").append(getUnmask());
         sb.append("}");
         return sb.toString();
     }
@@ -493,6 +713,10 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (other.getLogGroupName() == null ^ this.getLogGroupName() == null)
             return false;
         if (other.getLogGroupName() != null && other.getLogGroupName().equals(this.getLogGroupName()) == false)
+            return false;
+        if (other.getLogGroupIdentifier() == null ^ this.getLogGroupIdentifier() == null)
+            return false;
+        if (other.getLogGroupIdentifier() != null && other.getLogGroupIdentifier().equals(this.getLogGroupIdentifier()) == false)
             return false;
         if (other.getLogStreamName() == null ^ this.getLogStreamName() == null)
             return false;
@@ -518,6 +742,10 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getStartFromHead() != null && other.getStartFromHead().equals(this.getStartFromHead()) == false)
             return false;
+        if (other.getUnmask() == null ^ this.getUnmask() == null)
+            return false;
+        if (other.getUnmask() != null && other.getUnmask().equals(this.getUnmask()) == false)
+            return false;
         return true;
     }
 
@@ -527,12 +755,14 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getLogGroupName() == null) ? 0 : getLogGroupName().hashCode());
+        hashCode = prime * hashCode + ((getLogGroupIdentifier() == null) ? 0 : getLogGroupIdentifier().hashCode());
         hashCode = prime * hashCode + ((getLogStreamName() == null) ? 0 : getLogStreamName().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
         hashCode = prime * hashCode + ((getStartFromHead() == null) ? 0 : getStartFromHead().hashCode());
+        hashCode = prime * hashCode + ((getUnmask() == null) ? 0 : getUnmask().hashCode());
         return hashCode;
     }
 

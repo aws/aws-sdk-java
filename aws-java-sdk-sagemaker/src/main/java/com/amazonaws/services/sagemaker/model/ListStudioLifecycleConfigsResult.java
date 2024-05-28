@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,8 @@ public class ListStudioLifecycleConfigsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A token for getting the next set of actions, if there are any.
+     * If the previous response was truncated, you will receive this token. Use it in your next request to receive the
+     * next set of results.
      * </p>
      */
     private String nextToken;
@@ -38,11 +39,13 @@ public class ListStudioLifecycleConfigsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A token for getting the next set of actions, if there are any.
+     * If the previous response was truncated, you will receive this token. Use it in your next request to receive the
+     * next set of results.
      * </p>
      * 
      * @param nextToken
-     *        A token for getting the next set of actions, if there are any.
+     *        If the previous response was truncated, you will receive this token. Use it in your next request to
+     *        receive the next set of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -51,10 +54,12 @@ public class ListStudioLifecycleConfigsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A token for getting the next set of actions, if there are any.
+     * If the previous response was truncated, you will receive this token. Use it in your next request to receive the
+     * next set of results.
      * </p>
      * 
-     * @return A token for getting the next set of actions, if there are any.
+     * @return If the previous response was truncated, you will receive this token. Use it in your next request to
+     *         receive the next set of results.
      */
 
     public String getNextToken() {
@@ -63,11 +68,13 @@ public class ListStudioLifecycleConfigsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A token for getting the next set of actions, if there are any.
+     * If the previous response was truncated, you will receive this token. Use it in your next request to receive the
+     * next set of results.
      * </p>
      * 
      * @param nextToken
-     *        A token for getting the next set of actions, if there are any.
+     *        If the previous response was truncated, you will receive this token. Use it in your next request to
+     *        receive the next set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

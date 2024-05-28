@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,11 @@ public class AbstractAWSkendra implements AWSkendra {
     }
 
     @Override
+    public BatchDeleteFeaturedResultsSetResult batchDeleteFeaturedResultsSet(BatchDeleteFeaturedResultsSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchGetDocumentStatusResult batchGetDocumentStatus(BatchGetDocumentStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -74,6 +79,11 @@ public class AbstractAWSkendra implements AWSkendra {
 
     @Override
     public CreateFaqResult createFaq(CreateFaqRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateFeaturedResultsSetResult createFeaturedResultsSet(CreateFeaturedResultsSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -149,6 +159,11 @@ public class AbstractAWSkendra implements AWSkendra {
 
     @Override
     public DescribeFaqResult describeFaq(DescribeFaqRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeFeaturedResultsSetResult describeFeaturedResultsSet(DescribeFeaturedResultsSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -233,6 +248,11 @@ public class AbstractAWSkendra implements AWSkendra {
     }
 
     @Override
+    public ListFeaturedResultsSetsResult listFeaturedResultsSets(ListFeaturedResultsSetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListGroupsOlderThanOrderingIdResult listGroupsOlderThanOrderingId(ListGroupsOlderThanOrderingIdRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -264,6 +284,11 @@ public class AbstractAWSkendra implements AWSkendra {
 
     @Override
     public QueryResult query(QueryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RetrieveResult retrieve(RetrieveRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -304,6 +329,11 @@ public class AbstractAWSkendra implements AWSkendra {
 
     @Override
     public UpdateExperienceResult updateExperience(UpdateExperienceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateFeaturedResultsSetResult updateFeaturedResultsSet(UpdateFeaturedResultsSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

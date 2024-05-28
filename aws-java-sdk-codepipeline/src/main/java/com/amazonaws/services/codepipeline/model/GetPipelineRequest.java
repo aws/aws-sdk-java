@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,8 +30,8 @@ public class GetPipelineRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user
-     * account.
+     * The name of the pipeline for which you want to get information. Pipeline names must be unique in an Amazon Web
+     * Services account.
      * </p>
      */
     private String name;
@@ -44,13 +44,13 @@ public class GetPipelineRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user
-     * account.
+     * The name of the pipeline for which you want to get information. Pipeline names must be unique in an Amazon Web
+     * Services account.
      * </p>
      * 
      * @param name
-     *        The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS
-     *        user account.
+     *        The name of the pipeline for which you want to get information. Pipeline names must be unique in an Amazon
+     *        Web Services account.
      */
 
     public void setName(String name) {
@@ -59,12 +59,12 @@ public class GetPipelineRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user
-     * account.
+     * The name of the pipeline for which you want to get information. Pipeline names must be unique in an Amazon Web
+     * Services account.
      * </p>
      * 
-     * @return The name of the pipeline for which you want to get information. Pipeline names must be unique under an
-     *         AWS user account.
+     * @return The name of the pipeline for which you want to get information. Pipeline names must be unique in an
+     *         Amazon Web Services account.
      */
 
     public String getName() {
@@ -73,13 +73,13 @@ public class GetPipelineRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user
-     * account.
+     * The name of the pipeline for which you want to get information. Pipeline names must be unique in an Amazon Web
+     * Services account.
      * </p>
      * 
      * @param name
-     *        The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS
-     *        user account.
+     *        The name of the pipeline for which you want to get information. Pipeline names must be unique in an Amazon
+     *        Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

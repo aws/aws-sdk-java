@@ -1,0 +1,290 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.billingconductor.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+import com.amazonaws.AmazonWebServiceRequest;
+
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListCustomLineItemVersions"
+ *      target="_top">AWS API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListCustomLineItemVersionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the custom line item.
+     * </p>
+     */
+    private String arn;
+    /**
+     * <p>
+     * The maximum number of custom line item versions to retrieve.
+     * </p>
+     */
+    private Integer maxResults;
+    /**
+     * <p>
+     * The pagination token that's used on subsequent calls to retrieve custom line item versions.
+     * </p>
+     */
+    private String nextToken;
+    /**
+     * <p>
+     * A <code>ListCustomLineItemVersionsFilter</code> that specifies the billing period range in which the custom line
+     * item versions are applied.
+     * </p>
+     */
+    private ListCustomLineItemVersionsFilter filters;
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the custom line item.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) for the custom line item.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the custom line item.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the custom line item.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the custom line item.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) for the custom line item.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListCustomLineItemVersionsRequest withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of custom line item versions to retrieve.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of custom line item versions to retrieve.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of custom line item versions to retrieve.
+     * </p>
+     * 
+     * @return The maximum number of custom line item versions to retrieve.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of custom line item versions to retrieve.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of custom line item versions to retrieve.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListCustomLineItemVersionsRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The pagination token that's used on subsequent calls to retrieve custom line item versions.
+     * </p>
+     * 
+     * @param nextToken
+     *        The pagination token that's used on subsequent calls to retrieve custom line item versions.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The pagination token that's used on subsequent calls to retrieve custom line item versions.
+     * </p>
+     * 
+     * @return The pagination token that's used on subsequent calls to retrieve custom line item versions.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The pagination token that's used on subsequent calls to retrieve custom line item versions.
+     * </p>
+     * 
+     * @param nextToken
+     *        The pagination token that's used on subsequent calls to retrieve custom line item versions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListCustomLineItemVersionsRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A <code>ListCustomLineItemVersionsFilter</code> that specifies the billing period range in which the custom line
+     * item versions are applied.
+     * </p>
+     * 
+     * @param filters
+     *        A <code>ListCustomLineItemVersionsFilter</code> that specifies the billing period range in which the
+     *        custom line item versions are applied.
+     */
+
+    public void setFilters(ListCustomLineItemVersionsFilter filters) {
+        this.filters = filters;
+    }
+
+    /**
+     * <p>
+     * A <code>ListCustomLineItemVersionsFilter</code> that specifies the billing period range in which the custom line
+     * item versions are applied.
+     * </p>
+     * 
+     * @return A <code>ListCustomLineItemVersionsFilter</code> that specifies the billing period range in which the
+     *         custom line item versions are applied.
+     */
+
+    public ListCustomLineItemVersionsFilter getFilters() {
+        return this.filters;
+    }
+
+    /**
+     * <p>
+     * A <code>ListCustomLineItemVersionsFilter</code> that specifies the billing period range in which the custom line
+     * item versions are applied.
+     * </p>
+     * 
+     * @param filters
+     *        A <code>ListCustomLineItemVersionsFilter</code> that specifies the billing period range in which the
+     *        custom line item versions are applied.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListCustomLineItemVersionsRequest withFilters(ListCustomLineItemVersionsFilter filters) {
+        setFilters(filters);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getFilters() != null)
+            sb.append("Filters: ").append(getFilters());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ListCustomLineItemVersionsRequest == false)
+            return false;
+        ListCustomLineItemVersionsRequest other = (ListCustomLineItemVersionsRequest) obj;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getFilters() == null ^ this.getFilters() == null)
+            return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public ListCustomLineItemVersionsRequest clone() {
+        return (ListCustomLineItemVersionsRequest) super.clone();
+    }
+
+}

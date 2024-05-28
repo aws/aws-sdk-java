@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,32 @@ import com.amazonaws.services.mediaconnect.model.*;
 public class AbstractAWSMediaConnectAsync extends AbstractAWSMediaConnect implements AWSMediaConnectAsync {
 
     protected AbstractAWSMediaConnectAsync() {
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddBridgeOutputsResult> addBridgeOutputsAsync(AddBridgeOutputsRequest request) {
+
+        return addBridgeOutputsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddBridgeOutputsResult> addBridgeOutputsAsync(AddBridgeOutputsRequest request,
+            com.amazonaws.handlers.AsyncHandler<AddBridgeOutputsRequest, AddBridgeOutputsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddBridgeSourcesResult> addBridgeSourcesAsync(AddBridgeSourcesRequest request) {
+
+        return addBridgeSourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddBridgeSourcesResult> addBridgeSourcesAsync(AddBridgeSourcesRequest request,
+            com.amazonaws.handlers.AsyncHandler<AddBridgeSourcesRequest, AddBridgeSourcesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -80,6 +106,19 @@ public class AbstractAWSMediaConnectAsync extends AbstractAWSMediaConnect implem
     }
 
     @Override
+    public java.util.concurrent.Future<CreateBridgeResult> createBridgeAsync(CreateBridgeRequest request) {
+
+        return createBridgeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateBridgeResult> createBridgeAsync(CreateBridgeRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateBridgeRequest, CreateBridgeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateFlowResult> createFlowAsync(CreateFlowRequest request) {
 
         return createFlowAsync(request, null);
@@ -88,6 +127,32 @@ public class AbstractAWSMediaConnectAsync extends AbstractAWSMediaConnect implem
     @Override
     public java.util.concurrent.Future<CreateFlowResult> createFlowAsync(CreateFlowRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateFlowRequest, CreateFlowResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateGatewayResult> createGatewayAsync(CreateGatewayRequest request) {
+
+        return createGatewayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateGatewayResult> createGatewayAsync(CreateGatewayRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateGatewayRequest, CreateGatewayResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBridgeResult> deleteBridgeAsync(DeleteBridgeRequest request) {
+
+        return deleteBridgeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBridgeResult> deleteBridgeAsync(DeleteBridgeRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteBridgeRequest, DeleteBridgeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -106,6 +171,45 @@ public class AbstractAWSMediaConnectAsync extends AbstractAWSMediaConnect implem
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteGatewayResult> deleteGatewayAsync(DeleteGatewayRequest request) {
+
+        return deleteGatewayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteGatewayResult> deleteGatewayAsync(DeleteGatewayRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteGatewayRequest, DeleteGatewayResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterGatewayInstanceResult> deregisterGatewayInstanceAsync(DeregisterGatewayInstanceRequest request) {
+
+        return deregisterGatewayInstanceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterGatewayInstanceResult> deregisterGatewayInstanceAsync(DeregisterGatewayInstanceRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeregisterGatewayInstanceRequest, DeregisterGatewayInstanceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBridgeResult> describeBridgeAsync(DescribeBridgeRequest request) {
+
+        return describeBridgeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBridgeResult> describeBridgeAsync(DescribeBridgeRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeBridgeRequest, DescribeBridgeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeFlowResult> describeFlowAsync(DescribeFlowRequest request) {
 
         return describeFlowAsync(request, null);
@@ -114,6 +218,45 @@ public class AbstractAWSMediaConnectAsync extends AbstractAWSMediaConnect implem
     @Override
     public java.util.concurrent.Future<DescribeFlowResult> describeFlowAsync(DescribeFlowRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeFlowRequest, DescribeFlowResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFlowSourceMetadataResult> describeFlowSourceMetadataAsync(DescribeFlowSourceMetadataRequest request) {
+
+        return describeFlowSourceMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFlowSourceMetadataResult> describeFlowSourceMetadataAsync(DescribeFlowSourceMetadataRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeFlowSourceMetadataRequest, DescribeFlowSourceMetadataResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeGatewayResult> describeGatewayAsync(DescribeGatewayRequest request) {
+
+        return describeGatewayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeGatewayResult> describeGatewayAsync(DescribeGatewayRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeGatewayRequest, DescribeGatewayResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeGatewayInstanceResult> describeGatewayInstanceAsync(DescribeGatewayInstanceRequest request) {
+
+        return describeGatewayInstanceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeGatewayInstanceResult> describeGatewayInstanceAsync(DescribeGatewayInstanceRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeGatewayInstanceRequest, DescribeGatewayInstanceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -158,6 +301,19 @@ public class AbstractAWSMediaConnectAsync extends AbstractAWSMediaConnect implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListBridgesResult> listBridgesAsync(ListBridgesRequest request) {
+
+        return listBridgesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBridgesResult> listBridgesAsync(ListBridgesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListBridgesRequest, ListBridgesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListEntitlementsResult> listEntitlementsAsync(ListEntitlementsRequest request) {
 
         return listEntitlementsAsync(request, null);
@@ -179,6 +335,32 @@ public class AbstractAWSMediaConnectAsync extends AbstractAWSMediaConnect implem
     @Override
     public java.util.concurrent.Future<ListFlowsResult> listFlowsAsync(ListFlowsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListFlowsRequest, ListFlowsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGatewayInstancesResult> listGatewayInstancesAsync(ListGatewayInstancesRequest request) {
+
+        return listGatewayInstancesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGatewayInstancesResult> listGatewayInstancesAsync(ListGatewayInstancesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListGatewayInstancesRequest, ListGatewayInstancesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGatewaysResult> listGatewaysAsync(ListGatewaysRequest request) {
+
+        return listGatewaysAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGatewaysResult> listGatewaysAsync(ListGatewaysRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListGatewaysRequest, ListGatewaysResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -231,6 +413,32 @@ public class AbstractAWSMediaConnectAsync extends AbstractAWSMediaConnect implem
     @Override
     public java.util.concurrent.Future<PurchaseOfferingResult> purchaseOfferingAsync(PurchaseOfferingRequest request,
             com.amazonaws.handlers.AsyncHandler<PurchaseOfferingRequest, PurchaseOfferingResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveBridgeOutputResult> removeBridgeOutputAsync(RemoveBridgeOutputRequest request) {
+
+        return removeBridgeOutputAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveBridgeOutputResult> removeBridgeOutputAsync(RemoveBridgeOutputRequest request,
+            com.amazonaws.handlers.AsyncHandler<RemoveBridgeOutputRequest, RemoveBridgeOutputResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveBridgeSourceResult> removeBridgeSourceAsync(RemoveBridgeSourceRequest request) {
+
+        return removeBridgeSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveBridgeSourceResult> removeBridgeSourceAsync(RemoveBridgeSourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<RemoveBridgeSourceRequest, RemoveBridgeSourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -353,6 +561,58 @@ public class AbstractAWSMediaConnectAsync extends AbstractAWSMediaConnect implem
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateBridgeResult> updateBridgeAsync(UpdateBridgeRequest request) {
+
+        return updateBridgeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBridgeResult> updateBridgeAsync(UpdateBridgeRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateBridgeRequest, UpdateBridgeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBridgeOutputResult> updateBridgeOutputAsync(UpdateBridgeOutputRequest request) {
+
+        return updateBridgeOutputAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBridgeOutputResult> updateBridgeOutputAsync(UpdateBridgeOutputRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateBridgeOutputRequest, UpdateBridgeOutputResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBridgeSourceResult> updateBridgeSourceAsync(UpdateBridgeSourceRequest request) {
+
+        return updateBridgeSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBridgeSourceResult> updateBridgeSourceAsync(UpdateBridgeSourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateBridgeSourceRequest, UpdateBridgeSourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBridgeStateResult> updateBridgeStateAsync(UpdateBridgeStateRequest request) {
+
+        return updateBridgeStateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBridgeStateResult> updateBridgeStateAsync(UpdateBridgeStateRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateBridgeStateRequest, UpdateBridgeStateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateFlowResult> updateFlowAsync(UpdateFlowRequest request) {
 
         return updateFlowAsync(request, null);
@@ -413,6 +673,19 @@ public class AbstractAWSMediaConnectAsync extends AbstractAWSMediaConnect implem
     @Override
     public java.util.concurrent.Future<UpdateFlowSourceResult> updateFlowSourceAsync(UpdateFlowSourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateFlowSourceRequest, UpdateFlowSourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGatewayInstanceResult> updateGatewayInstanceAsync(UpdateGatewayInstanceRequest request) {
+
+        return updateGatewayInstanceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGatewayInstanceResult> updateGatewayInstanceAsync(UpdateGatewayInstanceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateGatewayInstanceRequest, UpdateGatewayInstanceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

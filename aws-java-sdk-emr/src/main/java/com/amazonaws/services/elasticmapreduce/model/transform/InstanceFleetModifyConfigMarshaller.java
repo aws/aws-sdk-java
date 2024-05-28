@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class InstanceFleetModifyConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetOnDemandCapacity").build();
     private static final MarshallingInfo<Integer> TARGETSPOTCAPACITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetSpotCapacity").build();
+    private static final MarshallingInfo<StructuredPojo> RESIZESPECIFICATIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResizeSpecifications").build();
 
     private static final InstanceFleetModifyConfigMarshaller instance = new InstanceFleetModifyConfigMarshaller();
 
@@ -53,6 +55,7 @@ public class InstanceFleetModifyConfigMarshaller {
             protocolMarshaller.marshall(instanceFleetModifyConfig.getInstanceFleetId(), INSTANCEFLEETID_BINDING);
             protocolMarshaller.marshall(instanceFleetModifyConfig.getTargetOnDemandCapacity(), TARGETONDEMANDCAPACITY_BINDING);
             protocolMarshaller.marshall(instanceFleetModifyConfig.getTargetSpotCapacity(), TARGETSPOTCAPACITY_BINDING);
+            protocolMarshaller.marshall(instanceFleetModifyConfig.getResizeSpecifications(), RESIZESPECIFICATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

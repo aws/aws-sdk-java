@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -468,9 +468,9 @@ public class GetProfileObjectTypeTemplateResult extends com.amazonaws.AmazonWebS
         if (getSourceLastUpdatedTimestampFormat() != null)
             sb.append("SourceLastUpdatedTimestampFormat: ").append(getSourceLastUpdatedTimestampFormat()).append(",");
         if (getFields() != null)
-            sb.append("Fields: ").append(getFields()).append(",");
+            sb.append("Fields: ").append("***Sensitive Data Redacted***").append(",");
         if (getKeys() != null)
-            sb.append("Keys: ").append(getKeys());
+            sb.append("Keys: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

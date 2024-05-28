@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class ListRecoveryPointsByBackupVaultRequestMarshaller {
 
     private static final MarshallingInfo<String> BACKUPVAULTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("backupVaultName").build();
+    private static final MarshallingInfo<String> BACKUPVAULTACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("backupVaultAccountId").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -43,6 +45,8 @@ public class ListRecoveryPointsByBackupVaultRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("createdBefore").timestampFormat("iso8601").build();
     private static final MarshallingInfo<java.util.Date> BYCREATEDAFTER_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("createdAfter").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<String> BYPARENTRECOVERYPOINTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("parentRecoveryPointArn").build();
 
     private static final ListRecoveryPointsByBackupVaultRequestMarshaller instance = new ListRecoveryPointsByBackupVaultRequestMarshaller();
 
@@ -61,6 +65,7 @@ public class ListRecoveryPointsByBackupVaultRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listRecoveryPointsByBackupVaultRequest.getBackupVaultName(), BACKUPVAULTNAME_BINDING);
+            protocolMarshaller.marshall(listRecoveryPointsByBackupVaultRequest.getBackupVaultAccountId(), BACKUPVAULTACCOUNTID_BINDING);
             protocolMarshaller.marshall(listRecoveryPointsByBackupVaultRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listRecoveryPointsByBackupVaultRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listRecoveryPointsByBackupVaultRequest.getByResourceArn(), BYRESOURCEARN_BINDING);
@@ -68,6 +73,7 @@ public class ListRecoveryPointsByBackupVaultRequestMarshaller {
             protocolMarshaller.marshall(listRecoveryPointsByBackupVaultRequest.getByBackupPlanId(), BYBACKUPPLANID_BINDING);
             protocolMarshaller.marshall(listRecoveryPointsByBackupVaultRequest.getByCreatedBefore(), BYCREATEDBEFORE_BINDING);
             protocolMarshaller.marshall(listRecoveryPointsByBackupVaultRequest.getByCreatedAfter(), BYCREATEDAFTER_BINDING);
+            protocolMarshaller.marshall(listRecoveryPointsByBackupVaultRequest.getByParentRecoveryPointArn(), BYPARENTRECOVERYPOINTARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

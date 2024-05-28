@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,7 +38,41 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
      * action is specified as an Amazon Resource Name (ARN).
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     * Valid Values: ]
+     * </p>
+     * <p>
+     * <b>Amazon SNS actions:</b>
+     * </p>
+     * <p>
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * </p>
+     * <p>
+     * <b>Lambda actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Invoke the latest version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Systems Manager actions:</b>
+     * </p>
+     * <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code>
      * </p>
      */
@@ -141,8 +175,37 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
      * state. Each action is specified as an Amazon Resource Name (ARN).
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * Valid Values: ]
      * </p>
+     * <p>
+     * <b>Amazon SNS actions:</b>
+     * </p>
+     * <p>
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * </p>
+     * <p>
+     * <b>Lambda actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Invoke the latest version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> insufficientDataActions;
     /**
@@ -151,18 +214,55 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
      * is specified as an Amazon Resource Name (ARN).
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * Valid Values: ]
      * </p>
+     * <p>
+     * <b>Amazon SNS actions:</b>
+     * </p>
+     * <p>
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * </p>
+     * <p>
+     * <b>Lambda actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Invoke the latest version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> oKActions;
     /**
      * <p>
-     * A list of key-value pairs to associate with the composite alarm. You can associate as many as 50 tags with an
-     * alarm.
+     * A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm. To be
+     * able to associate tags with the alarm when you create the alarm, you must have the
+     * <code>cloudwatch:TagResource</code> permission.
      * </p>
      * <p>
-     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by
+     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions by
      * granting a user permission to access or change only resources with certain tag values.
+     * </p>
+     * <p>
+     * If you are using this operation to update an existing alarm, any tags you specify in this parameter are ignored.
+     * To change the tags of an existing alarm, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -264,14 +364,82 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
      * action is specified as an Amazon Resource Name (ARN).
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     * Valid Values: ]
+     * </p>
+     * <p>
+     * <b>Amazon SNS actions:</b>
+     * </p>
+     * <p>
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * </p>
+     * <p>
+     * <b>Lambda actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Invoke the latest version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Systems Manager actions:</b>
+     * </p>
+     * <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code>
      * </p>
      * 
      * @return The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state.
      *         Each action is specified as an Amazon Resource Name (ARN).</p>
      *         <p>
-     *         Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     *         Valid Values: ]
+     *         </p>
+     *         <p>
+     *         <b>Amazon SNS actions:</b>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *         </p>
+     *         <p>
+     *         <b>Lambda actions:</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Invoke the latest version of a Lambda function:
+     *         <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Invoke a specific version of a Lambda function:
+     *         <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Invoke a function by using an alias Lambda function:
+     *         <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>Systems Manager actions:</b>
+     *         </p>
+     *         <p>
      *         <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code>
      */
 
@@ -288,7 +456,41 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
      * action is specified as an Amazon Resource Name (ARN).
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     * Valid Values: ]
+     * </p>
+     * <p>
+     * <b>Amazon SNS actions:</b>
+     * </p>
+     * <p>
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * </p>
+     * <p>
+     * <b>Lambda actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Invoke the latest version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Systems Manager actions:</b>
+     * </p>
+     * <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code>
      * </p>
      * 
@@ -296,7 +498,41 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
      *        The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state.
      *        Each action is specified as an Amazon Resource Name (ARN).</p>
      *        <p>
-     *        Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     *        Valid Values: ]
+     *        </p>
+     *        <p>
+     *        <b>Amazon SNS actions:</b>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *        </p>
+     *        <p>
+     *        <b>Lambda actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Invoke the latest version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a specific version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a function by using an alias Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Systems Manager actions:</b>
+     *        </p>
+     *        <p>
      *        <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code>
      */
 
@@ -315,7 +551,41 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
      * action is specified as an Amazon Resource Name (ARN).
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     * Valid Values: ]
+     * </p>
+     * <p>
+     * <b>Amazon SNS actions:</b>
+     * </p>
+     * <p>
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * </p>
+     * <p>
+     * <b>Lambda actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Invoke the latest version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Systems Manager actions:</b>
+     * </p>
+     * <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code>
      * </p>
      * <p>
@@ -328,7 +598,41 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
      *        The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state.
      *        Each action is specified as an Amazon Resource Name (ARN).</p>
      *        <p>
-     *        Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     *        Valid Values: ]
+     *        </p>
+     *        <p>
+     *        <b>Amazon SNS actions:</b>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *        </p>
+     *        <p>
+     *        <b>Lambda actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Invoke the latest version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a specific version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a function by using an alias Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Systems Manager actions:</b>
+     *        </p>
+     *        <p>
      *        <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -349,7 +653,41 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
      * action is specified as an Amazon Resource Name (ARN).
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     * Valid Values: ]
+     * </p>
+     * <p>
+     * <b>Amazon SNS actions:</b>
+     * </p>
+     * <p>
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * </p>
+     * <p>
+     * <b>Lambda actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Invoke the latest version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Systems Manager actions:</b>
+     * </p>
+     * <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code>
      * </p>
      * 
@@ -357,7 +695,41 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
      *        The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state.
      *        Each action is specified as an Amazon Resource Name (ARN).</p>
      *        <p>
-     *        Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     *        Valid Values: ]
+     *        </p>
+     *        <p>
+     *        <b>Amazon SNS actions:</b>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *        </p>
+     *        <p>
+     *        <b>Lambda actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Invoke the latest version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a specific version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a function by using an alias Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Systems Manager actions:</b>
+     *        </p>
+     *        <p>
      *        <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -947,13 +1319,71 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
      * state. Each action is specified as an Amazon Resource Name (ARN).
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * Valid Values: ]
      * </p>
+     * <p>
+     * <b>Amazon SNS actions:</b>
+     * </p>
+     * <p>
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * </p>
+     * <p>
+     * <b>Lambda actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Invoke the latest version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any
      *         other state. Each action is specified as an Amazon Resource Name (ARN).</p>
      *         <p>
-     *         Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *         Valid Values: ]
+     *         </p>
+     *         <p>
+     *         <b>Amazon SNS actions:</b>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *         </p>
+     *         <p>
+     *         <b>Lambda actions:</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Invoke the latest version of a Lambda function:
+     *         <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Invoke a specific version of a Lambda function:
+     *         <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Invoke a function by using an alias Lambda function:
+     *         <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<String> getInsufficientDataActions() {
@@ -969,14 +1399,72 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
      * state. Each action is specified as an Amazon Resource Name (ARN).
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * Valid Values: ]
      * </p>
+     * <p>
+     * <b>Amazon SNS actions:</b>
+     * </p>
+     * <p>
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * </p>
+     * <p>
+     * <b>Lambda actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Invoke the latest version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param insufficientDataActions
      *        The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any
      *        other state. Each action is specified as an Amazon Resource Name (ARN).</p>
      *        <p>
-     *        Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *        Valid Values: ]
+     *        </p>
+     *        <p>
+     *        <b>Amazon SNS actions:</b>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *        </p>
+     *        <p>
+     *        <b>Lambda actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Invoke the latest version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a specific version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a function by using an alias Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     *        </p>
+     *        </li>
      */
 
     public void setInsufficientDataActions(java.util.Collection<String> insufficientDataActions) {
@@ -994,8 +1482,37 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
      * state. Each action is specified as an Amazon Resource Name (ARN).
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * Valid Values: ]
      * </p>
+     * <p>
+     * <b>Amazon SNS actions:</b>
+     * </p>
+     * <p>
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * </p>
+     * <p>
+     * <b>Lambda actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Invoke the latest version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setInsufficientDataActions(java.util.Collection)} or
@@ -1006,7 +1523,36 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
      *        The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any
      *        other state. Each action is specified as an Amazon Resource Name (ARN).</p>
      *        <p>
-     *        Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *        Valid Values: ]
+     *        </p>
+     *        <p>
+     *        <b>Amazon SNS actions:</b>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *        </p>
+     *        <p>
+     *        <b>Lambda actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Invoke the latest version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a specific version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a function by using an alias Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1026,14 +1572,72 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
      * state. Each action is specified as an Amazon Resource Name (ARN).
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * Valid Values: ]
      * </p>
+     * <p>
+     * <b>Amazon SNS actions:</b>
+     * </p>
+     * <p>
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * </p>
+     * <p>
+     * <b>Lambda actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Invoke the latest version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param insufficientDataActions
      *        The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any
      *        other state. Each action is specified as an Amazon Resource Name (ARN).</p>
      *        <p>
-     *        Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *        Valid Values: ]
+     *        </p>
+     *        <p>
+     *        <b>Amazon SNS actions:</b>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *        </p>
+     *        <p>
+     *        <b>Lambda actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Invoke the latest version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a specific version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a function by using an alias Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1048,13 +1652,71 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
      * is specified as an Amazon Resource Name (ARN).
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * Valid Values: ]
      * </p>
+     * <p>
+     * <b>Amazon SNS actions:</b>
+     * </p>
+     * <p>
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * </p>
+     * <p>
+     * <b>Lambda actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Invoke the latest version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each
      *         action is specified as an Amazon Resource Name (ARN).</p>
      *         <p>
-     *         Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *         Valid Values: ]
+     *         </p>
+     *         <p>
+     *         <b>Amazon SNS actions:</b>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *         </p>
+     *         <p>
+     *         <b>Lambda actions:</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Invoke the latest version of a Lambda function:
+     *         <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Invoke a specific version of a Lambda function:
+     *         <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Invoke a function by using an alias Lambda function:
+     *         <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<String> getOKActions() {
@@ -1070,14 +1732,72 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
      * is specified as an Amazon Resource Name (ARN).
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * Valid Values: ]
      * </p>
+     * <p>
+     * <b>Amazon SNS actions:</b>
+     * </p>
+     * <p>
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * </p>
+     * <p>
+     * <b>Lambda actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Invoke the latest version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param oKActions
      *        The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each
      *        action is specified as an Amazon Resource Name (ARN).</p>
      *        <p>
-     *        Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *        Valid Values: ]
+     *        </p>
+     *        <p>
+     *        <b>Amazon SNS actions:</b>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *        </p>
+     *        <p>
+     *        <b>Lambda actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Invoke the latest version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a specific version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a function by using an alias Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     *        </p>
+     *        </li>
      */
 
     public void setOKActions(java.util.Collection<String> oKActions) {
@@ -1095,8 +1815,37 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
      * is specified as an Amazon Resource Name (ARN).
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * Valid Values: ]
      * </p>
+     * <p>
+     * <b>Amazon SNS actions:</b>
+     * </p>
+     * <p>
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * </p>
+     * <p>
+     * <b>Lambda actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Invoke the latest version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setOKActions(java.util.Collection)} or {@link #withOKActions(java.util.Collection)} if you want to
@@ -1107,7 +1856,36 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
      *        The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each
      *        action is specified as an Amazon Resource Name (ARN).</p>
      *        <p>
-     *        Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *        Valid Values: ]
+     *        </p>
+     *        <p>
+     *        <b>Amazon SNS actions:</b>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *        </p>
+     *        <p>
+     *        <b>Lambda actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Invoke the latest version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a specific version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a function by using an alias Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1127,14 +1905,72 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
      * is specified as an Amazon Resource Name (ARN).
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * Valid Values: ]
      * </p>
+     * <p>
+     * <b>Amazon SNS actions:</b>
+     * </p>
+     * <p>
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * </p>
+     * <p>
+     * <b>Lambda actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Invoke the latest version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param oKActions
      *        The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each
      *        action is specified as an Amazon Resource Name (ARN).</p>
      *        <p>
-     *        Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *        Valid Values: ]
+     *        </p>
+     *        <p>
+     *        <b>Amazon SNS actions:</b>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *        </p>
+     *        <p>
+     *        <b>Lambda actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Invoke the latest version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a specific version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a function by using an alias Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1145,19 +1981,36 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of key-value pairs to associate with the composite alarm. You can associate as many as 50 tags with an
-     * alarm.
+     * A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm. To be
+     * able to associate tags with the alarm when you create the alarm, you must have the
+     * <code>cloudwatch:TagResource</code> permission.
      * </p>
      * <p>
-     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by
+     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions by
      * granting a user permission to access or change only resources with certain tag values.
      * </p>
+     * <p>
+     * If you are using this operation to update an existing alarm, any tags you specify in this parameter are ignored.
+     * To change the tags of an existing alarm, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.
+     * </p>
      * 
-     * @return A list of key-value pairs to associate with the composite alarm. You can associate as many as 50 tags
-     *         with an alarm.</p>
+     * @return A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an
+     *         alarm. To be able to associate tags with the alarm when you create the alarm, you must have the
+     *         <code>cloudwatch:TagResource</code> permission.</p>
      *         <p>
-     *         Tags can help you organize and categorize your resources. You can also use them to scope user
-     *         permissions, by granting a user permission to access or change only resources with certain tag values.
+     *         Tags can help you organize and categorize your resources. You can also use them to scope user permissions
+     *         by granting a user permission to access or change only resources with certain tag values.
+     *         </p>
+     *         <p>
+     *         If you are using this operation to update an existing alarm, any tags you specify in this parameter are
+     *         ignored. To change the tags of an existing alarm, use <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html"
+     *         >TagResource</a> or <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html"
+     *         >UntagResource</a>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -1169,20 +2022,37 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of key-value pairs to associate with the composite alarm. You can associate as many as 50 tags with an
-     * alarm.
+     * A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm. To be
+     * able to associate tags with the alarm when you create the alarm, you must have the
+     * <code>cloudwatch:TagResource</code> permission.
      * </p>
      * <p>
-     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by
+     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions by
      * granting a user permission to access or change only resources with certain tag values.
+     * </p>
+     * <p>
+     * If you are using this operation to update an existing alarm, any tags you specify in this parameter are ignored.
+     * To change the tags of an existing alarm, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.
      * </p>
      * 
      * @param tags
-     *        A list of key-value pairs to associate with the composite alarm. You can associate as many as 50 tags with
-     *        an alarm.</p>
+     *        A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm.
+     *        To be able to associate tags with the alarm when you create the alarm, you must have the
+     *        <code>cloudwatch:TagResource</code> permission.</p>
      *        <p>
-     *        Tags can help you organize and categorize your resources. You can also use them to scope user permissions,
+     *        Tags can help you organize and categorize your resources. You can also use them to scope user permissions
      *        by granting a user permission to access or change only resources with certain tag values.
+     *        </p>
+     *        <p>
+     *        If you are using this operation to update an existing alarm, any tags you specify in this parameter are
+     *        ignored. To change the tags of an existing alarm, use <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html"
+     *        >TagResource</a> or <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html"
+     *        >UntagResource</a>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -1196,12 +2066,20 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of key-value pairs to associate with the composite alarm. You can associate as many as 50 tags with an
-     * alarm.
+     * A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm. To be
+     * able to associate tags with the alarm when you create the alarm, you must have the
+     * <code>cloudwatch:TagResource</code> permission.
      * </p>
      * <p>
-     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by
+     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions by
      * granting a user permission to access or change only resources with certain tag values.
+     * </p>
+     * <p>
+     * If you are using this operation to update an existing alarm, any tags you specify in this parameter are ignored.
+     * To change the tags of an existing alarm, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1210,11 +2088,20 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param tags
-     *        A list of key-value pairs to associate with the composite alarm. You can associate as many as 50 tags with
-     *        an alarm.</p>
+     *        A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm.
+     *        To be able to associate tags with the alarm when you create the alarm, you must have the
+     *        <code>cloudwatch:TagResource</code> permission.</p>
      *        <p>
-     *        Tags can help you organize and categorize your resources. You can also use them to scope user permissions,
+     *        Tags can help you organize and categorize your resources. You can also use them to scope user permissions
      *        by granting a user permission to access or change only resources with certain tag values.
+     *        </p>
+     *        <p>
+     *        If you are using this operation to update an existing alarm, any tags you specify in this parameter are
+     *        ignored. To change the tags of an existing alarm, use <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html"
+     *        >TagResource</a> or <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html"
+     *        >UntagResource</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1230,20 +2117,37 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of key-value pairs to associate with the composite alarm. You can associate as many as 50 tags with an
-     * alarm.
+     * A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm. To be
+     * able to associate tags with the alarm when you create the alarm, you must have the
+     * <code>cloudwatch:TagResource</code> permission.
      * </p>
      * <p>
-     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by
+     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions by
      * granting a user permission to access or change only resources with certain tag values.
+     * </p>
+     * <p>
+     * If you are using this operation to update an existing alarm, any tags you specify in this parameter are ignored.
+     * To change the tags of an existing alarm, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.
      * </p>
      * 
      * @param tags
-     *        A list of key-value pairs to associate with the composite alarm. You can associate as many as 50 tags with
-     *        an alarm.</p>
+     *        A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm.
+     *        To be able to associate tags with the alarm when you create the alarm, you must have the
+     *        <code>cloudwatch:TagResource</code> permission.</p>
      *        <p>
-     *        Tags can help you organize and categorize your resources. You can also use them to scope user permissions,
+     *        Tags can help you organize and categorize your resources. You can also use them to scope user permissions
      *        by granting a user permission to access or change only resources with certain tag values.
+     *        </p>
+     *        <p>
+     *        If you are using this operation to update an existing alarm, any tags you specify in this parameter are
+     *        ignored. To change the tags of an existing alarm, use <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html"
+     *        >TagResource</a> or <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html"
+     *        >UntagResource</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

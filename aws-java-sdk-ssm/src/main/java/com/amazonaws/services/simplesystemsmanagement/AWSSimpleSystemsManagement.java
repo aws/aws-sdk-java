@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,18 +28,14 @@ import com.amazonaws.services.simplesystemsmanagement.waiters.AWSSimpleSystemsMa
  * </p>
  * <p>
  * <p>
- * Amazon Web Services Systems Manager is a collection of capabilities to help you manage your applications and
- * infrastructure running in the Amazon Web Services Cloud;. Systems Manager simplifies application and resource
- * management, shortens the time to detect and resolve operational problems, and helps you manage your Amazon Web
- * Services resources securely at scale.
+ * Amazon Web Services Systems Manager is the operations hub for your Amazon Web Services applications and resources and
+ * a secure end-to-end management solution for hybrid cloud environments that enables safe and secure operations at
+ * scale.
  * </p>
  * <p>
  * This reference is intended to be used with the <a
  * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/">Amazon Web Services Systems Manager User
- * Guide</a>.
- * </p>
- * <p>
- * To get started, verify prerequisites. For more information, see <a
+ * Guide</a>. To get started, see <a
  * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting up Amazon
  * Web Services Systems Manager</a>.
  * </p>
@@ -49,28 +45,32 @@ import com.amazonaws.services.simplesystemsmanagement.waiters.AWSSimpleSystemsMa
  * <ul>
  * <li>
  * <p>
- * For information about how to use a Query API, see <a
- * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/making-api-requests.html">Making API requests</a>.
+ * For information about each of the capabilities that comprise Systems Manager, see <a href=
+ * "https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html#systems-manager-capabilities"
+ * >Systems Manager capabilities</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
  * </p>
  * </li>
  * <li>
  * <p>
- * For information about other API operations you can perform on EC2 instances, see the <a
- * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API Reference</a>.
+ * For details about predefined runbooks for Automation, a capability of Amazon Web Services Systems Manager, see the
+ * <i> <a href=
+ * "https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-runbook-reference.html"
+ * >Systems Manager Automation runbook reference</a> </i>.
  * </p>
  * </li>
  * <li>
  * <p>
- * For information about AppConfig, a capability of Systems Manager, see the <a
- * href="https://docs.aws.amazon.com/appconfig/latest/userguide/">AppConfig User Guide</a> and the <a
- * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/">AppConfig API Reference</a>.
+ * For information about AppConfig, a capability of Systems Manager, see the <i> <a
+ * href="https://docs.aws.amazon.com/appconfig/latest/userguide/">AppConfig User Guide</a> </i> and the <i> <a
+ * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/">AppConfig API Reference</a> </i>.
  * </p>
  * </li>
  * <li>
  * <p>
- * For information about Incident Manager, a capability of Systems Manager, see the <a
- * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/">Incident Manager User Guide</a> and the <a
- * href="https://docs.aws.amazon.com/incident-manager/latest/APIReference/">Incident Manager API Reference</a>.
+ * For information about Incident Manager, a capability of Systems Manager, see the <i> <a
+ * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/">Systems Manager Incident Manager User Guide</a>
+ * </i> and the <i> <a href="https://docs.aws.amazon.com/incident-manager/latest/APIReference/">Systems Manager Incident
+ * Manager API Reference</a> </i>.
  * </p>
  * </li>
  * </ul>
@@ -189,8 +189,8 @@ public interface AWSSimpleSystemsManagement {
      * </p>
      * <p>
      * For more information about using tags with Amazon Elastic Compute Cloud (Amazon EC2) instances, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2 resources</a>
-     * in the <i>Amazon EC2 User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag your Amazon EC2 resources</a> in
+     * the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param addTagsToResourceRequest
@@ -227,14 +227,13 @@ public interface AWSSimpleSystemsManagement {
      * @throws OpsItemNotFoundException
      *         The specified OpsItem ID doesn't exist. Verify the ID and try again.
      * @throws OpsItemLimitExceededException
-     *         The request caused OpsItems to exceed one or more quotas. For information about OpsItem quotas, see <a
-     *         href=
-     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits"
-     *         >What are the resource limits for OpsCenter?</a>.
+     *         The request caused OpsItems to exceed one or more quotas.
      * @throws OpsItemInvalidParameterException
      *         A specified parameter argument isn't valid. Verify the available arguments and try again.
      * @throws OpsItemRelatedItemAlreadyExistsException
      *         The Amazon Resource Name (ARN) is already associated with the OpsItem.
+     * @throws OpsItemConflictException
+     *         The specified OpsItem is in the process of being deleted.
      * @sample AWSSimpleSystemsManagement.AssociateOpsItemRelatedItem
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AssociateOpsItemRelatedItem"
      *      target="_top">AWS API Documentation</a>
@@ -263,7 +262,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.
+     *         Amazon Web Services Systems Manager Agent (SSM Agent) isn't running. Verify that SSM Agent is running.
      *         </p>
      *         </li>
      *         <li>
@@ -273,7 +272,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+     *         The managed node isn't in a valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
      *         <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and
      *         <code>Terminated</code>.
      *         </p>
@@ -317,8 +316,8 @@ public interface AWSSimpleSystemsManagement {
      * installing SSM Agent on machines in your hybrid environment. For more information about requirements for managing
      * on-premises machines using Systems Manager, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
-     * up Amazon Web Services Systems Manager for hybrid environments</a> in the <i>Amazon Web Services Systems Manager
-     * User Guide</i>.
+     * up Amazon Web Services Systems Manager for hybrid and multicloud environments</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -375,7 +374,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.
+     *         Amazon Web Services Systems Manager Agent (SSM Agent) isn't running. Verify that SSM Agent is running.
      *         </p>
      *         </li>
      *         <li>
@@ -385,13 +384,13 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+     *         The managed node isn't in a valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
      *         <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and
      *         <code>Terminated</code>.
      *         </p>
      *         </li>
      * @throws UnsupportedPlatformTypeException
-     *         The document doesn't support the platform type of the given managed node ID(s). For example, you sent an
+     *         The document doesn't support the platform type of the given managed node IDs. For example, you sent an
      *         document for a Windows managed node to a Linux node.
      * @throws InvalidOutputLocationException
      *         The output location isn't valid or doesn't exist.
@@ -446,7 +445,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.
+     *         Amazon Web Services Systems Manager Agent (SSM Agent) isn't running. Verify that SSM Agent is running.
      *         </p>
      *         </li>
      *         <li>
@@ -456,7 +455,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+     *         The managed node isn't in a valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
      *         <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and
      *         <code>Terminated</code>.
      *         </p>
@@ -469,7 +468,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws AssociationLimitExceededException
      *         You can have at most 2,000 active associations.
      * @throws UnsupportedPlatformTypeException
-     *         The document doesn't support the platform type of the given managed node ID(s). For example, you sent an
+     *         The document doesn't support the platform type of the given managed node IDs. For example, you sent an
      *         document for a Windows managed node to a Linux node.
      * @throws InvalidOutputLocationException
      *         The output location isn't valid or doesn't exist.
@@ -553,8 +552,8 @@ public interface AWSSimpleSystemsManagement {
      * <p>
      * Creates a new OpsItem. You must have permission in Identity and Access Management (IAM) to create a new OpsItem.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-     * started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set up OpsCenter</a> in
+     * the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <p>
      * Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate,
@@ -571,12 +570,13 @@ public interface AWSSimpleSystemsManagement {
      * @throws OpsItemAlreadyExistsException
      *         The OpsItem already exists.
      * @throws OpsItemLimitExceededException
-     *         The request caused OpsItems to exceed one or more quotas. For information about OpsItem quotas, see <a
-     *         href=
-     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits"
-     *         >What are the resource limits for OpsCenter?</a>.
+     *         The request caused OpsItems to exceed one or more quotas.
      * @throws OpsItemInvalidParameterException
      *         A specified parameter argument isn't valid. Verify the available arguments and try again.
+     * @throws OpsItemAccessDeniedException
+     *         You don't have permission to view OpsItems in the specified account. Verify that your account is
+     *         configured either as a Systems Manager delegated administrator or that you are logged into the
+     *         Organizations management account.
      * @sample AWSSimpleSystemsManagement.CreateOpsItem
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsItem" target="_top">AWS API
      *      Documentation</a>
@@ -744,7 +744,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.
+     *         Amazon Web Services Systems Manager Agent (SSM Agent) isn't running. Verify that SSM Agent is running.
      *         </p>
      *         </li>
      *         <li>
@@ -754,7 +754,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+     *         The managed node isn't in a valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
      *         <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and
      *         <code>Terminated</code>.
      *         </p>
@@ -833,6 +833,58 @@ public interface AWSSimpleSystemsManagement {
      *      API Documentation</a>
      */
     DeleteMaintenanceWindowResult deleteMaintenanceWindow(DeleteMaintenanceWindowRequest deleteMaintenanceWindowRequest);
+
+    /**
+     * <p>
+     * Delete an OpsItem. You must have permission in Identity and Access Management (IAM) to delete an OpsItem.
+     * </p>
+     * <important>
+     * <p>
+     * Note the following important information about this operation.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Deleting an OpsItem is irreversible. You can't restore a deleted OpsItem.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This operation uses an <i>eventual consistency model</i>, which means the system can take a few minutes to
+     * complete this operation. If you delete an OpsItem and immediately call, for example, <a>GetOpsItem</a>, the
+     * deleted OpsItem might still appear in the response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This operation is idempotent. The system doesn't throw an exception if you repeatedly call this operation for the
+     * same OpsItem. If the first call is successful, all additional calls return the same successful response as the
+     * first call.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This operation doesn't support cross-account calls. A delegated administrator or management account can't delete
+     * OpsItems in other accounts, even if OpsCenter has been set up for cross-account administration. For more
+     * information about cross-account administration, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setting-up-cross-account.html"
+     * >Setting up OpsCenter to centrally manage OpsItems across accounts</a> in the <i>Systems Manager User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * </important>
+     * 
+     * @param deleteOpsItemRequest
+     * @return Result of the DeleteOpsItem operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws OpsItemInvalidParameterException
+     *         A specified parameter argument isn't valid. Verify the available arguments and try again.
+     * @sample AWSSimpleSystemsManagement.DeleteOpsItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteOpsItem" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteOpsItemResult deleteOpsItem(DeleteOpsItemRequest deleteOpsItemRequest);
 
     /**
      * <p>
@@ -926,6 +978,52 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Deletes a Systems Manager resource policy. A resource policy helps you to define the IAM entity (for example, an
+     * Amazon Web Services account) that can manage your Systems Manager resources. The following resources support
+     * Systems Manager resource policies.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>OpsItemGroup</code> - The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services
+     * accounts to view and interact with OpsCenter operational work items (OpsItems).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Parameter</code> - The resource policy is used to share a parameter with other accounts using Resource
+     * Access Manager (RAM). For more information about cross-account sharing of parameters, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html"
+     * >Working with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @return Result of the DeleteResourcePolicy operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws ResourcePolicyInvalidParameterException
+     *         One or more parameters specified for the call aren't valid. Verify the parameters and their values and
+     *         try again.
+     * @throws ResourcePolicyConflictException
+     *         The hash provided in the call doesn't match the stored hash. This exception is thrown when trying to
+     *         update an obsolete policy version or when multiple requests to update a policy are sent.
+     * @throws ResourceNotFoundException
+     *         The specified parameter to be shared could not be found.
+     * @throws MalformedResourcePolicyDocumentException
+     *         The specified policy document is malformed or invalid, or excessive <code>PutResourcePolicy</code> or
+     *         <code>DeleteResourcePolicy</code> calls have been made.
+     * @throws ResourcePolicyNotFoundException
+     *         No policies with the specified policy ID and hash could be found.
+     * @sample AWSSimpleSystemsManagement.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourcePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest deleteResourcePolicyRequest);
+
+    /**
+     * <p>
      * Removes the server or virtual machine from the list of registered servers. You can reregister the node again at
      * any time. If you don't plan to use Run Command on the server, we suggest uninstalling SSM Agent first.
      * </p>
@@ -942,7 +1040,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.
+     *         Amazon Web Services Systems Manager Agent (SSM Agent) isn't running. Verify that SSM Agent is running.
      *         </p>
      *         </li>
      *         <li>
@@ -952,7 +1050,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+     *         The managed node isn't in a valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
      *         <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and
      *         <code>Terminated</code>.
      *         </p>
@@ -1081,7 +1179,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.
+     *         Amazon Web Services Systems Manager Agent (SSM Agent) isn't running. Verify that SSM Agent is running.
      *         </p>
      *         </li>
      *         <li>
@@ -1091,7 +1189,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+     *         The managed node isn't in a valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
      *         <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and
      *         <code>Terminated</code>.
      *         </p>
@@ -1191,6 +1289,12 @@ public interface AWSSimpleSystemsManagement {
      * <p>
      * Lists all patches eligible to be included in a patch baseline.
      * </p>
+     * <note>
+     * <p>
+     * Currently, <code>DescribeAvailablePatches</code> supports only the Amazon Linux 1, Amazon Linux 2, and Windows
+     * Server operating systems.
+     * </p>
+     * </note>
      * 
      * @param describeAvailablePatchesRequest
      * @return Result of the DescribeAvailablePatches operation returned by the service.
@@ -1249,7 +1353,7 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
-     * All associations for the managed node(s).
+     * All associations for the managed nodes.
      * </p>
      * 
      * @param describeEffectiveInstanceAssociationsRequest
@@ -1266,7 +1370,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.
+     *         Amazon Web Services Systems Manager Agent (SSM Agent) isn't running. Verify that SSM Agent is running.
      *         </p>
      *         </li>
      *         <li>
@@ -1276,7 +1380,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+     *         The managed node isn't in a valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
      *         <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and
      *         <code>Terminated</code>.
      *         </p>
@@ -1321,7 +1425,7 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
-     * The status of the associations for the managed node(s).
+     * The status of the associations for the managed nodes.
      * </p>
      * 
      * @param describeInstanceAssociationsStatusRequest
@@ -1338,7 +1442,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.
+     *         Amazon Web Services Systems Manager Agent (SSM Agent) isn't running. Verify that SSM Agent is running.
      *         </p>
      *         </li>
      *         <li>
@@ -1348,7 +1452,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+     *         The managed node isn't in a valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
      *         <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and
      *         <code>Terminated</code>.
      *         </p>
@@ -1364,18 +1468,19 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
-     * Describes one or more of your managed nodes, including information about the operating system platform, the
-     * version of SSM Agent installed on the managed node, node status, and so on.
+     * Provides information about one or more of your managed nodes, including the operating system platform, SSM Agent
+     * version, association status, and IP address. This operation does not return information for nodes that are either
+     * Stopped or Terminated.
      * </p>
      * <p>
-     * If you specify one or more managed node IDs, it returns information for those managed nodes. If you don't specify
-     * node IDs, it returns information for all your managed nodes. If you specify a node ID that isn't valid or a node
-     * that you don't own, you receive an error.
+     * If you specify one or more node IDs, the operation returns information for those managed nodes. If you don't
+     * specify node IDs, it returns information for all your managed nodes. If you specify a node ID that isn't valid or
+     * a node that you don't own, you receive an error.
      * </p>
      * <note>
      * <p>
-     * The <code>IamRole</code> field for this API operation is the Identity and Access Management (IAM) role assigned
-     * to on-premises managed nodes. This call doesn't return the IAM role for EC2 instances.
+     * The <code>IamRole</code> field returned for this API operation is the Identity and Access Management (IAM) role
+     * assigned to on-premises managed nodes. This operation does not return the IAM role for EC2 instances.
      * </p>
      * </note>
      * 
@@ -1393,7 +1498,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.
+     *         Amazon Web Services Systems Manager Agent (SSM Agent) isn't running. Verify that SSM Agent is running.
      *         </p>
      *         </li>
      *         <li>
@@ -1403,7 +1508,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+     *         The managed node isn't in a valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
      *         <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and
      *         <code>Terminated</code>.
      *         </p>
@@ -1477,7 +1582,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.
+     *         Amazon Web Services Systems Manager Agent (SSM Agent) isn't running. Verify that SSM Agent is running.
      *         </p>
      *         </li>
      *         <li>
@@ -1487,7 +1592,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+     *         The managed node isn't in a valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
      *         <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and
      *         <code>Terminated</code>.
      *         </p>
@@ -1501,6 +1606,57 @@ public interface AWSSimpleSystemsManagement {
      *      API Documentation</a>
      */
     DescribeInstancePatchesResult describeInstancePatches(DescribeInstancePatchesRequest describeInstancePatchesRequest);
+
+    /**
+     * <p>
+     * An API operation used by the Systems Manager console to display information about Systems Manager managed nodes.
+     * </p>
+     * 
+     * @param describeInstancePropertiesRequest
+     * @return Result of the DescribeInstanceProperties operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The specified token isn't valid.
+     * @throws InvalidFilterKeyException
+     *         The specified key isn't valid.
+     * @throws InvalidInstanceIdException
+     *         The following problems can cause this exception:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You don't have permission to access the managed node.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon Web Services Systems Manager Agent (SSM Agent) isn't running. Verify that SSM Agent is running.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The managed node isn't in a valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+     *         <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and
+     *         <code>Terminated</code>.
+     *         </p>
+     *         </li>
+     * @throws InvalidActivationIdException
+     *         The activation ID isn't valid. Verify the you entered the correct ActivationId or ActivationCode and try
+     *         again.
+     * @throws InvalidInstancePropertyFilterValueException
+     *         The specified filter value isn't valid.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidDocumentException
+     *         The specified SSM document doesn't exist.
+     * @sample AWSSimpleSystemsManagement.DescribeInstanceProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceProperties" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeInstancePropertiesResult describeInstanceProperties(DescribeInstancePropertiesRequest describeInstancePropertiesRequest);
 
     /**
      * <p>
@@ -1695,15 +1851,15 @@ public interface AWSSimpleSystemsManagement {
      * <p>
      * Query a set of OpsItems. You must have permission in Identity and Access Management (IAM) to query a list of
      * OpsItems. For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-     * started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set up OpsCenter</a> in
+     * the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <p>
      * Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate,
      * and remediate operational issues impacting the performance and health of their Amazon Web Services resources. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a> in the <i>Amazon
-     * Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">Amazon Web Services Systems
+     * Manager OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param describeOpsItemsRequest
@@ -1718,7 +1874,10 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
-     * Get information about a parameter.
+     * Lists the parameters in your Amazon Web Services account or the parameters shared with you when you enable the <a
+     * href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeParameters.html#systemsmanager-DescribeParameters-request-Shared"
+     * >Shared</a> option.
      * </p>
      * <p>
      * Request results are returned on a best-effort basis. If you specify <code>MaxResults</code> in the request, the
@@ -1923,6 +2082,8 @@ public interface AWSSimpleSystemsManagement {
      *         The specified OpsItem ID doesn't exist. Verify the ID and try again.
      * @throws OpsItemInvalidParameterException
      *         A specified parameter argument isn't valid. Verify the available arguments and try again.
+     * @throws OpsItemConflictException
+     *         The specified OpsItem is in the process of being deleted.
      * @sample AWSSimpleSystemsManagement.DisassociateOpsItemRelatedItem
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DisassociateOpsItemRelatedItem"
      *      target="_top">AWS API Documentation</a>
@@ -2008,7 +2169,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.
+     *         Amazon Web Services Systems Manager Agent (SSM Agent) isn't running. Verify that SSM Agent is running.
      *         </p>
      *         </li>
      *         <li>
@@ -2018,7 +2179,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+     *         The managed node isn't in a valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
      *         <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and
      *         <code>Terminated</code>.
      *         </p>
@@ -2097,7 +2258,7 @@ public interface AWSSimpleSystemsManagement {
      *         instances. To patch applications released by Microsoft on on-premises servers and VMs, you must enable
      *         advanced instances. For more information, see <a href=
      *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances-advanced.html"
-     *         >Enabling the advanced-instances tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     *         >Turning on the advanced-instances tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @sample AWSSimpleSystemsManagement.GetDeployablePatchSnapshotForInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance"
      *      target="_top">AWS API Documentation</a>
@@ -2300,15 +2461,15 @@ public interface AWSSimpleSystemsManagement {
      * <p>
      * Get information about an OpsItem by using the ID. You must have permission in Identity and Access Management
      * (IAM) to view information about an OpsItem. For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-     * started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set up OpsCenter</a> in
+     * the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <p>
      * Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate,
      * and remediate operational issues impacting the performance and health of their Amazon Web Services resources. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a> in the <i>Amazon
-     * Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">Amazon Web Services Systems
+     * Manager OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param getOpsItemRequest
@@ -2317,6 +2478,10 @@ public interface AWSSimpleSystemsManagement {
      *         An error occurred on the server side.
      * @throws OpsItemNotFoundException
      *         The specified OpsItem ID doesn't exist. Verify the ID and try again.
+     * @throws OpsItemAccessDeniedException
+     *         You don't have permission to view OpsItems in the specified account. Verify that your account is
+     *         configured either as a Systems Manager delegated administrator or that you are logged into the
+     *         Organizations management account.
      * @sample AWSSimpleSystemsManagement.GetOpsItem
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsItem" target="_top">AWS API
      *      Documentation</a>
@@ -2521,6 +2686,26 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Returns an array of the <code>Policy</code> object.
+     * </p>
+     * 
+     * @param getResourcePoliciesRequest
+     * @return Result of the GetResourcePolicies operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws ResourcePolicyInvalidParameterException
+     *         One or more parameters specified for the call aren't valid. Verify the parameters and their values and
+     *         try again.
+     * @throws ResourceNotFoundException
+     *         The specified parameter to be shared could not be found.
+     * @sample AWSSimpleSystemsManagement.GetResourcePolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetResourcePolicies" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetResourcePoliciesResult getResourcePolicies(GetResourcePoliciesRequest getResourcePoliciesRequest);
+
+    /**
+     * <p>
      * <code>ServiceSetting</code> is an account-level setting for an Amazon Web Services service. This setting defines
      * how a user interacts with or uses a service or a feature of a service. For example, if an Amazon Web Services
      * service charges money to the account based on feature or service usage, then the Amazon Web Services service team
@@ -2689,7 +2874,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.
+     *         Amazon Web Services Systems Manager Agent (SSM Agent) isn't running. Verify that SSM Agent is running.
      *         </p>
      *         </li>
      *         <li>
@@ -2699,7 +2884,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+     *         The managed node isn't in a valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
      *         <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and
      *         <code>Terminated</code>.
      *         </p>
@@ -2735,7 +2920,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.
+     *         Amazon Web Services Systems Manager Agent (SSM Agent) isn't running. Verify that SSM Agent is running.
      *         </p>
      *         </li>
      *         <li>
@@ -2745,7 +2930,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+     *         The managed node isn't in a valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
      *         <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and
      *         <code>Terminated</code>.
      *         </p>
@@ -2893,7 +3078,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.
+     *         Amazon Web Services Systems Manager Agent (SSM Agent) isn't running. Verify that SSM Agent is running.
      *         </p>
      *         </li>
      *         <li>
@@ -2903,7 +3088,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+     *         The managed node isn't in a valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
      *         <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and
      *         <code>Terminated</code>.
      *         </p>
@@ -2933,10 +3118,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws OpsItemNotFoundException
      *         The specified OpsItem ID doesn't exist. Verify the ID and try again.
      * @throws OpsItemLimitExceededException
-     *         The request caused OpsItems to exceed one or more quotas. For information about OpsItem quotas, see <a
-     *         href=
-     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits"
-     *         >What are the resource limits for OpsCenter?</a>.
+     *         The request caused OpsItems to exceed one or more quotas.
      * @throws OpsItemInvalidParameterException
      *         A specified parameter argument isn't valid. Verify the available arguments and try again.
      * @sample AWSSimpleSystemsManagement.ListOpsItemEvents
@@ -3054,8 +3236,8 @@ public interface AWSSimpleSystemsManagement {
     /**
      * <p>
      * Shares a Amazon Web Services Systems Manager document (SSM document)publicly or privately. If you share a
-     * document privately, you must specify the Amazon Web Services user account IDs for those people who can use the
-     * document. If you share a document publicly, you must specify <i>All</i> as the account ID.
+     * document privately, you must specify the Amazon Web Services user IDs for those people who can use the document.
+     * If you share a document publicly, you must specify <i>All</i> as the account ID.
      * </p>
      * 
      * @param modifyDocumentPermissionRequest
@@ -3067,7 +3249,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidPermissionTypeException
      *         The permission type isn't supported. <i>Share</i> is the only supported permission type.
      * @throws DocumentPermissionLimitException
-     *         The document can't be shared with more Amazon Web Services user accounts. You can specify a maximum of 20
+     *         The document can't be shared with more Amazon Web Services accounts. You can specify a maximum of 20
      *         accounts per API operation to share a private document.</p>
      *         <p>
      *         By default, you can share a private document with a maximum of 1,000 accounts and publicly share up to
@@ -3168,7 +3350,7 @@ public interface AWSSimpleSystemsManagement {
      * <li>
      * <p>
      * InstalledTime: The time the association, patch, or custom compliance item was applied to the resource. Specify
-     * the time by using the following format: yyyy-MM-dd'T'HH:mm:ss'Z'
+     * the time by using the following format: <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code>
      * </p>
      * </li>
      * </ul>
@@ -3216,7 +3398,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.
+     *         Amazon Web Services Systems Manager Agent (SSM Agent) isn't running. Verify that SSM Agent is running.
      *         </p>
      *         </li>
      *         <li>
@@ -3226,7 +3408,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+     *         The managed node isn't in a valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
      *         <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and
      *         <code>Terminated</code>.
      *         </p>
@@ -3326,6 +3508,86 @@ public interface AWSSimpleSystemsManagement {
      *      Documentation</a>
      */
     PutParameterResult putParameter(PutParameterRequest putParameterRequest);
+
+    /**
+     * <p>
+     * Creates or updates a Systems Manager resource policy. A resource policy helps you to define the IAM entity (for
+     * example, an Amazon Web Services account) that can manage your Systems Manager resources. The following resources
+     * support Systems Manager resource policies.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>OpsItemGroup</code> - The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services
+     * accounts to view and interact with OpsCenter operational work items (OpsItems).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Parameter</code> - The resource policy is used to share a parameter with other accounts using Resource
+     * Access Manager (RAM).
+     * </p>
+     * <p>
+     * To share a parameter, it must be in the advanced parameter tier. For information about parameter tiers, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">
+     * Managing parameter tiers</a>. For information about changing an existing standard parameter to an advanced
+     * parameter, see <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html#parameter-store-advanced-parameters-enabling"
+     * >Changing a standard parameter to an advanced parameter</a>.
+     * </p>
+     * <p>
+     * To share a <code>SecureString</code> parameter, it must be encrypted with a customer managed key, and you must
+     * share the key separately through Key Management Service. Amazon Web Services managed keys cannot be shared.
+     * Parameters encrypted with the default Amazon Web Services managed key can be updated to use a customer managed
+     * key instead. For KMS key definitions, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">KMS concepts</a> in the <i>Key
+     * Management Service Developer Guide</i>.
+     * </p>
+     * <important>
+     * <p>
+     * While you can share a parameter using the Systems Manager <code>PutResourcePolicy</code> operation, we recommend
+     * using Resource Access Manager (RAM) instead. This is because using <code>PutResourcePolicy</code> requires the
+     * extra step of promoting the parameter to a standard RAM Resource Share using the RAM <a
+     * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html"
+     * >PromoteResourceShareCreatedFromPolicy</a> API operation. Otherwise, the parameter won't be returned by the
+     * Systems Manager <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeParameters.html"
+     * >DescribeParameters</a> API operation using the <code>--shared</code> option.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html#share"
+     * >Sharing a parameter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>
+     * </p>
+     * </important></li>
+     * </ul>
+     * 
+     * @param putResourcePolicyRequest
+     * @return Result of the PutResourcePolicy operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws ResourcePolicyInvalidParameterException
+     *         One or more parameters specified for the call aren't valid. Verify the parameters and their values and
+     *         try again.
+     * @throws ResourcePolicyLimitExceededException
+     *         The <a>PutResourcePolicy</a> API action enforces two limits. A policy can't be greater than 1024 bytes in
+     *         size. And only one policy can be attached to <code>OpsItemGroup</code>. Verify these limits and try
+     *         again.
+     * @throws ResourcePolicyConflictException
+     *         The hash provided in the call doesn't match the stored hash. This exception is thrown when trying to
+     *         update an obsolete policy version or when multiple requests to update a policy are sent.
+     * @throws ResourceNotFoundException
+     *         The specified parameter to be shared could not be found.
+     * @throws MalformedResourcePolicyDocumentException
+     *         The specified policy document is malformed or invalid, or excessive <code>PutResourcePolicy</code> or
+     *         <code>DeleteResourcePolicy</code> calls have been made.
+     * @throws ResourcePolicyNotFoundException
+     *         No policies with the specified policy ID and hash could be found.
+     * @sample AWSSimpleSystemsManagement.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutResourcePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PutResourcePolicyResult putResourcePolicy(PutResourcePolicyRequest putResourcePolicyRequest);
 
     /**
      * <p>
@@ -3592,7 +3854,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.
+     *         Amazon Web Services Systems Manager Agent (SSM Agent) isn't running. Verify that SSM Agent is running.
      *         </p>
      *         </li>
      *         <li>
@@ -3602,7 +3864,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+     *         The managed node isn't in a valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
      *         <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and
      *         <code>Terminated</code>.
      *         </p>
@@ -3617,7 +3879,7 @@ public interface AWSSimpleSystemsManagement {
      *         You must specify values for all required parameters in the Amazon Web Services Systems Manager document
      *         (SSM document). You can only supply values to parameters defined in the SSM document.
      * @throws UnsupportedPlatformTypeException
-     *         The document doesn't support the platform type of the given managed node ID(s). For example, you sent an
+     *         The document doesn't support the platform type of the given managed node IDs. For example, you sent an
      *         document for a Windows managed node to a Linux node.
      * @throws MaxDocumentSizeExceededException
      *         The size limit of a document is 64 KB.
@@ -3625,9 +3887,9 @@ public interface AWSSimpleSystemsManagement {
      *         The role name can't contain invalid characters. Also verify that you specified an IAM role for
      *         notifications that includes the required trust policy. For information about configuring the IAM role for
      *         Run Command notifications, see <a
-     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring
-     *         Amazon SNS Notifications for Run Command</a> in the <i>Amazon Web Services Systems Manager User
-     *         Guide</i>.
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html"
+     *         >Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web
+     *         Services Systems Manager User Guide</i>.
      * @throws InvalidNotificationConfigException
      *         One or more configuration items isn't valid. Verify that a valid Amazon Resource Name (ARN) was provided
      *         for an Amazon Simple Notification Service topic.
@@ -3821,9 +4083,9 @@ public interface AWSSimpleSystemsManagement {
      * required for your <code>UpdateAssociation</code> call.
      * </p>
      * <p>
-     * In order to call this API operation, your Identity and Access Management (IAM) user account, group, or role must
-     * be configured with permission to call the <a>DescribeAssociation</a> API operation. If you don't have permission
-     * to call <code>DescribeAssociation</code>, then you receive the following error:
+     * In order to call this API operation, a user, group, or role must be granted permission to call the
+     * <a>DescribeAssociation</a> API operation. If you don't have permission to call <code>DescribeAssociation</code>,
+     * then you receive the following error:
      * <code>An error occurred (AccessDeniedException) when calling the UpdateAssociation operation: User: &lt;user_arn&gt; isn't authorized to perform: ssm:DescribeAssociation on resource: &lt;resource_arn&gt;</code>
      * </p>
      * <important>
@@ -3897,7 +4159,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.
+     *         Amazon Web Services Systems Manager Agent (SSM Agent) isn't running. Verify that SSM Agent is running.
      *         </p>
      *         </li>
      *         <li>
@@ -3907,7 +4169,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+     *         The managed node isn't in a valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
      *         <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and
      *         <code>Terminated</code>.
      *         </p>
@@ -4204,7 +4466,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.
+     *         Amazon Web Services Systems Manager Agent (SSM Agent) isn't running. Verify that SSM Agent is running.
      *         </p>
      *         </li>
      *         <li>
@@ -4214,7 +4476,7 @@ public interface AWSSimpleSystemsManagement {
      *         </li>
      *         <li>
      *         <p>
-     *         The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+     *         The managed node isn't in a valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
      *         <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and
      *         <code>Terminated</code>.
      *         </p>
@@ -4231,15 +4493,15 @@ public interface AWSSimpleSystemsManagement {
      * <p>
      * Edit or change an OpsItem. You must have permission in Identity and Access Management (IAM) to update an OpsItem.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-     * started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set up OpsCenter</a> in
+     * the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <p>
      * Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate,
      * and remediate operational issues impacting the performance and health of their Amazon Web Services resources. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a> in the <i>Amazon
-     * Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">Amazon Web Services Systems
+     * Manager OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param updateOpsItemRequest
@@ -4251,12 +4513,15 @@ public interface AWSSimpleSystemsManagement {
      * @throws OpsItemAlreadyExistsException
      *         The OpsItem already exists.
      * @throws OpsItemLimitExceededException
-     *         The request caused OpsItems to exceed one or more quotas. For information about OpsItem quotas, see <a
-     *         href=
-     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits"
-     *         >What are the resource limits for OpsCenter?</a>.
+     *         The request caused OpsItems to exceed one or more quotas.
      * @throws OpsItemInvalidParameterException
      *         A specified parameter argument isn't valid. Verify the available arguments and try again.
+     * @throws OpsItemAccessDeniedException
+     *         You don't have permission to view OpsItems in the specified account. Verify that your account is
+     *         configured either as a Systems Manager delegated administrator or that you are logged into the
+     *         Organizations management account.
+     * @throws OpsItemConflictException
+     *         The specified OpsItem is in the process of being deleted.
      * @sample AWSSimpleSystemsManagement.UpdateOpsItem
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsItem" target="_top">AWS API
      *      Documentation</a>

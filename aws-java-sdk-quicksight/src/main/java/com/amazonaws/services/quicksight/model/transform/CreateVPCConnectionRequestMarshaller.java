@@ -1,0 +1,77 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.quicksight.model.transform;
+
+import java.util.List;
+import javax.annotation.Generated;
+
+import com.amazonaws.SdkClientException;
+import com.amazonaws.services.quicksight.model.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
+
+/**
+ * CreateVPCConnectionRequestMarshaller
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class CreateVPCConnectionRequestMarshaller {
+
+    private static final MarshallingInfo<String> AWSACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("AwsAccountId").build();
+    private static final MarshallingInfo<String> VPCCONNECTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VPCConnectionId").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<List> SUBNETIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SubnetIds").build();
+    private static final MarshallingInfo<List> SECURITYGROUPIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecurityGroupIds").build();
+    private static final MarshallingInfo<List> DNSRESOLVERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("DnsResolvers").build();
+    private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("RoleArn").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
+
+    private static final CreateVPCConnectionRequestMarshaller instance = new CreateVPCConnectionRequestMarshaller();
+
+    public static CreateVPCConnectionRequestMarshaller getInstance() {
+        return instance;
+    }
+
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateVPCConnectionRequest createVPCConnectionRequest, ProtocolMarshaller protocolMarshaller) {
+
+        if (createVPCConnectionRequest == null) {
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
+        }
+
+        try {
+            protocolMarshaller.marshall(createVPCConnectionRequest.getAwsAccountId(), AWSACCOUNTID_BINDING);
+            protocolMarshaller.marshall(createVPCConnectionRequest.getVPCConnectionId(), VPCCONNECTIONID_BINDING);
+            protocolMarshaller.marshall(createVPCConnectionRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createVPCConnectionRequest.getSubnetIds(), SUBNETIDS_BINDING);
+            protocolMarshaller.marshall(createVPCConnectionRequest.getSecurityGroupIds(), SECURITYGROUPIDS_BINDING);
+            protocolMarshaller.marshall(createVPCConnectionRequest.getDnsResolvers(), DNSRESOLVERS_BINDING);
+            protocolMarshaller.marshall(createVPCConnectionRequest.getRoleArn(), ROLEARN_BINDING);
+            protocolMarshaller.marshall(createVPCConnectionRequest.getTags(), TAGS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
+        }
+    }
+
+}

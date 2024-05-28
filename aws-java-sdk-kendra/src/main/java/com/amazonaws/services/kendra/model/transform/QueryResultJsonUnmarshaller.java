@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -77,6 +77,12 @@ public class QueryResultJsonUnmarshaller implements Unmarshaller<QueryResult, Js
                 if (context.testExpression("SpellCorrectedQueries", targetDepth)) {
                     context.nextToken();
                     queryResult.setSpellCorrectedQueries(new ListUnmarshaller<SpellCorrectedQuery>(SpellCorrectedQueryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("FeaturedResultsItems", targetDepth)) {
+                    context.nextToken();
+                    queryResult.setFeaturedResultsItems(new ListUnmarshaller<FeaturedResultsItem>(FeaturedResultsItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }

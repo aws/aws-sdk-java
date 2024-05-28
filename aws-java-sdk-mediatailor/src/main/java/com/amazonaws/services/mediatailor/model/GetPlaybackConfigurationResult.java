@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,6 +73,15 @@ public class GetPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private HlsConfiguration hlsConfiguration;
+    /**
+     * <p>
+     * The setting that controls whether players can use stitched or guided ad insertion. The default,
+     * <code>STITCHED_ONLY</code>, forces all player sessions to use stitched (server-side) ad insertion. Choosing
+     * <code>PLAYER_SELECT</code> allows players to select either stitched or guided ad insertion at
+     * session-initialization time. The default for players that do not specify an insertion mode is stitched.
+     * </p>
+     */
+    private String insertionMode;
     /**
      * <p>
      * The configuration for pre-roll ad insertion.
@@ -521,6 +530,89 @@ public class GetPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     public GetPlaybackConfigurationResult withHlsConfiguration(HlsConfiguration hlsConfiguration) {
         setHlsConfiguration(hlsConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The setting that controls whether players can use stitched or guided ad insertion. The default,
+     * <code>STITCHED_ONLY</code>, forces all player sessions to use stitched (server-side) ad insertion. Choosing
+     * <code>PLAYER_SELECT</code> allows players to select either stitched or guided ad insertion at
+     * session-initialization time. The default for players that do not specify an insertion mode is stitched.
+     * </p>
+     * 
+     * @param insertionMode
+     *        The setting that controls whether players can use stitched or guided ad insertion. The default,
+     *        <code>STITCHED_ONLY</code>, forces all player sessions to use stitched (server-side) ad insertion.
+     *        Choosing <code>PLAYER_SELECT</code> allows players to select either stitched or guided ad insertion at
+     *        session-initialization time. The default for players that do not specify an insertion mode is stitched.
+     * @see InsertionMode
+     */
+
+    public void setInsertionMode(String insertionMode) {
+        this.insertionMode = insertionMode;
+    }
+
+    /**
+     * <p>
+     * The setting that controls whether players can use stitched or guided ad insertion. The default,
+     * <code>STITCHED_ONLY</code>, forces all player sessions to use stitched (server-side) ad insertion. Choosing
+     * <code>PLAYER_SELECT</code> allows players to select either stitched or guided ad insertion at
+     * session-initialization time. The default for players that do not specify an insertion mode is stitched.
+     * </p>
+     * 
+     * @return The setting that controls whether players can use stitched or guided ad insertion. The default,
+     *         <code>STITCHED_ONLY</code>, forces all player sessions to use stitched (server-side) ad insertion.
+     *         Choosing <code>PLAYER_SELECT</code> allows players to select either stitched or guided ad insertion at
+     *         session-initialization time. The default for players that do not specify an insertion mode is stitched.
+     * @see InsertionMode
+     */
+
+    public String getInsertionMode() {
+        return this.insertionMode;
+    }
+
+    /**
+     * <p>
+     * The setting that controls whether players can use stitched or guided ad insertion. The default,
+     * <code>STITCHED_ONLY</code>, forces all player sessions to use stitched (server-side) ad insertion. Choosing
+     * <code>PLAYER_SELECT</code> allows players to select either stitched or guided ad insertion at
+     * session-initialization time. The default for players that do not specify an insertion mode is stitched.
+     * </p>
+     * 
+     * @param insertionMode
+     *        The setting that controls whether players can use stitched or guided ad insertion. The default,
+     *        <code>STITCHED_ONLY</code>, forces all player sessions to use stitched (server-side) ad insertion.
+     *        Choosing <code>PLAYER_SELECT</code> allows players to select either stitched or guided ad insertion at
+     *        session-initialization time. The default for players that do not specify an insertion mode is stitched.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InsertionMode
+     */
+
+    public GetPlaybackConfigurationResult withInsertionMode(String insertionMode) {
+        setInsertionMode(insertionMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The setting that controls whether players can use stitched or guided ad insertion. The default,
+     * <code>STITCHED_ONLY</code>, forces all player sessions to use stitched (server-side) ad insertion. Choosing
+     * <code>PLAYER_SELECT</code> allows players to select either stitched or guided ad insertion at
+     * session-initialization time. The default for players that do not specify an insertion mode is stitched.
+     * </p>
+     * 
+     * @param insertionMode
+     *        The setting that controls whether players can use stitched or guided ad insertion. The default,
+     *        <code>STITCHED_ONLY</code>, forces all player sessions to use stitched (server-side) ad insertion.
+     *        Choosing <code>PLAYER_SELECT</code> allows players to select either stitched or guided ad insertion at
+     *        session-initialization time. The default for players that do not specify an insertion mode is stitched.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InsertionMode
+     */
+
+    public GetPlaybackConfigurationResult withInsertionMode(InsertionMode insertionMode) {
+        this.insertionMode = insertionMode.toString();
         return this;
     }
 
@@ -1160,6 +1252,8 @@ public class GetPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
             sb.append("DashConfiguration: ").append(getDashConfiguration()).append(",");
         if (getHlsConfiguration() != null)
             sb.append("HlsConfiguration: ").append(getHlsConfiguration()).append(",");
+        if (getInsertionMode() != null)
+            sb.append("InsertionMode: ").append(getInsertionMode()).append(",");
         if (getLivePreRollConfiguration() != null)
             sb.append("LivePreRollConfiguration: ").append(getLivePreRollConfiguration()).append(",");
         if (getLogConfiguration() != null)
@@ -1226,6 +1320,10 @@ public class GetPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getHlsConfiguration() != null && other.getHlsConfiguration().equals(this.getHlsConfiguration()) == false)
             return false;
+        if (other.getInsertionMode() == null ^ this.getInsertionMode() == null)
+            return false;
+        if (other.getInsertionMode() != null && other.getInsertionMode().equals(this.getInsertionMode()) == false)
+            return false;
         if (other.getLivePreRollConfiguration() == null ^ this.getLivePreRollConfiguration() == null)
             return false;
         if (other.getLivePreRollConfiguration() != null && other.getLivePreRollConfiguration().equals(this.getLivePreRollConfiguration()) == false)
@@ -1291,6 +1389,7 @@ public class GetPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getConfigurationAliases() == null) ? 0 : getConfigurationAliases().hashCode());
         hashCode = prime * hashCode + ((getDashConfiguration() == null) ? 0 : getDashConfiguration().hashCode());
         hashCode = prime * hashCode + ((getHlsConfiguration() == null) ? 0 : getHlsConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getInsertionMode() == null) ? 0 : getInsertionMode().hashCode());
         hashCode = prime * hashCode + ((getLivePreRollConfiguration() == null) ? 0 : getLivePreRollConfiguration().hashCode());
         hashCode = prime * hashCode + ((getLogConfiguration() == null) ? 0 : getLogConfiguration().hashCode());
         hashCode = prime * hashCode + ((getManifestProcessingRules() == null) ? 0 : getManifestProcessingRules().hashCode());

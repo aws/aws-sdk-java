@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,6 +65,14 @@ public class UpdateBotLocaleRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private VoiceSettings voiceSettings;
+    /**
+     * <p>
+     * Contains settings for generative AI features powered by Amazon Bedrock for your bot locale. Use this object to
+     * turn generative AI features on and off. Pricing may differ if you turn a feature on. For more information, see
+     * LINK.
+     * </p>
+     */
+    private GenerativeAISettings generativeAISettings;
 
     /**
      * <p>
@@ -331,6 +339,58 @@ public class UpdateBotLocaleRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Contains settings for generative AI features powered by Amazon Bedrock for your bot locale. Use this object to
+     * turn generative AI features on and off. Pricing may differ if you turn a feature on. For more information, see
+     * LINK.
+     * </p>
+     * 
+     * @param generativeAISettings
+     *        Contains settings for generative AI features powered by Amazon Bedrock for your bot locale. Use this
+     *        object to turn generative AI features on and off. Pricing may differ if you turn a feature on. For more
+     *        information, see LINK.
+     */
+
+    public void setGenerativeAISettings(GenerativeAISettings generativeAISettings) {
+        this.generativeAISettings = generativeAISettings;
+    }
+
+    /**
+     * <p>
+     * Contains settings for generative AI features powered by Amazon Bedrock for your bot locale. Use this object to
+     * turn generative AI features on and off. Pricing may differ if you turn a feature on. For more information, see
+     * LINK.
+     * </p>
+     * 
+     * @return Contains settings for generative AI features powered by Amazon Bedrock for your bot locale. Use this
+     *         object to turn generative AI features on and off. Pricing may differ if you turn a feature on. For more
+     *         information, see LINK.
+     */
+
+    public GenerativeAISettings getGenerativeAISettings() {
+        return this.generativeAISettings;
+    }
+
+    /**
+     * <p>
+     * Contains settings for generative AI features powered by Amazon Bedrock for your bot locale. Use this object to
+     * turn generative AI features on and off. Pricing may differ if you turn a feature on. For more information, see
+     * LINK.
+     * </p>
+     * 
+     * @param generativeAISettings
+     *        Contains settings for generative AI features powered by Amazon Bedrock for your bot locale. Use this
+     *        object to turn generative AI features on and off. Pricing may differ if you turn a feature on. For more
+     *        information, see LINK.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateBotLocaleRequest withGenerativeAISettings(GenerativeAISettings generativeAISettings) {
+        setGenerativeAISettings(generativeAISettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -353,7 +413,9 @@ public class UpdateBotLocaleRequest extends com.amazonaws.AmazonWebServiceReques
         if (getNluIntentConfidenceThreshold() != null)
             sb.append("NluIntentConfidenceThreshold: ").append(getNluIntentConfidenceThreshold()).append(",");
         if (getVoiceSettings() != null)
-            sb.append("VoiceSettings: ").append(getVoiceSettings());
+            sb.append("VoiceSettings: ").append(getVoiceSettings()).append(",");
+        if (getGenerativeAISettings() != null)
+            sb.append("GenerativeAISettings: ").append(getGenerativeAISettings());
         sb.append("}");
         return sb.toString();
     }
@@ -392,6 +454,10 @@ public class UpdateBotLocaleRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getVoiceSettings() != null && other.getVoiceSettings().equals(this.getVoiceSettings()) == false)
             return false;
+        if (other.getGenerativeAISettings() == null ^ this.getGenerativeAISettings() == null)
+            return false;
+        if (other.getGenerativeAISettings() != null && other.getGenerativeAISettings().equals(this.getGenerativeAISettings()) == false)
+            return false;
         return true;
     }
 
@@ -406,6 +472,7 @@ public class UpdateBotLocaleRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getNluIntentConfidenceThreshold() == null) ? 0 : getNluIntentConfidenceThreshold().hashCode());
         hashCode = prime * hashCode + ((getVoiceSettings() == null) ? 0 : getVoiceSettings().hashCode());
+        hashCode = prime * hashCode + ((getGenerativeAISettings() == null) ? 0 : getGenerativeAISettings().hashCode());
         return hashCode;
     }
 

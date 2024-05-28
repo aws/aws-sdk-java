@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,7 +73,7 @@ public class EksContainerDetail implements Serializable, Cloneable, StructuredPo
      * command string will remain "<code>$(NAME1)</code>". <code>$$</code> is replaced with <code>$</code> and the
      * resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed as <code>$(VAR_NAME)</code>
      * whether or not the <code>VAR_NAME</code> environment variable exists. For more information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile reference: CMD</a> and <a
      * href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a
      * command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.
      * </p>
@@ -102,7 +102,7 @@ public class EksContainerDetail implements Serializable, Cloneable, StructuredPo
     private EksContainerResourceRequirements resources;
     /**
      * <p>
-     * The exit code for the job attempt. A non-zero exit code is considered failed.
+     * The exit code returned for the job attempt. A non-zero exit code is considered failed.
      * </p>
      */
     private Integer exitCode;
@@ -380,7 +380,7 @@ public class EksContainerDetail implements Serializable, Cloneable, StructuredPo
      * command string will remain "<code>$(NAME1)</code>". <code>$$</code> is replaced with <code>$</code> and the
      * resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed as <code>$(VAR_NAME)</code>
      * whether or not the <code>VAR_NAME</code> environment variable exists. For more information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile reference: CMD</a> and <a
      * href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a
      * command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.
      * </p>
@@ -397,8 +397,8 @@ public class EksContainerDetail implements Serializable, Cloneable, StructuredPo
      *         doesn't exist, the command string will remain "<code>$(NAME1)</code>". <code>$$</code> is replaced with
      *         <code>$</code> and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed
      *         as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. For
-     *         more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the
-     *         <i>Dockerfile reference</i> and <a
+     *         more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile
+     *         reference: CMD</a> and <a
      *         href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
      *         a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.
      */
@@ -421,7 +421,7 @@ public class EksContainerDetail implements Serializable, Cloneable, StructuredPo
      * command string will remain "<code>$(NAME1)</code>". <code>$$</code> is replaced with <code>$</code> and the
      * resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed as <code>$(VAR_NAME)</code>
      * whether or not the <code>VAR_NAME</code> environment variable exists. For more information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile reference: CMD</a> and <a
      * href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a
      * command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.
      * </p>
@@ -439,8 +439,8 @@ public class EksContainerDetail implements Serializable, Cloneable, StructuredPo
      *        doesn't exist, the command string will remain "<code>$(NAME1)</code>". <code>$$</code> is replaced with
      *        <code>$</code> and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed
      *        as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. For more
-     *        information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the
-     *        <i>Dockerfile reference</i> and <a
+     *        information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile reference:
+     *        CMD</a> and <a
      *        href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
      *        a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.
      */
@@ -468,7 +468,7 @@ public class EksContainerDetail implements Serializable, Cloneable, StructuredPo
      * command string will remain "<code>$(NAME1)</code>". <code>$$</code> is replaced with <code>$</code> and the
      * resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed as <code>$(VAR_NAME)</code>
      * whether or not the <code>VAR_NAME</code> environment variable exists. For more information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile reference: CMD</a> and <a
      * href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a
      * command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.
      * </p>
@@ -491,8 +491,8 @@ public class EksContainerDetail implements Serializable, Cloneable, StructuredPo
      *        doesn't exist, the command string will remain "<code>$(NAME1)</code>". <code>$$</code> is replaced with
      *        <code>$</code> and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed
      *        as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. For more
-     *        information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the
-     *        <i>Dockerfile reference</i> and <a
+     *        information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile reference:
+     *        CMD</a> and <a
      *        href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
      *        a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -522,7 +522,7 @@ public class EksContainerDetail implements Serializable, Cloneable, StructuredPo
      * command string will remain "<code>$(NAME1)</code>". <code>$$</code> is replaced with <code>$</code> and the
      * resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed as <code>$(VAR_NAME)</code>
      * whether or not the <code>VAR_NAME</code> environment variable exists. For more information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile reference: CMD</a> and <a
      * href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a
      * command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.
      * </p>
@@ -540,8 +540,8 @@ public class EksContainerDetail implements Serializable, Cloneable, StructuredPo
      *        doesn't exist, the command string will remain "<code>$(NAME1)</code>". <code>$$</code> is replaced with
      *        <code>$</code> and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed
      *        as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. For more
-     *        information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the
-     *        <i>Dockerfile reference</i> and <a
+     *        information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile reference:
+     *        CMD</a> and <a
      *        href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
      *        a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -722,11 +722,11 @@ public class EksContainerDetail implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The exit code for the job attempt. A non-zero exit code is considered failed.
+     * The exit code returned for the job attempt. A non-zero exit code is considered failed.
      * </p>
      * 
      * @param exitCode
-     *        The exit code for the job attempt. A non-zero exit code is considered failed.
+     *        The exit code returned for the job attempt. A non-zero exit code is considered failed.
      */
 
     public void setExitCode(Integer exitCode) {
@@ -735,10 +735,10 @@ public class EksContainerDetail implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The exit code for the job attempt. A non-zero exit code is considered failed.
+     * The exit code returned for the job attempt. A non-zero exit code is considered failed.
      * </p>
      * 
-     * @return The exit code for the job attempt. A non-zero exit code is considered failed.
+     * @return The exit code returned for the job attempt. A non-zero exit code is considered failed.
      */
 
     public Integer getExitCode() {
@@ -747,11 +747,11 @@ public class EksContainerDetail implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The exit code for the job attempt. A non-zero exit code is considered failed.
+     * The exit code returned for the job attempt. A non-zero exit code is considered failed.
      * </p>
      * 
      * @param exitCode
-     *        The exit code for the job attempt. A non-zero exit code is considered failed.
+     *        The exit code returned for the job attempt. A non-zero exit code is considered failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

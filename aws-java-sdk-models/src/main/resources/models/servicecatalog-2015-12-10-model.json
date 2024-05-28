@@ -56,7 +56,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"LimitExceededException"}
       ],
-      "documentation":"<p>Associates the specified principal ARN with the specified portfolio.</p>"
+      "documentation":"<p>Associates the specified principal ARN with the specified portfolio.</p> <p>If you share the portfolio with principal name sharing enabled, the <code>PrincipalARN</code> association is included in the share. </p> <p>The <code>PortfolioID</code>, <code>PrincipalARN</code>, and <code>PrincipalType</code> parameters are required. </p> <p>You can associate a maximum of 10 Principals with a portfolio using <code>PrincipalType</code> as <code>IAM_PATTERN</code>. </p> <note> <p>When you associate a principal with portfolio, a potential privilege escalation path may occur when that portfolio is then shared with other accounts. For a user in a recipient account who is <i>not</i> an Service Catalog Admin, but still has the ability to create Principals (Users/Groups/Roles), that user could create a role that matches a principal name association for the portfolio. Although this user may not know which principal names are associated through Service Catalog, they may be able to guess the user. If this potential escalation path is a concern, then Service Catalog recommends using <code>PrincipalType</code> as <code>IAM</code>. With this configuration, the <code>PrincipalARN</code> must already exist in the recipient account before it can be associated. </p> </note>"
     },
     "AssociateProductWithPortfolio":{
       "name":"AssociateProductWithPortfolio",
@@ -84,7 +84,8 @@
       "errors":[
         {"shape":"ResourceNotFoundException"},
         {"shape":"DuplicateResourceException"},
-        {"shape":"LimitExceededException"}
+        {"shape":"LimitExceededException"},
+        {"shape":"InvalidParametersException"}
       ],
       "documentation":"<p>Associates a self-service action with a provisioning artifact.</p>"
     },
@@ -192,7 +193,7 @@
         {"shape":"OperationNotSupportedException"},
         {"shape":"InvalidStateException"}
       ],
-      "documentation":"<p>Shares the specified portfolio with the specified account or organization node. Shares to an organization node can only be created by the management account of an organization or by a delegated administrator. You can share portfolios to an organization, an organizational unit, or a specific account.</p> <p>Note that if a delegated admin is de-registered, they can no longer create portfolio shares.</p> <p> <code>AWSOrganizationsAccess</code> must be enabled in order to create a portfolio share to an organization node.</p> <p>You can't share a shared resource, including portfolios that contain a shared product.</p> <p>If the portfolio share with the specified account or organization node already exists, this action will have no effect and will not return an error. To update an existing share, you must use the <code> UpdatePortfolioShare</code> API instead.</p>"
+      "documentation":"<p>Shares the specified portfolio with the specified account or organization node. Shares to an organization node can only be created by the management account of an organization or by a delegated administrator. You can share portfolios to an organization, an organizational unit, or a specific account.</p> <p>Note that if a delegated admin is de-registered, they can no longer create portfolio shares.</p> <p> <code>AWSOrganizationsAccess</code> must be enabled in order to create a portfolio share to an organization node.</p> <p>You can't share a shared resource, including portfolios that contain a shared product.</p> <p>If the portfolio share with the specified account or organization node already exists, this action will have no effect and will not return an error. To update an existing share, you must use the <code> UpdatePortfolioShare</code> API instead. </p> <note> <p>When you associate a principal with portfolio, a potential privilege escalation path may occur when that portfolio is then shared with other accounts. For a user in a recipient account who is <i>not</i> an Service Catalog Admin, but still has the ability to create Principals (Users/Groups/Roles), that user could create a role that matches a principal name association for the portfolio. Although this user may not know which principal names are associated through Service Catalog, they may be able to guess the user. If this potential escalation path is a concern, then Service Catalog recommends using <code>PrincipalType</code> as <code>IAM</code>. With this configuration, the <code>PrincipalARN</code> must already exist in the recipient account before it can be associated. </p> </note>"
     },
     "CreateProduct":{
       "name":"CreateProduct",
@@ -468,7 +469,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"InvalidParametersException"}
       ],
-      "documentation":"<p>Gets information about the specified product.</p>"
+      "documentation":"<p>Gets information about the specified product.</p> <note> <p> Running this operation with administrator access results in a failure. <a>DescribeProductAsAdmin</a> should be used instead. </p> </note>"
     },
     "DescribeProductAsAdmin":{
       "name":"DescribeProductAsAdmin",
@@ -648,7 +649,7 @@
         {"shape":"InvalidParametersException"},
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Disassociates a previously associated principal ARN from a specified portfolio.</p>"
+      "documentation":"<p>Disassociates a previously associated principal ARN from a specified portfolio.</p> <p>The <code>PrincipalType</code> and <code>PrincipalARN</code> must match the <code>AssociatePrincipalWithPortfolio</code> call request details. For example, to disassociate an association created with a <code>PrincipalARN</code> of <code>PrincipalType</code> IAM you must use the <code>PrincipalType</code> IAM when calling <code>DisassociatePrincipalFromPortfolio</code>. </p> <p>For portfolios that have been shared with principal name sharing enabled: after disassociating a principal, share recipient accounts will no longer be able to provision products in this portfolio using a role matching the name of the associated principal. </p> <p>For more information, review <a href=\"https://docs.aws.amazon.com/cli/latest/reference/servicecatalog/associate-principal-with-portfolio.html#options\">associate-principal-with-portfolio</a> in the Amazon Web Services CLI Command Reference. </p> <note> <p>If you disassociate a principal from a portfolio, with PrincipalType as <code>IAM</code>, the same principal will still have access to the portfolio if it matches one of the associated principals of type <code>IAM_PATTERN</code>. To fully remove access for a principal, verify all the associated Principals of type <code>IAM_PATTERN</code>, and then ensure you disassociate any <code>IAM_PATTERN</code> principals that match the principal whose access you are removing.</p> </note>"
     },
     "DisassociateProductFromPortfolio":{
       "name":"DisassociateProductFromPortfolio",
@@ -779,7 +780,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"InvalidParametersException"}
       ],
-      "documentation":"<p>Requests the import of a resource as a Amazon Web Services Service Catalog provisioned product that is associated to a Amazon Web Services Service Catalog product and provisioning artifact. Once imported, all supported Amazon Web Services Service Catalog governance actions are supported on the provisioned product.</p> <p>Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets and non-root nested stacks are not supported.</p> <p>The CloudFormation stack must have one of the following statuses to be imported: <code>CREATE_COMPLETE</code>, <code>UPDATE_COMPLETE</code>, <code>UPDATE_ROLLBACK_COMPLETE</code>, <code>IMPORT_COMPLETE</code>, <code>IMPORT_ROLLBACK_COMPLETE</code>.</p> <p>Import of the resource requires that the CloudFormation stack template matches the associated Amazon Web Services Service Catalog product provisioning artifact. </p> <p>The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code> and <code>cloudformation:DescribeStacks</code> IAM policy permissions. </p>"
+      "documentation":"<p> Requests the import of a resource as an Service Catalog provisioned product that is associated to an Service Catalog product and provisioning artifact. Once imported, all supported governance actions are supported on the provisioned product. </p> <p> Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets, and non-root nested stacks, are not supported. </p> <p> The CloudFormation stack must have one of the following statuses to be imported: <code>CREATE_COMPLETE</code>, <code>UPDATE_COMPLETE</code>, <code>UPDATE_ROLLBACK_COMPLETE</code>, <code>IMPORT_COMPLETE</code>, and <code>IMPORT_ROLLBACK_COMPLETE</code>. </p> <p> Import of the resource requires that the CloudFormation stack template matches the associated Service Catalog product provisioning artifact. </p> <note> <p> When you import an existing CloudFormation stack into a portfolio, Service Catalog does not apply the product's associated constraints during the import process. Service Catalog applies the constraints after you call <code>UpdateProvisionedProduct</code> for the provisioned product. </p> </note> <p> The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code> and <code>cloudformation:DescribeStacks</code> IAM policy permissions. </p> <p>You can only import one provisioned product at a time. The product's CloudFormation stack must have the <code>IMPORT_COMPLETE</code> status before you import another. </p>"
     },
     "ListAcceptedPortfolioShares":{
       "name":"ListAcceptedPortfolioShares",
@@ -835,7 +836,7 @@
         {"shape":"InvalidParametersException"},
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Lists the paths to the specified product. A path is how the user has access to a specified product, and is necessary when provisioning a product. A path also determines the constraints put on the product.</p>"
+      "documentation":"<p> Lists the paths to the specified product. A path describes how the user gets access to a specified product and is necessary when provisioning a product. A path also determines the constraints that are put on a product. A path is dependent on a specific product, porfolio, and principal. </p> <note> <p> When provisioning a product that's been added to a portfolio, you must grant your user, group, or role access to the portfolio. For more information, see <a href=\"https://docs.aws.amazon.com/servicecatalog/latest/adminguide/catalogs_portfolios_users.html\">Granting users access</a> in the <i>Service Catalog User Guide</i>. </p> </note>"
     },
     "ListOrganizationPortfolioAccess":{
       "name":"ListOrganizationPortfolioAccess",
@@ -905,7 +906,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"InvalidParametersException"}
       ],
-      "documentation":"<p>Lists all principal ARNs associated with the specified portfolio.</p>"
+      "documentation":"<p>Lists all <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s associated with the specified portfolio.</p>"
     },
     "ListProvisionedProductPlans":{
       "name":"ListProvisionedProductPlans",
@@ -1032,6 +1033,48 @@
       ],
       "documentation":"<p>Lists the specified TagOptions or all TagOptions.</p>"
     },
+    "NotifyProvisionProductEngineWorkflowResult":{
+      "name":"NotifyProvisionProductEngineWorkflowResult",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"NotifyProvisionProductEngineWorkflowResultInput"},
+      "output":{"shape":"NotifyProvisionProductEngineWorkflowResultOutput"},
+      "errors":[
+        {"shape":"InvalidParametersException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p> Notifies the result of the provisioning engine execution. </p>"
+    },
+    "NotifyTerminateProvisionedProductEngineWorkflowResult":{
+      "name":"NotifyTerminateProvisionedProductEngineWorkflowResult",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"NotifyTerminateProvisionedProductEngineWorkflowResultInput"},
+      "output":{"shape":"NotifyTerminateProvisionedProductEngineWorkflowResultOutput"},
+      "errors":[
+        {"shape":"InvalidParametersException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p> Notifies the result of the terminate engine execution. </p>"
+    },
+    "NotifyUpdateProvisionedProductEngineWorkflowResult":{
+      "name":"NotifyUpdateProvisionedProductEngineWorkflowResult",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"NotifyUpdateProvisionedProductEngineWorkflowResultInput"},
+      "output":{"shape":"NotifyUpdateProvisionedProductEngineWorkflowResultOutput"},
+      "errors":[
+        {"shape":"InvalidParametersException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p> Notifies the result of the update engine execution. </p>"
+    },
     "ProvisionProduct":{
       "name":"ProvisionProduct",
       "http":{
@@ -1045,7 +1088,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"DuplicateResourceException"}
       ],
-      "documentation":"<p>Provisions the specified product.</p> <p>A provisioned product is a resourced instance of a product. For example, provisioning a product based on a CloudFormation template launches a CloudFormation stack and its underlying resources. You can check the status of this request using <a>DescribeRecord</a>.</p> <p>If the request contains a tag key with an empty list of values, there is a tag conflict for that key. Do not include conflicted keys as tags, or this causes the error \"Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>\".</p>"
+      "documentation":"<p> Provisions the specified product. </p> <p> A provisioned product is a resourced instance of a product. For example, provisioning a product that's based on an CloudFormation template launches an CloudFormation stack and its underlying resources. You can check the status of this request using <a>DescribeRecord</a>. </p> <p> If the request contains a tag key with an empty list of values, there's a tag conflict for that key. Don't include conflicted keys as tags, or this will cause the error \"Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>\". </p> <note> <p> When provisioning a product that's been added to a portfolio, you must grant your user, group, or role access to the portfolio. For more information, see <a href=\"https://docs.aws.amazon.com/servicecatalog/latest/adminguide/catalogs_portfolios_users.html\">Granting users access</a> in the <i>Service Catalog User Guide</i>. </p> </note>"
     },
     "RejectPortfolioShare":{
       "name":"RejectPortfolioShare",
@@ -1111,7 +1154,7 @@
       "errors":[
         {"shape":"InvalidParametersException"}
       ],
-      "documentation":"<p>Gets information about the provisioned products that meet the specified criteria.</p> <note> <p>To ensure a complete list of provisioned products and remove duplicate products, use <code>sort-by createdTime</code>. </p> <p>Here is a CLI example: <code> </code> </p> <p> <code>aws servicecatalog search-provisioned-products --sort-by createdTime </code> </p> </note>"
+      "documentation":"<p>Gets information about the provisioned products that meet the specified criteria.</p>"
     },
     "TerminateProvisionedProduct":{
       "name":"TerminateProvisionedProduct",
@@ -1170,7 +1213,7 @@
         {"shape":"OperationNotSupportedException"},
         {"shape":"InvalidStateException"}
       ],
-      "documentation":"<p>Updates the specified portfolio share. You can use this API to enable or disable TagOptions sharing for an existing portfolio share. </p> <p>The portfolio share cannot be updated if the <code> CreatePortfolioShare</code> operation is <code>IN_PROGRESS</code>, as the share is not available to recipient entities. In this case, you must wait for the portfolio share to be COMPLETED.</p> <p>You must provide the <code>accountId</code> or organization node in the input, but not both.</p> <p>If the portfolio is shared to both an external account and an organization node, and both shares need to be updated, you must invoke <code>UpdatePortfolioShare</code> separately for each share type. </p> <p>This API cannot be used for removing the portfolio share. You must use <code>DeletePortfolioShare</code> API for that action. </p>"
+      "documentation":"<p>Updates the specified portfolio share. You can use this API to enable or disable <code>TagOptions</code> sharing or Principal sharing for an existing portfolio share. </p> <p>The portfolio share cannot be updated if the <code>CreatePortfolioShare</code> operation is <code>IN_PROGRESS</code>, as the share is not available to recipient entities. In this case, you must wait for the portfolio share to be completed.</p> <p>You must provide the <code>accountId</code> or organization node in the input, but not both.</p> <p>If the portfolio is shared to both an external account and an organization node, and both shares need to be updated, you must invoke <code>UpdatePortfolioShare</code> separately for each share type. </p> <p>This API cannot be used for removing the portfolio share. You must use <code>DeletePortfolioShare</code> API for that action. </p> <note> <p>When you associate a principal with portfolio, a potential privilege escalation path may occur when that portfolio is then shared with other accounts. For a user in a recipient account who is <i>not</i> an Service Catalog Admin, but still has the ability to create Principals (Users/Groups/Roles), that user could create a role that matches a principal name association for the portfolio. Although this user may not know which principal names are associated through Service Catalog, they may be able to guess the user. If this potential escalation path is a concern, then Service Catalog recommends using <code>PrincipalType</code> as <code>IAM</code>. With this configuration, the <code>PrincipalARN</code> must already exist in the recipient account before it can be associated. </p> </note>"
     },
     "UpdateProduct":{
       "name":"UpdateProduct",
@@ -1272,7 +1315,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "PortfolioId":{
           "shape":"Id",
@@ -1298,7 +1341,7 @@
         },
         "Value":{
           "shape":"AccessLevelFilterValue",
-          "documentation":"<p>The user to which the access level applies. The only supported value is <code>Self</code>.</p>"
+          "documentation":"<p>The user to which the access level applies. The only supported value is <code>self</code>.</p>"
         }
       },
       "documentation":"<p>The access level to use to filter results.</p>"
@@ -1370,7 +1413,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "PortfolioId":{
           "shape":"Id",
@@ -1378,11 +1421,11 @@
         },
         "PrincipalARN":{
           "shape":"PrincipalARN",
-          "documentation":"<p>The ARN of the principal (IAM user, role, or group).</p>"
+          "documentation":"<p>The ARN of the principal (user, role, or group). If the <code>PrincipalType</code> is <code>IAM</code>, the supported value is a fully defined <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns\">IAM Amazon Resource Name (ARN)</a>. If the <code>PrincipalType</code> is <code>IAM_PATTERN</code>, the supported value is an <code>IAM</code> ARN <i>without an AccountID</i> in the following format:</p> <p> <i>arn:partition:iam:::resource-type/resource-id</i> </p> <p>The ARN resource-id can be either:</p> <ul> <li> <p>A fully formed resource-id. For example, <i>arn:aws:iam:::role/resource-name</i> or <i>arn:aws:iam:::role/resource-path/resource-name</i> </p> </li> <li> <p>A wildcard ARN. The wildcard ARN accepts <code>IAM_PATTERN</code> values with a \"*\" or \"?\" in the resource-id segment of the ARN. For example <i>arn:partition:service:::resource-type/resource-path/resource-name</i>. The new symbols are exclusive to the <b>resource-path</b> and <b>resource-name</b> and cannot replace the <b>resource-type</b> or other ARN values. </p> <p>The ARN path and principal name allow unlimited wildcard characters.</p> </li> </ul> <p>Examples of an <b>acceptable</b> wildcard ARN:</p> <ul> <li> <p>arn:aws:iam:::role/ResourceName_*</p> </li> <li> <p>arn:aws:iam:::role/*/ResourceName_?</p> </li> </ul> <p>Examples of an <b>unacceptable</b> wildcard ARN:</p> <ul> <li> <p>arn:aws:iam:::*/ResourceName</p> </li> </ul> <p>You can associate multiple <code>IAM_PATTERN</code>s even if the account has no principal with that name. </p> <p>The \"?\" wildcard character matches zero or one of any character. This is similar to \".?\" in regular regex context. The \"*\" wildcard character matches any number of any characters. This is similar to \".*\" in regular regex context.</p> <p>In the IAM Principal ARN format (<i>arn:partition:iam:::resource-type/resource-path/resource-name</i>), valid resource-type values include <b>user/</b>, <b>group/</b>, or <b>role/</b>. The \"?\" and \"*\" characters are allowed only after the resource-type in the resource-id segment. You can use special characters anywhere within the resource-id. </p> <p>The \"*\" character also matches the \"/\" character, allowing paths to be formed <i>within</i> the resource-id. For example, <i>arn:aws:iam:::role/<b>*</b>/ResourceName_?</i> matches both <i>arn:aws:iam:::role/pathA/pathB/ResourceName_1</i> and <i>arn:aws:iam:::role/pathA/ResourceName_1</i>. </p>"
         },
         "PrincipalType":{
           "shape":"PrincipalType",
-          "documentation":"<p>The principal type. The supported value is <code>IAM</code>.</p>"
+          "documentation":"<p>The principal type. The supported value is <code>IAM</code> if you use a fully defined Amazon Resource Name (ARN), or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>, with or without wildcard characters. </p>"
         }
       }
     },
@@ -1400,7 +1443,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "ProductId":{
           "shape":"Id",
@@ -1443,7 +1486,12 @@
         },
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+        },
+        "IdempotencyToken":{
+          "shape":"IdempotencyToken",
+          "documentation":"<p>A unique identifier that you provide to ensure idempotency. If multiple requests from the same Amazon Web Services account use the same idempotency token, the same response is returned for each repeated request. </p>",
+          "idempotencyToken":true
         }
       }
     },
@@ -1485,7 +1533,7 @@
         },
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         }
       }
     },
@@ -1508,7 +1556,7 @@
         },
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         }
       }
     },
@@ -1564,6 +1612,40 @@
     "CloudWatchDashboards":{
       "type":"list",
       "member":{"shape":"CloudWatchDashboard"}
+    },
+    "CodeStarConnectionArn":{
+      "type":"string",
+      "max":1224,
+      "min":1,
+      "pattern":"arn:[a-z0-9][-.a-z0-9]{0,62}:codestar-connections:([a-z0-9][-.a-z0-9]{0,62})?:([a-z0-9][-.a-z0-9]{0,62})?:[^/].{0,1023}$"
+    },
+    "CodeStarParameters":{
+      "type":"structure",
+      "required":[
+        "ConnectionArn",
+        "Repository",
+        "Branch",
+        "ArtifactPath"
+      ],
+      "members":{
+        "ConnectionArn":{
+          "shape":"CodeStarConnectionArn",
+          "documentation":"<p>The CodeStar ARN, which is the connection between Service Catalog and the external repository.</p>"
+        },
+        "Repository":{
+          "shape":"Repository",
+          "documentation":"<p>The specific repository where the product’s artifact-to-be-synced resides, formatted as \"Account/Repo.\" </p>"
+        },
+        "Branch":{
+          "shape":"RepositoryBranch",
+          "documentation":"<p>The specific branch where the artifact resides. </p>"
+        },
+        "ArtifactPath":{
+          "shape":"RepositoryArtifactPath",
+          "documentation":"<p>The absolute path wehre the artifact resides within the repo and branch, formatted as \"folder/file.json.\" </p>"
+        }
+      },
+      "documentation":"<p>The subtype containing details about the Codestar connection <code>Type</code>. </p>"
     },
     "ConstraintDescription":{
       "type":"string",
@@ -1644,7 +1726,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "SourceProductArn":{
           "shape":"ProductArn",
@@ -1702,7 +1784,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "PortfolioId":{
           "shape":"Id",
@@ -1758,7 +1840,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "DisplayName":{
           "shape":"PortfolioDisplayName",
@@ -1802,7 +1884,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "PortfolioId":{
           "shape":"Id",
@@ -1819,6 +1901,10 @@
         "ShareTagOptions":{
           "shape":"Boolean",
           "documentation":"<p>Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not provided, TagOptions sharing is disabled.</p>"
+        },
+        "SharePrincipals":{
+          "shape":"Boolean",
+          "documentation":"<p>This parameter is only supported for portfolios with an <b>OrganizationalNode</b> Type of <code>ORGANIZATION</code> or <code>ORGANIZATIONAL_UNIT</code>. </p> <p>Enables or disables <code>Principal</code> sharing when creating the portfolio share. If you do <b>not</b> provide this flag, principal sharing is disabled. </p> <p>When you enable Principal Name Sharing for a portfolio share, the share recipient account end users with a principal that matches any of the associated IAM patterns can provision products from the portfolio. Once shared, the share recipient can view associations of <code>PrincipalType</code>: <code>IAM_PATTERN</code> on their portfolio. You can create the principals in the recipient account before or after creating the share. </p>"
         }
       }
     },
@@ -1837,13 +1923,12 @@
         "Name",
         "Owner",
         "ProductType",
-        "ProvisioningArtifactParameters",
         "IdempotencyToken"
       ],
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "Name":{
           "shape":"ProductViewName",
@@ -1889,6 +1974,10 @@
           "shape":"IdempotencyToken",
           "documentation":"<p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>",
           "idempotencyToken":true
+        },
+        "SourceConnection":{
+          "shape":"SourceConnection",
+          "documentation":"<p>Specifies connection details for the created product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p> <ul> <li> <p> <code>Type</code> </p> </li> <li> <p> <code>ConnectionParamters</code> </p> </li> </ul>"
         }
       }
     },
@@ -1922,7 +2011,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "PlanName":{
           "shape":"ProvisionedProductPlanName",
@@ -2002,7 +2091,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "ProductId":{
           "shape":"Id",
@@ -2028,7 +2117,7 @@
         },
         "Info":{
           "shape":"ProvisioningArtifactInfo",
-          "documentation":"<p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p> <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format. </p> <p> <code>LoadTemplateFromURL</code> </p> <p>Use the URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.</p> <p> <code>ImportFromPhysicalId</code> </p> <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>"
+          "documentation":"<p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p> <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. </p> <p> <code>LoadTemplateFromURL</code> </p> <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p> <p> <code>ImportFromPhysicalId</code> </p> <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>"
         },
         "Status":{
           "shape":"Status",
@@ -2063,7 +2152,7 @@
         },
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "IdempotencyToken":{
           "shape":"IdempotencyToken",
@@ -2116,7 +2205,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "Id":{
           "shape":"Id",
@@ -2135,7 +2224,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "Id":{
           "shape":"Id",
@@ -2154,7 +2243,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "PortfolioId":{
           "shape":"Id",
@@ -2185,7 +2274,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "Id":{
           "shape":"Id",
@@ -2204,7 +2293,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "PlanId":{
           "shape":"Id",
@@ -2230,7 +2319,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "ProductId":{
           "shape":"Id",
@@ -2257,7 +2346,12 @@
         },
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+        },
+        "IdempotencyToken":{
+          "shape":"IdempotencyToken",
+          "documentation":"<p>A unique identifier that you provide to ensure idempotency. If multiple requests from the same Amazon Web Services account use the same idempotency token, the same response is returned for each repeated request. </p>",
+          "idempotencyToken":true
         }
       }
     },
@@ -2287,7 +2381,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "Id":{
           "shape":"Id",
@@ -2318,7 +2412,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "CopyProductToken":{
           "shape":"Id",
@@ -2349,7 +2443,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "Id":{
           "shape":"Id",
@@ -2465,7 +2559,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "Id":{
           "shape":"Id",
@@ -2511,7 +2605,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "Id":{
           "shape":"Id",
@@ -2550,7 +2644,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "Id":{
           "shape":"Id",
@@ -2576,7 +2670,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "Id":{
           "shape":"Id",
@@ -2608,7 +2702,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "PlanId":{
           "shape":"Id",
@@ -2646,7 +2740,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "ProvisioningArtifactId":{
           "shape":"Id",
@@ -2667,6 +2761,10 @@
         "Verbose":{
           "shape":"Verbose",
           "documentation":"<p>Indicates whether a verbose level of detail is enabled.</p>"
+        },
+        "IncludeProvisioningArtifactParameters":{
+          "shape":"Boolean",
+          "documentation":"<p>Indicates if the API call response does or does not include additional details about the provisioning parameters. </p>"
         }
       }
     },
@@ -2679,11 +2777,15 @@
         },
         "Info":{
           "shape":"ProvisioningArtifactInfo",
-          "documentation":"<p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.</p>"
+          "documentation":"<p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>"
         },
         "Status":{
           "shape":"Status",
           "documentation":"<p>The status of the current request.</p>"
+        },
+        "ProvisioningArtifactParameters":{
+          "shape":"ProvisioningArtifactParameters",
+          "documentation":"<p>Information about the parameters used to provision the product. </p>"
         }
       }
     },
@@ -2692,7 +2794,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "ProductId":{
           "shape":"Id",
@@ -2761,7 +2863,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "Id":{
           "shape":"Id",
@@ -2811,7 +2913,7 @@
         },
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         }
       }
     },
@@ -2834,7 +2936,7 @@
         },
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         }
       }
     },
@@ -2909,7 +3011,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "PortfolioId":{
           "shape":"Id",
@@ -2917,7 +3019,11 @@
         },
         "PrincipalARN":{
           "shape":"PrincipalARN",
-          "documentation":"<p>The ARN of the principal (IAM user, role, or group).</p>"
+          "documentation":"<p>The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> with or without wildcard characters if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.</p>"
+        },
+        "PrincipalType":{
+          "shape":"PrincipalType",
+          "documentation":"<p>The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you specify an <code>IAM</code> ARN with no AccountId, with or without wildcard characters. </p>"
         }
       }
     },
@@ -2935,7 +3041,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "ProductId":{
           "shape":"Id",
@@ -2974,7 +3080,12 @@
         },
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+        },
+        "IdempotencyToken":{
+          "shape":"IdempotencyToken",
+          "documentation":"<p>A unique identifier that you provide to ensure idempotency. If multiple requests from the same Amazon Web Services account use the same idempotency token, the same response is returned for each repeated request. </p>",
+          "idempotencyToken":true
         }
       }
     },
@@ -3022,6 +3133,35 @@
       "members":{
       }
     },
+    "EngineWorkflowFailureReason":{
+      "type":"string",
+      "max":2048,
+      "min":1,
+      "pattern":"[\\u0009\\u000a\\u000d\\u0020-\\uD7FF\\uE000-\\uFFFD]*"
+    },
+    "EngineWorkflowResourceIdentifier":{
+      "type":"structure",
+      "members":{
+        "UniqueTag":{
+          "shape":"UniqueTagResourceIdentifier",
+          "documentation":"<p> The unique key-value pair for a tag that identifies provisioned product resources. </p>"
+        }
+      },
+      "documentation":"<p> The ID for the provisioned product resources that are part of a resource group. </p>"
+    },
+    "EngineWorkflowStatus":{
+      "type":"string",
+      "enum":[
+        "SUCCEEDED",
+        "FAILED"
+      ]
+    },
+    "EngineWorkflowToken":{
+      "type":"string",
+      "max":20000,
+      "min":1,
+      "pattern":"[0-9A-Za-z+\\/=]+"
+    },
     "Error":{"type":"string"},
     "ErrorCode":{"type":"string"},
     "ErrorDescription":{"type":"string"},
@@ -3041,7 +3181,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "PlanId":{
           "shape":"Id",
@@ -3086,7 +3226,7 @@
         },
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "Parameters":{
           "shape":"ExecutionParameterMap",
@@ -3203,7 +3343,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "ProvisionedProductId":{
           "shape":"Id",
@@ -3266,7 +3406,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "ProductId":{
           "shape":"Id",
@@ -3314,6 +3454,42 @@
       "exception":true
     },
     "LastRequestId":{"type":"string"},
+    "LastSuccessfulSyncTime":{"type":"timestamp"},
+    "LastSync":{
+      "type":"structure",
+      "members":{
+        "LastSyncTime":{
+          "shape":"LastSyncTime",
+          "documentation":"<p>The time of the last attempted sync from the repository to the Service Catalog product. </p>"
+        },
+        "LastSyncStatus":{
+          "shape":"LastSyncStatus",
+          "documentation":"<p>The current status of the sync. Responses include <code>SUCCEEDED</code> or <code>FAILED</code>. </p>"
+        },
+        "LastSyncStatusMessage":{
+          "shape":"LastSyncStatusMessage",
+          "documentation":"<p>The sync's status message. </p>"
+        },
+        "LastSuccessfulSyncTime":{
+          "shape":"LastSuccessfulSyncTime",
+          "documentation":"<p>The time of the latest successful sync from the source repo artifact to the Service Catalog product.</p>"
+        },
+        "LastSuccessfulSyncProvisioningArtifactId":{
+          "shape":"Id",
+          "documentation":"<p>The ProvisioningArtifactID of the ProvisioningArtifact created from the latest successful sync. </p>"
+        }
+      },
+      "documentation":"<p>Provides details about the product's connection sync and contains the following sub-fields. </p> <ul> <li> <p> <code>LastSyncTime</code> </p> </li> <li> <p> <code>LastSyncStatus</code> </p> </li> <li> <p> <code>LastSyncStatusMessage</code> </p> </li> <li> <p> <code>LastSuccessfulSyncTime</code> </p> </li> <li> <p> <code>LastSuccessfulSyncProvisioningArtifactID</code> </p> </li> </ul>"
+    },
+    "LastSyncStatus":{
+      "type":"string",
+      "enum":[
+        "SUCCEEDED",
+        "FAILED"
+      ]
+    },
+    "LastSyncStatusMessage":{"type":"string"},
+    "LastSyncTime":{"type":"timestamp"},
     "LaunchPath":{
       "type":"structure",
       "members":{
@@ -3370,7 +3546,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "PageToken":{
           "shape":"PageToken",
@@ -3405,7 +3581,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "ResourceId":{
           "shape":"Id",
@@ -3440,7 +3616,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "PortfolioId":{
           "shape":"Id",
@@ -3479,7 +3655,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "ProductId":{
           "shape":"Id",
@@ -3517,7 +3693,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "PortfolioId":{
           "shape":"Id",
@@ -3556,7 +3732,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "PortfolioId":{
           "shape":"Id",
@@ -3595,7 +3771,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "ProductId":{
           "shape":"Id",
@@ -3629,7 +3805,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "PageToken":{
           "shape":"PageToken",
@@ -3660,7 +3836,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "PortfolioId":{
           "shape":"Id",
@@ -3681,7 +3857,7 @@
       "members":{
         "Principals":{
           "shape":"Principals",
-          "documentation":"<p>The IAM principals (users or roles) associated with the portfolio.</p>"
+          "documentation":"<p>The <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s associated with the portfolio.</p>"
         },
         "NextPageToken":{
           "shape":"PageToken",
@@ -3694,7 +3870,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "ProvisionProductId":{
           "shape":"Id",
@@ -3745,7 +3921,7 @@
         },
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         }
       }
     },
@@ -3768,7 +3944,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "ProductId":{
           "shape":"Id",
@@ -3794,7 +3970,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "AccessLevelFilter":{
           "shape":"AccessLevelFilter",
@@ -3901,7 +4077,7 @@
         },
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         }
       }
     },
@@ -3923,7 +4099,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "PageSize":{
           "shape":"PageSize",
@@ -3954,7 +4130,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "ProvisionedProductId":{
           "shape":"Id",
@@ -4048,6 +4224,129 @@
       "type":"list",
       "member":{"shape":"NotificationArn"},
       "max":5
+    },
+    "NotifyProvisionProductEngineWorkflowResultInput":{
+      "type":"structure",
+      "required":[
+        "WorkflowToken",
+        "RecordId",
+        "Status",
+        "IdempotencyToken"
+      ],
+      "members":{
+        "WorkflowToken":{
+          "shape":"EngineWorkflowToken",
+          "documentation":"<p> The encrypted contents of the provisioning engine execution payload that Service Catalog sends after the Terraform product provisioning workflow starts. </p>"
+        },
+        "RecordId":{
+          "shape":"Id",
+          "documentation":"<p> The identifier of the record. </p>"
+        },
+        "Status":{
+          "shape":"EngineWorkflowStatus",
+          "documentation":"<p> The status of the provisioning engine execution. </p>"
+        },
+        "FailureReason":{
+          "shape":"EngineWorkflowFailureReason",
+          "documentation":"<p> The reason why the provisioning engine execution failed. </p>"
+        },
+        "ResourceIdentifier":{
+          "shape":"EngineWorkflowResourceIdentifier",
+          "documentation":"<p> The ID for the provisioned product resources that are part of a resource group. </p>"
+        },
+        "Outputs":{
+          "shape":"RecordOutputs",
+          "documentation":"<p> The output of the provisioning engine execution. </p>"
+        },
+        "IdempotencyToken":{
+          "shape":"IdempotencyToken",
+          "documentation":"<p> The idempotency token that identifies the provisioning engine execution. </p>",
+          "idempotencyToken":true
+        }
+      }
+    },
+    "NotifyProvisionProductEngineWorkflowResultOutput":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "NotifyTerminateProvisionedProductEngineWorkflowResultInput":{
+      "type":"structure",
+      "required":[
+        "WorkflowToken",
+        "RecordId",
+        "Status",
+        "IdempotencyToken"
+      ],
+      "members":{
+        "WorkflowToken":{
+          "shape":"EngineWorkflowToken",
+          "documentation":"<p> The encrypted contents of the terminate engine execution payload that Service Catalog sends after the Terraform product terminate workflow starts. </p>"
+        },
+        "RecordId":{
+          "shape":"Id",
+          "documentation":"<p> The identifier of the record. </p>"
+        },
+        "Status":{
+          "shape":"EngineWorkflowStatus",
+          "documentation":"<p> The status of the terminate engine execution. </p>"
+        },
+        "FailureReason":{
+          "shape":"EngineWorkflowFailureReason",
+          "documentation":"<p> The reason why the terminate engine execution failed. </p>"
+        },
+        "IdempotencyToken":{
+          "shape":"IdempotencyToken",
+          "documentation":"<p> The idempotency token that identifies the terminate engine execution. </p>",
+          "idempotencyToken":true
+        }
+      }
+    },
+    "NotifyTerminateProvisionedProductEngineWorkflowResultOutput":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "NotifyUpdateProvisionedProductEngineWorkflowResultInput":{
+      "type":"structure",
+      "required":[
+        "WorkflowToken",
+        "RecordId",
+        "Status",
+        "IdempotencyToken"
+      ],
+      "members":{
+        "WorkflowToken":{
+          "shape":"EngineWorkflowToken",
+          "documentation":"<p> The encrypted contents of the update engine execution payload that Service Catalog sends after the Terraform product update workflow starts. </p>"
+        },
+        "RecordId":{
+          "shape":"Id",
+          "documentation":"<p> The identifier of the record. </p>"
+        },
+        "Status":{
+          "shape":"EngineWorkflowStatus",
+          "documentation":"<p> The status of the update engine execution. </p>"
+        },
+        "FailureReason":{
+          "shape":"EngineWorkflowFailureReason",
+          "documentation":"<p> The reason why the update engine execution failed. </p>"
+        },
+        "Outputs":{
+          "shape":"RecordOutputs",
+          "documentation":"<p> The output of the update engine execution. </p>"
+        },
+        "IdempotencyToken":{
+          "shape":"IdempotencyToken",
+          "documentation":"<p> The idempotency token that identifies the update engine execution. </p>",
+          "idempotencyToken":true
+        }
+      }
+    },
+    "NotifyUpdateProvisionedProductEngineWorkflowResultOutput":{
+      "type":"structure",
+      "members":{
+      }
     },
     "NullableBoolean":{
       "type":"boolean",
@@ -4217,7 +4516,7 @@
       "members":{
         "PrincipalId":{
           "shape":"Id",
-          "documentation":"<p>The identifier of the recipient entity that received the portfolio share. The recipient entities can be one of the following: </p> <p>1. An external account.</p> <p>2. An organziation member account.</p> <p>3. An organzational unit (OU).</p> <p>4. The organization itself. (This shares with every account in the organization).</p>"
+          "documentation":"<p>The identifier of the recipient entity that received the portfolio share. The recipient entity can be one of the following:</p> <p>1. An external account.</p> <p>2. An organziation member account.</p> <p>3. An organzational unit (OU).</p> <p>4. The organization itself. (This shares with every account in the organization).</p>"
         },
         "Type":{
           "shape":"DescribePortfolioShareType",
@@ -4230,6 +4529,10 @@
         "ShareTagOptions":{
           "shape":"Boolean",
           "documentation":"<p>Indicates whether TagOptions sharing is enabled or disabled for the portfolio share.</p>"
+        },
+        "SharePrincipals":{
+          "shape":"Boolean",
+          "documentation":"<p>Indicates if <code>Principal</code> sharing is enabled or disabled for the portfolio share. </p>"
         }
       },
       "documentation":"<p>Information about the portfolio share.</p>"
@@ -4251,11 +4554,11 @@
       "members":{
         "PrincipalARN":{
           "shape":"PrincipalARN",
-          "documentation":"<p>The ARN of the principal (IAM user, role, or group).</p>"
+          "documentation":"<p>The ARN of the principal (user, role, or group). This field allows for an ARN with no <code>accountID</code>, with or without wildcard characters if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>. </p> <p>For more information, review <a href=\"https://docs.aws.amazon.com/cli/latest/reference/servicecatalog/associate-principal-with-portfolio.html#options\">associate-principal-with-portfolio</a> in the Amazon Web Services CLI Command Reference. </p>"
         },
         "PrincipalType":{
           "shape":"PrincipalType",
-          "documentation":"<p>The principal type. The supported value is <code>IAM</code>.</p>"
+          "documentation":"<p>The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>, with or without wildcard characters. </p>"
         }
       },
       "documentation":"<p>Information about a principal.</p>"
@@ -4267,7 +4570,10 @@
     },
     "PrincipalType":{
       "type":"string",
-      "enum":["IAM"]
+      "enum":[
+        "IAM",
+        "IAM_PATTERN"
+      ]
     },
     "Principals":{
       "type":"list",
@@ -4287,7 +4593,10 @@
       "type":"string",
       "enum":[
         "CLOUD_FORMATION_TEMPLATE",
-        "MARKETPLACE"
+        "MARKETPLACE",
+        "TERRAFORM_OPEN_SOURCE",
+        "TERRAFORM_CLOUD",
+        "EXTERNAL"
       ],
       "max":8191
     },
@@ -4333,6 +4642,10 @@
         "CreatedTime":{
           "shape":"CreatedTime",
           "documentation":"<p>The UTC time stamp of the creation time.</p>"
+        },
+        "SourceConnection":{
+          "shape":"SourceConnectionDetail",
+          "documentation":"<p>A top level <code>ProductViewDetail</code> response containing details about the product’s connection. Service Catalog returns this field for the <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code> APIs. This response contains the same fields as the <code>ConnectionParameters</code> request, with the addition of the <code>LastSync</code> response.</p>"
         }
       },
       "documentation":"<p>Information about a product view.</p>"
@@ -4464,7 +4777,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "ProductId":{
           "shape":"Id",
@@ -4539,7 +4852,7 @@
         },
         "Type":{
           "shape":"ProvisionedProductType",
-          "documentation":"<p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>"
+          "documentation":"<p>The type of provisioned product. The supported values are <code>CFN_STACK</code>, <code>CFN_STACKSET</code>, <code>TERRAFORM_OPEN_SOURCE</code>, <code>TERRAFORM_CLOUD</code>, and <code>EXTERNAL</code>.</p>"
         },
         "Id":{
           "shape":"Id",
@@ -4567,11 +4880,11 @@
         },
         "LastProvisioningRecordId":{
           "shape":"Id",
-          "documentation":"<p>The record identifier of the last request performed on this provisioned product of the following types:</p> <ul> <li> <p> ProvisionedProduct </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p> ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct </p> </li> </ul>"
+          "documentation":"<p>The record identifier of the last request performed on this provisioned product of the following types:</p> <ul> <li> <p> ProvisionProduct </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p> ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct </p> </li> </ul>"
         },
         "LastSuccessfulProvisioningRecordId":{
           "shape":"Id",
-          "documentation":"<p>The record identifier of the last successful request performed on this provisioned product of the following types:</p> <ul> <li> <p> ProvisionedProduct </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p> ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct </p> </li> </ul>"
+          "documentation":"<p>The record identifier of the last successful request performed on this provisioned product of the following types:</p> <ul> <li> <p> ProvisionProduct </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p> ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct </p> </li> </ul>"
         },
         "Tags":{
           "shape":"Tags",
@@ -4599,11 +4912,11 @@
         },
         "UserArn":{
           "shape":"UserArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the IAM user.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the user.</p>"
         },
         "UserArnSession":{
           "shape":"UserArnSession",
-          "documentation":"<p>The ARN of the IAM user in the session. This ARN might contain a session ID.</p>"
+          "documentation":"<p>The ARN of the user in the session. This ARN might contain a session ID.</p>"
         }
       },
       "documentation":"<p>Information about a provisioned product.</p>"
@@ -4625,7 +4938,7 @@
         },
         "Type":{
           "shape":"ProvisionedProductType",
-          "documentation":"<p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>"
+          "documentation":"<p>The type of provisioned product. The supported values are <code>CFN_STACK</code>, <code>CFN_STACKSET</code>, <code>TERRAFORM_OPEN_SOURCE</code>, <code>TERRAFORM_CLOUD</code>, and <code>EXTERNAL</code>.</p>"
         },
         "Id":{
           "shape":"ProvisionedProductId",
@@ -4653,11 +4966,11 @@
         },
         "LastProvisioningRecordId":{
           "shape":"Id",
-          "documentation":"<p>The record identifier of the last request performed on this provisioned product of the following types:</p> <ul> <li> <p> ProvisionedProduct </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p> ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct </p> </li> </ul>"
+          "documentation":"<p>The record identifier of the last request performed on this provisioned product of the following types:</p> <ul> <li> <p> ProvisionProduct </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p> ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct </p> </li> </ul>"
         },
         "LastSuccessfulProvisioningRecordId":{
           "shape":"Id",
-          "documentation":"<p>The record identifier of the last successful request performed on this provisioned product of the following types:</p> <ul> <li> <p> ProvisionedProduct </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p> ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct </p> </li> </ul>"
+          "documentation":"<p>The record identifier of the last successful request performed on this provisioned product of the following types:</p> <ul> <li> <p> ProvisionProduct </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p> ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct </p> </li> </ul>"
         },
         "ProductId":{
           "shape":"Id",
@@ -4741,7 +5054,7 @@
         },
         "UpdatedTime":{
           "shape":"UpdatedTime",
-          "documentation":"<p>The time when the plan was last updated.</p>"
+          "documentation":"<p>The UTC time stamp when the plan was last updated.</p>"
         },
         "NotificationArns":{
           "shape":"NotificationArns",
@@ -4889,7 +5202,7 @@
         },
         "Type":{
           "shape":"ProvisioningArtifactType",
-          "documentation":"<p>The type of provisioning artifact.</p> <ul> <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li> <li> <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li> <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources</p> </li> </ul>"
+          "documentation":"<p>The type of provisioning artifact.</p> <ul> <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li> <li> <p> <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file</p> </li> <li> <p> <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file</p> </li> <li> <p> <code>EXTERNAL</code> - External configuration file</p> </li> </ul>"
         },
         "CreatedTime":{
           "shape":"CreationTime",
@@ -4902,6 +5215,10 @@
         "Guidance":{
           "shape":"ProvisioningArtifactGuidance",
           "documentation":"<p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>"
+        },
+        "SourceRevision":{
+          "shape":"SourceRevision",
+          "documentation":"<p>Specifies the revision of the external artifact that was used to automatically sync the Service Catalog product and create the provisioning artifact. Service Catalog includes this response parameter as a high level field to the existing <code>ProvisioningArtifactDetail</code> type, which is returned as part of the response for <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>, and <code>UpdateProvisioningArticat</code> APIs. </p> <p>This field only exists for Repo-Synced products. </p>"
         }
       },
       "documentation":"<p>Information about a provisioning artifact (also known as a version) for a product.</p>"
@@ -5005,7 +5322,6 @@
     },
     "ProvisioningArtifactProperties":{
       "type":"structure",
-      "required":["Info"],
       "members":{
         "Name":{
           "shape":"ProvisioningArtifactName",
@@ -5017,15 +5333,15 @@
         },
         "Info":{
           "shape":"ProvisioningArtifactInfo",
-          "documentation":"<p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p> <p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format. Specify the URL in JSON format as follows:</p> <p> <code>\"LoadTemplateFromURL\": \"https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/...\"</code> </p> <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code> </p>"
+          "documentation":"<p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p> <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format as follows:</p> <p> <code>\"LoadTemplateFromURL\": \"https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/...\"</code> </p> <p> <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code> </p>"
         },
         "Type":{
           "shape":"ProvisioningArtifactType",
-          "documentation":"<p>The type of provisioning artifact.</p> <ul> <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li> <li> <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li> <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources</p> </li> </ul>"
+          "documentation":"<p>The type of provisioning artifact.</p> <ul> <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li> <li> <p> <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file</p> </li> <li> <p> <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file</p> </li> <li> <p> <code>EXTERNAL</code> - External configuration file</p> </li> </ul>"
         },
         "DisableTemplateValidation":{
           "shape":"DisableTemplateValidation",
-          "documentation":"<p>If set to true, Amazon Web Services Service Catalog stops validating the specified provisioning artifact even if it is invalid.</p>"
+          "documentation":"<p>If set to true, Service Catalog stops validating the specified provisioning artifact even if it is invalid. </p> <p>Service Catalog does not support template validation for the <code>TERRAFORM_OS</code> product type. </p>"
         }
       },
       "documentation":"<p>Information about a provisioning artifact (also known as a version) for a product.</p>"
@@ -5070,7 +5386,10 @@
       "enum":[
         "CLOUD_FORMATION_TEMPLATE",
         "MARKETPLACE_AMI",
-        "MARKETPLACE_CAR"
+        "MARKETPLACE_CAR",
+        "TERRAFORM_OPEN_SOURCE",
+        "TERRAFORM_CLOUD",
+        "EXTERNAL"
       ]
     },
     "ProvisioningArtifactView":{
@@ -5168,7 +5487,7 @@
         },
         "ProvisionedProductType":{
           "shape":"ProvisionedProductType",
-          "documentation":"<p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>"
+          "documentation":"<p>The type of provisioned product. The supported values are <code>CFN_STACK</code>, <code>CFN_STACKSET</code>, <code>TERRAFORM_OPEN_SOURCE</code>, <code>TERRAFORM_CLOUD</code>, and <code>EXTERNAL</code>.</p>"
         },
         "RecordType":{
           "shape":"RecordType",
@@ -5298,7 +5617,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "PortfolioId":{
           "shape":"Id",
@@ -5322,6 +5641,21 @@
         "FALSE",
         "CONDITIONAL"
       ]
+    },
+    "Repository":{
+      "type":"string",
+      "max":100,
+      "min":1
+    },
+    "RepositoryArtifactPath":{
+      "type":"string",
+      "max":4096,
+      "min":1
+    },
+    "RepositoryBranch":{
+      "type":"string",
+      "max":250,
+      "min":1
     },
     "RequiresRecreation":{
       "type":"string",
@@ -5488,7 +5822,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "AccessLevelFilter":{
           "shape":"AccessLevelFilter",
@@ -5528,7 +5862,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "PortfolioId":{
           "shape":"Id",
@@ -5578,7 +5912,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "Filters":{
           "shape":"ProductViewFilters",
@@ -5624,7 +5958,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "AccessLevelFilter":{
           "shape":"AccessLevelFilter",
@@ -5632,7 +5966,7 @@
         },
         "Filters":{
           "shape":"ProvisionedProductFilters",
-          "documentation":"<p>The search filters.</p> <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and <code>provisioningArtifactName</code>.</p> <p>Example: <code>\"SearchQuery\":[\"status:AVAILABLE\"]</code> </p>"
+          "documentation":"<p>The search filters.</p> <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifactId</code>, <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and <code>provisioningArtifactName</code>.</p> <p>Example: <code>\"SearchQuery\":[\"status:AVAILABLE\"]</code> </p>"
         },
         "SortBy":{
           "shape":"SortField",
@@ -5704,7 +6038,8 @@
         "INTERNAL_FAILURE",
         "LIMIT_EXCEEDED",
         "RESOURCE_NOT_FOUND",
-        "THROTTLING"
+        "THROTTLING",
+        "INVALID_PARAMETER"
       ]
     },
     "ServiceActionAssociationErrorMessage":{
@@ -5847,6 +6182,49 @@
         "DESCENDING"
       ]
     },
+    "SourceConnection":{
+      "type":"structure",
+      "required":["ConnectionParameters"],
+      "members":{
+        "Type":{
+          "shape":"SourceType",
+          "documentation":"<p>The only supported <code>SourceConnection</code> type is Codestar. </p>"
+        },
+        "ConnectionParameters":{
+          "shape":"SourceConnectionParameters",
+          "documentation":"<p>The connection details based on the connection <code>Type</code>. </p>"
+        }
+      },
+      "documentation":"<p>A top level <code>ProductViewDetail</code> response containing details about the product’s connection. Service Catalog returns this field for the <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code> APIs. This response contains the same fields as the <code>ConnectionParameters</code> request, with the addition of the <code>LastSync</code> response.</p>"
+    },
+    "SourceConnectionDetail":{
+      "type":"structure",
+      "members":{
+        "Type":{
+          "shape":"SourceType",
+          "documentation":"<p>The only supported <code>SourceConnection</code> type is Codestar.</p>"
+        },
+        "ConnectionParameters":{
+          "shape":"SourceConnectionParameters",
+          "documentation":"<p>The connection details based on the connection <code>Type</code>.</p>"
+        },
+        "LastSync":{
+          "shape":"LastSync",
+          "documentation":"<p>Provides details about the product's connection sync and contains the following sub-fields. </p> <ul> <li> <p> <code>LastSyncTime</code> </p> </li> <li> <p> <code>LastSyncStatus</code> </p> </li> <li> <p> <code>LastSyncStatusMessage</code> </p> </li> <li> <p> <code>LastSuccessfulSyncTime</code> </p> </li> <li> <p> <code>LastSuccessfulSyncProvisioningArtifactID</code> </p> </li> </ul>"
+        }
+      },
+      "documentation":"<p>Provides details about the configured <code>SourceConnection</code>. </p>"
+    },
+    "SourceConnectionParameters":{
+      "type":"structure",
+      "members":{
+        "CodeStar":{
+          "shape":"CodeStarParameters",
+          "documentation":"<p>Provides <code>ConnectionType</code> details.</p>"
+        }
+      },
+      "documentation":"<p>Provides connection details.</p>"
+    },
     "SourceProvisioningArtifactProperties":{
       "type":"list",
       "member":{"shape":"SourceProvisioningArtifactPropertiesMap"}
@@ -5855,6 +6233,15 @@
       "type":"map",
       "key":{"shape":"ProvisioningArtifactPropertyName"},
       "value":{"shape":"ProvisioningArtifactPropertyValue"}
+    },
+    "SourceRevision":{
+      "type":"string",
+      "max":512,
+      "min":1
+    },
+    "SourceType":{
+      "type":"string",
+      "enum":["CODESTAR"]
     },
     "StackInstance":{
       "type":"structure",
@@ -6089,7 +6476,7 @@
         },
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "RetainPhysicalResources":{
           "shape":"RetainPhysicalResources",
@@ -6107,13 +6494,39 @@
       }
     },
     "TotalResultsCount":{"type":"integer"},
+    "UniqueTagKey":{
+      "type":"string",
+      "max":128,
+      "min":1,
+      "pattern":"^([\\p{L}\\p{Z}\\p{N}_.:\\/=+\\-@]*)$"
+    },
+    "UniqueTagResourceIdentifier":{
+      "type":"structure",
+      "members":{
+        "Key":{
+          "shape":"UniqueTagKey",
+          "documentation":"<p> A unique key that's attached to a resource. </p>"
+        },
+        "Value":{
+          "shape":"UniqueTagValue",
+          "documentation":"<p> A unique value that's attached to a resource. </p>"
+        }
+      },
+      "documentation":"<p> The unique key-value pair for a tag that identifies provisioned product resources. </p>"
+    },
+    "UniqueTagValue":{
+      "type":"string",
+      "max":256,
+      "min":1,
+      "pattern":"^([\\p{L}\\p{Z}\\p{N}_.:\\/=+\\-@]*)$"
+    },
     "UpdateConstraintInput":{
       "type":"structure",
       "required":["Id"],
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "Id":{
           "shape":"Id",
@@ -6152,7 +6565,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "Id":{
           "shape":"Id",
@@ -6199,7 +6612,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "PortfolioId":{
           "shape":"Id",
@@ -6212,7 +6625,11 @@
         "OrganizationNode":{"shape":"OrganizationNode"},
         "ShareTagOptions":{
           "shape":"NullableBoolean",
-          "documentation":"<p>A flag to enable or disable TagOptions sharing for the portfolio share. If this field is not provided, the current state of TagOptions sharing on the portfolio share will not be modified.</p>"
+          "documentation":"<p>Enables or disables <code>TagOptions</code> sharing for the portfolio share. If this field is not provided, the current state of TagOptions sharing on the portfolio share will not be modified.</p>"
+        },
+        "SharePrincipals":{
+          "shape":"NullableBoolean",
+          "documentation":"<p>A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not provided, the current state of the <code>Principals</code> sharing on the portfolio share will not be modified. </p>"
         }
       }
     },
@@ -6235,7 +6652,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "Id":{
           "shape":"Id",
@@ -6276,6 +6693,10 @@
         "RemoveTags":{
           "shape":"TagKeys",
           "documentation":"<p>The tags to remove from the product.</p>"
+        },
+        "SourceConnection":{
+          "shape":"SourceConnection",
+          "documentation":"<p>Specifies connection details for the updated product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p> <ul> <li> <p> <code>Type</code> </p> </li> <li> <p> <code>ConnectionParamters</code> </p> </li> </ul>"
         }
       }
     },
@@ -6298,7 +6719,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "ProvisionedProductName":{
           "shape":"ProvisionedProductNameOrArn",
@@ -6370,7 +6791,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "ProvisionedProductId":{
           "shape":"Id",
@@ -6378,7 +6799,7 @@
         },
         "ProvisionedProductProperties":{
           "shape":"ProvisionedProductProperties",
-          "documentation":"<p>A map that contains the provisioned product properties to be updated.</p> <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch role that is associated with a provisioned product. This role is used when an end user calls a provisioning operation such as <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>, or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts IAM user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that has permission to see, update, terminate, and execute service actions in the provisioned product.</p> <p>The administrator can change the owner of a provisioned product to another IAM or STS entity within the same account. Both end user owners and administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p> <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or Service Catalog console such as update, terminate, and execute service actions. If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through API or the Service Catalog console on that provisioned product.</p>"
+          "documentation":"<p>A map that contains the provisioned product properties to be updated.</p> <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch role that is associated with a provisioned product. This role is used when an end user calls a provisioning operation such as <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>, or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that has permission to see, update, terminate, and execute service actions in the provisioned product.</p> <p>The administrator can change the owner of a provisioned product to another IAM or STS entity within the same account. Both end user owners and administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p> <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or Service Catalog console such as update, terminate, and execute service actions. If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through API or the Service Catalog console on that provisioned product.</p>"
         },
         "IdempotencyToken":{
           "shape":"IdempotencyToken",
@@ -6417,7 +6838,7 @@
       "members":{
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         },
         "ProductId":{
           "shape":"Id",
@@ -6454,7 +6875,7 @@
         },
         "Info":{
           "shape":"ProvisioningArtifactInfo",
-          "documentation":"<p>The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.</p>"
+          "documentation":"<p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>"
         },
         "Status":{
           "shape":"Status",
@@ -6540,7 +6961,7 @@
         },
         "AcceptLanguage":{
           "shape":"AcceptLanguage",
-          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
         }
       }
     },
@@ -6604,5 +7025,5 @@
     "UserArnSession":{"type":"string"},
     "Verbose":{"type":"boolean"}
   },
-  "documentation":"<fullname>AWS Service Catalog</fullname> <p> <a href=\"https://aws.amazon.com/servicecatalog/\">Service Catalog</a> enables organizations to create and manage catalogs of IT services that are approved for Amazon Web Services. To get the most out of this documentation, you should be familiar with the terminology discussed in <a href=\"http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html\">Service Catalog Concepts</a>.</p>"
+  "documentation":"<fullname>Service Catalog</fullname> <p> <a href=\"http://aws.amazon.com/servicecatalog\">Service Catalog</a> enables organizations to create and manage catalogs of IT services that are approved for Amazon Web Services. To get the most out of this documentation, you should be familiar with the terminology discussed in <a href=\"http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html\">Service Catalog Concepts</a>.</p>"
 }

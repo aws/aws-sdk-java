@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -11,6 +11,8 @@
  * and limitations under the License.
  */
 package com.amazonaws.services.pinpoint.model.transform;
+
+import java.util.Map;
 
 import javax.annotation.Generated;
 
@@ -53,6 +55,8 @@ public class ActivityResponseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TotalEndpointCount").build();
     private static final MarshallingInfo<String> TREATMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TreatmentId").build();
+    private static final MarshallingInfo<Map> EXECUTIONMETRICS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionMetrics").build();
 
     private static final ActivityResponseMarshaller instance = new ActivityResponseMarshaller();
 
@@ -83,6 +87,7 @@ public class ActivityResponseMarshaller {
             protocolMarshaller.marshall(activityResponse.getTimezonesTotalCount(), TIMEZONESTOTALCOUNT_BINDING);
             protocolMarshaller.marshall(activityResponse.getTotalEndpointCount(), TOTALENDPOINTCOUNT_BINDING);
             protocolMarshaller.marshall(activityResponse.getTreatmentId(), TREATMENTID_BINDING);
+            protocolMarshaller.marshall(activityResponse.getExecutionMetrics(), EXECUTIONMETRICS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

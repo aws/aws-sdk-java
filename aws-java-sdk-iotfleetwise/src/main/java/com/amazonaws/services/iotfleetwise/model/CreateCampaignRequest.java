@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
     private String description;
     /**
      * <p>
-     * (Optional) The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign.
+     * The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign.
      * </p>
      */
     private String signalCatalogArn;
@@ -62,10 +62,10 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle
-     * data won't be collected after the campaign expires.
+     * data isn't collected after the campaign expires.
      * </p>
      * <p>
-     * Default: 253402243200 (December 31, 9999, 00:00:00 UTC)
+     * Default: 253402214400 (December 31, 9999, 00:00:00 UTC)
      * </p>
      */
     private java.util.Date expiryTime;
@@ -156,6 +156,23 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon
+     * Timestream.
+     * </p>
+     * <p>
+     * Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data
+     * lakes, centralized data storage, data processing pipelines, and analytics. Amazon Web Services IoT FleetWise
+     * supports at-least-once file delivery to S3. Your vehicle data is stored on multiple Amazon Web Services IoT
+     * FleetWise servers for redundancy and high availability.
+     * </p>
+     * <p>
+     * You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so
+     * that you can identify trends and patterns.
+     * </p>
+     */
+    private java.util.List<DataDestinationConfig> dataDestinationConfigs;
 
     /**
      * <p>
@@ -239,11 +256,11 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * (Optional) The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign.
+     * The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign.
      * </p>
      * 
      * @param signalCatalogArn
-     *        (Optional) The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign.
+     *        The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign.
      */
 
     public void setSignalCatalogArn(String signalCatalogArn) {
@@ -252,10 +269,10 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * (Optional) The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign.
+     * The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign.
      * </p>
      * 
-     * @return (Optional) The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign.
+     * @return The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign.
      */
 
     public String getSignalCatalogArn() {
@@ -264,11 +281,11 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * (Optional) The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign.
+     * The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign.
      * </p>
      * 
      * @param signalCatalogArn
-     *        (Optional) The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign.
+     *        The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -381,17 +398,17 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle
-     * data won't be collected after the campaign expires.
+     * data isn't collected after the campaign expires.
      * </p>
      * <p>
-     * Default: 253402243200 (December 31, 9999, 00:00:00 UTC)
+     * Default: 253402214400 (December 31, 9999, 00:00:00 UTC)
      * </p>
      * 
      * @param expiryTime
      *        (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time).
-     *        Vehicle data won't be collected after the campaign expires. </p>
+     *        Vehicle data isn't collected after the campaign expires. </p>
      *        <p>
-     *        Default: 253402243200 (December 31, 9999, 00:00:00 UTC)
+     *        Default: 253402214400 (December 31, 9999, 00:00:00 UTC)
      */
 
     public void setExpiryTime(java.util.Date expiryTime) {
@@ -401,16 +418,16 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle
-     * data won't be collected after the campaign expires.
+     * data isn't collected after the campaign expires.
      * </p>
      * <p>
-     * Default: 253402243200 (December 31, 9999, 00:00:00 UTC)
+     * Default: 253402214400 (December 31, 9999, 00:00:00 UTC)
      * </p>
      * 
      * @return (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time).
-     *         Vehicle data won't be collected after the campaign expires. </p>
+     *         Vehicle data isn't collected after the campaign expires. </p>
      *         <p>
-     *         Default: 253402243200 (December 31, 9999, 00:00:00 UTC)
+     *         Default: 253402214400 (December 31, 9999, 00:00:00 UTC)
      */
 
     public java.util.Date getExpiryTime() {
@@ -420,17 +437,17 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle
-     * data won't be collected after the campaign expires.
+     * data isn't collected after the campaign expires.
      * </p>
      * <p>
-     * Default: 253402243200 (December 31, 9999, 00:00:00 UTC)
+     * Default: 253402214400 (December 31, 9999, 00:00:00 UTC)
      * </p>
      * 
      * @param expiryTime
      *        (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time).
-     *        Vehicle data won't be collected after the campaign expires. </p>
+     *        Vehicle data isn't collected after the campaign expires. </p>
      *        <p>
-     *        Default: 253402243200 (December 31, 9999, 00:00:00 UTC)
+     *        Default: 253402214400 (December 31, 9999, 00:00:00 UTC)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1177,6 +1194,160 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon
+     * Timestream.
+     * </p>
+     * <p>
+     * Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data
+     * lakes, centralized data storage, data processing pipelines, and analytics. Amazon Web Services IoT FleetWise
+     * supports at-least-once file delivery to S3. Your vehicle data is stored on multiple Amazon Web Services IoT
+     * FleetWise servers for redundancy and high availability.
+     * </p>
+     * <p>
+     * You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so
+     * that you can identify trends and patterns.
+     * </p>
+     * 
+     * @return The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or
+     *         Amazon Timestream.</p>
+     *         <p>
+     *         Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such
+     *         as data lakes, centralized data storage, data processing pipelines, and analytics. Amazon Web Services
+     *         IoT FleetWise supports at-least-once file delivery to S3. Your vehicle data is stored on multiple Amazon
+     *         Web Services IoT FleetWise servers for redundancy and high availability.
+     *         </p>
+     *         <p>
+     *         You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle
+     *         data so that you can identify trends and patterns.
+     */
+
+    public java.util.List<DataDestinationConfig> getDataDestinationConfigs() {
+        return dataDestinationConfigs;
+    }
+
+    /**
+     * <p>
+     * The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon
+     * Timestream.
+     * </p>
+     * <p>
+     * Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data
+     * lakes, centralized data storage, data processing pipelines, and analytics. Amazon Web Services IoT FleetWise
+     * supports at-least-once file delivery to S3. Your vehicle data is stored on multiple Amazon Web Services IoT
+     * FleetWise servers for redundancy and high availability.
+     * </p>
+     * <p>
+     * You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so
+     * that you can identify trends and patterns.
+     * </p>
+     * 
+     * @param dataDestinationConfigs
+     *        The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or
+     *        Amazon Timestream.</p>
+     *        <p>
+     *        Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such
+     *        as data lakes, centralized data storage, data processing pipelines, and analytics. Amazon Web Services IoT
+     *        FleetWise supports at-least-once file delivery to S3. Your vehicle data is stored on multiple Amazon Web
+     *        Services IoT FleetWise servers for redundancy and high availability.
+     *        </p>
+     *        <p>
+     *        You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data
+     *        so that you can identify trends and patterns.
+     */
+
+    public void setDataDestinationConfigs(java.util.Collection<DataDestinationConfig> dataDestinationConfigs) {
+        if (dataDestinationConfigs == null) {
+            this.dataDestinationConfigs = null;
+            return;
+        }
+
+        this.dataDestinationConfigs = new java.util.ArrayList<DataDestinationConfig>(dataDestinationConfigs);
+    }
+
+    /**
+     * <p>
+     * The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon
+     * Timestream.
+     * </p>
+     * <p>
+     * Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data
+     * lakes, centralized data storage, data processing pipelines, and analytics. Amazon Web Services IoT FleetWise
+     * supports at-least-once file delivery to S3. Your vehicle data is stored on multiple Amazon Web Services IoT
+     * FleetWise servers for redundancy and high availability.
+     * </p>
+     * <p>
+     * You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so
+     * that you can identify trends and patterns.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDataDestinationConfigs(java.util.Collection)} or
+     * {@link #withDataDestinationConfigs(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param dataDestinationConfigs
+     *        The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or
+     *        Amazon Timestream.</p>
+     *        <p>
+     *        Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such
+     *        as data lakes, centralized data storage, data processing pipelines, and analytics. Amazon Web Services IoT
+     *        FleetWise supports at-least-once file delivery to S3. Your vehicle data is stored on multiple Amazon Web
+     *        Services IoT FleetWise servers for redundancy and high availability.
+     *        </p>
+     *        <p>
+     *        You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data
+     *        so that you can identify trends and patterns.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCampaignRequest withDataDestinationConfigs(DataDestinationConfig... dataDestinationConfigs) {
+        if (this.dataDestinationConfigs == null) {
+            setDataDestinationConfigs(new java.util.ArrayList<DataDestinationConfig>(dataDestinationConfigs.length));
+        }
+        for (DataDestinationConfig ele : dataDestinationConfigs) {
+            this.dataDestinationConfigs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon
+     * Timestream.
+     * </p>
+     * <p>
+     * Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data
+     * lakes, centralized data storage, data processing pipelines, and analytics. Amazon Web Services IoT FleetWise
+     * supports at-least-once file delivery to S3. Your vehicle data is stored on multiple Amazon Web Services IoT
+     * FleetWise servers for redundancy and high availability.
+     * </p>
+     * <p>
+     * You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so
+     * that you can identify trends and patterns.
+     * </p>
+     * 
+     * @param dataDestinationConfigs
+     *        The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or
+     *        Amazon Timestream.</p>
+     *        <p>
+     *        Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such
+     *        as data lakes, centralized data storage, data processing pipelines, and analytics. Amazon Web Services IoT
+     *        FleetWise supports at-least-once file delivery to S3. Your vehicle data is stored on multiple Amazon Web
+     *        Services IoT FleetWise servers for redundancy and high availability.
+     *        </p>
+     *        <p>
+     *        You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data
+     *        so that you can identify trends and patterns.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCampaignRequest withDataDestinationConfigs(java.util.Collection<DataDestinationConfig> dataDestinationConfigs) {
+        setDataDestinationConfigs(dataDestinationConfigs);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1217,7 +1388,9 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getDataExtraDimensions() != null)
             sb.append("DataExtraDimensions: ").append(getDataExtraDimensions()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getDataDestinationConfigs() != null)
+            sb.append("DataDestinationConfigs: ").append(getDataDestinationConfigs());
         sb.append("}");
         return sb.toString();
     }
@@ -1293,6 +1466,10 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getDataDestinationConfigs() == null ^ this.getDataDestinationConfigs() == null)
+            return false;
+        if (other.getDataDestinationConfigs() != null && other.getDataDestinationConfigs().equals(this.getDataDestinationConfigs()) == false)
+            return false;
         return true;
     }
 
@@ -1316,6 +1493,7 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getCollectionScheme() == null) ? 0 : getCollectionScheme().hashCode());
         hashCode = prime * hashCode + ((getDataExtraDimensions() == null) ? 0 : getDataExtraDimensions().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getDataDestinationConfigs() == null) ? 0 : getDataDestinationConfigs().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -410,7 +410,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getFlowDefinition() != null)
-            sb.append("FlowDefinition: ").append(getFlowDefinition()).append(",");
+            sb.append("FlowDefinition: ").append("***Sensitive Data Redacted***").append(",");
         if (getObjectTypeNames() != null)
             sb.append("ObjectTypeNames: ").append(getObjectTypeNames());
         sb.append("}");

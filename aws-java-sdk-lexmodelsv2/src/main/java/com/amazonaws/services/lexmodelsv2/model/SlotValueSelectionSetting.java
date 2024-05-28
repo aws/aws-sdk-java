@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,18 +36,19 @@ public class SlotValueSelectionSetting implements Serializable, Cloneable, Struc
      * <ul>
      * <li>
      * <p>
-     * OriginalValue - Returns the value entered by the user, if the user value is similar to the slot value.
+     * <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot
+     * value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * TopResolution - If there is a resolution list for the slot, return the first value in the resolution list as the
-     * slot type value. If there is no resolution list, null is returned.
+     * <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the
+     * resolution list as the slot type value. If there is no resolution list, null is returned.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you don't specify the valueSelectionStrategy, the default is OriginalValue.
+     * If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.
      * </p>
      */
     private String resolutionStrategy;
@@ -59,7 +60,8 @@ public class SlotValueSelectionSetting implements Serializable, Cloneable, Struc
     private SlotValueRegexFilter regexFilter;
     /**
      * <p>
-     * Provides settings that enable advanced recognition settings for slot values.
+     * Provides settings that enable advanced recognition settings for slot values. You can use this to enable using
+     * slot values as a custom vocabulary for recognizing user utterances.
      * </p>
      */
     private AdvancedRecognitionSetting advancedRecognitionSetting;
@@ -72,18 +74,19 @@ public class SlotValueSelectionSetting implements Serializable, Cloneable, Struc
      * <ul>
      * <li>
      * <p>
-     * OriginalValue - Returns the value entered by the user, if the user value is similar to the slot value.
+     * <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot
+     * value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * TopResolution - If there is a resolution list for the slot, return the first value in the resolution list as the
-     * slot type value. If there is no resolution list, null is returned.
+     * <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the
+     * resolution list as the slot type value. If there is no resolution list, null is returned.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you don't specify the valueSelectionStrategy, the default is OriginalValue.
+     * If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.
      * </p>
      * 
      * @param resolutionStrategy
@@ -92,18 +95,19 @@ public class SlotValueSelectionSetting implements Serializable, Cloneable, Struc
      *        <ul>
      *        <li>
      *        <p>
-     *        OriginalValue - Returns the value entered by the user, if the user value is similar to the slot value.
+     *        <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the
+     *        slot value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        TopResolution - If there is a resolution list for the slot, return the first value in the resolution list
-     *        as the slot type value. If there is no resolution list, null is returned.
+     *        <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the
+     *        resolution list as the slot type value. If there is no resolution list, null is returned.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If you don't specify the valueSelectionStrategy, the default is OriginalValue.
+     *        If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.
      * @see SlotValueResolutionStrategy
      */
 
@@ -119,18 +123,19 @@ public class SlotValueSelectionSetting implements Serializable, Cloneable, Struc
      * <ul>
      * <li>
      * <p>
-     * OriginalValue - Returns the value entered by the user, if the user value is similar to the slot value.
+     * <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot
+     * value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * TopResolution - If there is a resolution list for the slot, return the first value in the resolution list as the
-     * slot type value. If there is no resolution list, null is returned.
+     * <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the
+     * resolution list as the slot type value. If there is no resolution list, null is returned.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you don't specify the valueSelectionStrategy, the default is OriginalValue.
+     * If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.
      * </p>
      * 
      * @return Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be
@@ -138,18 +143,19 @@ public class SlotValueSelectionSetting implements Serializable, Cloneable, Struc
      *         <ul>
      *         <li>
      *         <p>
-     *         OriginalValue - Returns the value entered by the user, if the user value is similar to the slot value.
+     *         <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the
+     *         slot value.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         TopResolution - If there is a resolution list for the slot, return the first value in the resolution list
-     *         as the slot type value. If there is no resolution list, null is returned.
+     *         <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the
+     *         resolution list as the slot type value. If there is no resolution list, null is returned.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         If you don't specify the valueSelectionStrategy, the default is OriginalValue.
+     *         If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.
      * @see SlotValueResolutionStrategy
      */
 
@@ -165,18 +171,19 @@ public class SlotValueSelectionSetting implements Serializable, Cloneable, Struc
      * <ul>
      * <li>
      * <p>
-     * OriginalValue - Returns the value entered by the user, if the user value is similar to the slot value.
+     * <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot
+     * value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * TopResolution - If there is a resolution list for the slot, return the first value in the resolution list as the
-     * slot type value. If there is no resolution list, null is returned.
+     * <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the
+     * resolution list as the slot type value. If there is no resolution list, null is returned.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you don't specify the valueSelectionStrategy, the default is OriginalValue.
+     * If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.
      * </p>
      * 
      * @param resolutionStrategy
@@ -185,18 +192,19 @@ public class SlotValueSelectionSetting implements Serializable, Cloneable, Struc
      *        <ul>
      *        <li>
      *        <p>
-     *        OriginalValue - Returns the value entered by the user, if the user value is similar to the slot value.
+     *        <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the
+     *        slot value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        TopResolution - If there is a resolution list for the slot, return the first value in the resolution list
-     *        as the slot type value. If there is no resolution list, null is returned.
+     *        <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the
+     *        resolution list as the slot type value. If there is no resolution list, null is returned.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If you don't specify the valueSelectionStrategy, the default is OriginalValue.
+     *        If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SlotValueResolutionStrategy
      */
@@ -214,18 +222,19 @@ public class SlotValueSelectionSetting implements Serializable, Cloneable, Struc
      * <ul>
      * <li>
      * <p>
-     * OriginalValue - Returns the value entered by the user, if the user value is similar to the slot value.
+     * <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot
+     * value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * TopResolution - If there is a resolution list for the slot, return the first value in the resolution list as the
-     * slot type value. If there is no resolution list, null is returned.
+     * <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the
+     * resolution list as the slot type value. If there is no resolution list, null is returned.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you don't specify the valueSelectionStrategy, the default is OriginalValue.
+     * If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.
      * </p>
      * 
      * @param resolutionStrategy
@@ -234,18 +243,19 @@ public class SlotValueSelectionSetting implements Serializable, Cloneable, Struc
      *        <ul>
      *        <li>
      *        <p>
-     *        OriginalValue - Returns the value entered by the user, if the user value is similar to the slot value.
+     *        <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the
+     *        slot value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        TopResolution - If there is a resolution list for the slot, return the first value in the resolution list
-     *        as the slot type value. If there is no resolution list, null is returned.
+     *        <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the
+     *        resolution list as the slot type value. If there is no resolution list, null is returned.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If you don't specify the valueSelectionStrategy, the default is OriginalValue.
+     *        If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SlotValueResolutionStrategy
      */
@@ -297,11 +307,13 @@ public class SlotValueSelectionSetting implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Provides settings that enable advanced recognition settings for slot values.
+     * Provides settings that enable advanced recognition settings for slot values. You can use this to enable using
+     * slot values as a custom vocabulary for recognizing user utterances.
      * </p>
      * 
      * @param advancedRecognitionSetting
-     *        Provides settings that enable advanced recognition settings for slot values.
+     *        Provides settings that enable advanced recognition settings for slot values. You can use this to enable
+     *        using slot values as a custom vocabulary for recognizing user utterances.
      */
 
     public void setAdvancedRecognitionSetting(AdvancedRecognitionSetting advancedRecognitionSetting) {
@@ -310,10 +322,12 @@ public class SlotValueSelectionSetting implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Provides settings that enable advanced recognition settings for slot values.
+     * Provides settings that enable advanced recognition settings for slot values. You can use this to enable using
+     * slot values as a custom vocabulary for recognizing user utterances.
      * </p>
      * 
-     * @return Provides settings that enable advanced recognition settings for slot values.
+     * @return Provides settings that enable advanced recognition settings for slot values. You can use this to enable
+     *         using slot values as a custom vocabulary for recognizing user utterances.
      */
 
     public AdvancedRecognitionSetting getAdvancedRecognitionSetting() {
@@ -322,11 +336,13 @@ public class SlotValueSelectionSetting implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Provides settings that enable advanced recognition settings for slot values.
+     * Provides settings that enable advanced recognition settings for slot values. You can use this to enable using
+     * slot values as a custom vocabulary for recognizing user utterances.
      * </p>
      * 
      * @param advancedRecognitionSetting
-     *        Provides settings that enable advanced recognition settings for slot values.
+     *        Provides settings that enable advanced recognition settings for slot values. You can use this to enable
+     *        using slot values as a custom vocabulary for recognizing user utterances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

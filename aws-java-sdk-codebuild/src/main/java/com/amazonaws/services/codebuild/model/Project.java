@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -79,6 +79,11 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * For GitLab: the commit ID, branch, or Git tag to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you
      * want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default
      * branch's HEAD commit ID is used.
@@ -141,8 +146,8 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
     private String serviceRole;
     /**
      * <p>
-     * How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related build that did
-     * not get marked as completed. The default is 60 minutes.
+     * How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out any related build that
+     * did not get marked as completed. The default is 60 minutes.
      * </p>
      */
     private Integer timeoutInMinutes;
@@ -507,6 +512,11 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * For GitLab: the commit ID, branch, or Git tag to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you
      * want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default
      * branch's HEAD commit ID is used.
@@ -543,6 +553,11 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
      *        the source code you want to build. If a pull request ID is specified, it must use the format
      *        <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the
      *        branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For GitLab: the commit ID, branch, or Git tag to use.
      *        </p>
      *        </li>
      *        <li>
@@ -593,6 +608,11 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * For GitLab: the commit ID, branch, or Git tag to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you
      * want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default
      * branch's HEAD commit ID is used.
@@ -628,6 +648,11 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
      *         the source code you want to build. If a pull request ID is specified, it must use the format
      *         <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the
      *         branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For GitLab: the commit ID, branch, or Git tag to use.
      *         </p>
      *         </li>
      *         <li>
@@ -678,6 +703,11 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * For GitLab: the commit ID, branch, or Git tag to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you
      * want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default
      * branch's HEAD commit ID is used.
@@ -714,6 +744,11 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
      *        the source code you want to build. If a pull request ID is specified, it must use the format
      *        <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the
      *        branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For GitLab: the commit ID, branch, or Git tag to use.
      *        </p>
      *        </li>
      *        <li>
@@ -1065,12 +1100,12 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related build that did
-     * not get marked as completed. The default is 60 minutes.
+     * How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out any related build that
+     * did not get marked as completed. The default is 60 minutes.
      * </p>
      * 
      * @param timeoutInMinutes
-     *        How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related build
+     *        How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out any related build
      *        that did not get marked as completed. The default is 60 minutes.
      */
 
@@ -1080,12 +1115,12 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related build that did
-     * not get marked as completed. The default is 60 minutes.
+     * How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out any related build that
+     * did not get marked as completed. The default is 60 minutes.
      * </p>
      * 
-     * @return How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related build
-     *         that did not get marked as completed. The default is 60 minutes.
+     * @return How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out any related
+     *         build that did not get marked as completed. The default is 60 minutes.
      */
 
     public Integer getTimeoutInMinutes() {
@@ -1094,12 +1129,12 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related build that did
-     * not get marked as completed. The default is 60 minutes.
+     * How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out any related build that
+     * did not get marked as completed. The default is 60 minutes.
      * </p>
      * 
      * @param timeoutInMinutes
-     *        How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related build
+     *        How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out any related build
      *        that did not get marked as completed. The default is 60 minutes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

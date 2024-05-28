@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,13 @@ public class NetworkResource implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.List<NameValuePair> attributes;
+    /**
+     * <p>
+     * Information about the commitment period for the radio unit. Shows the duration, the date and time that the
+     * contract started and ends, and the renewal status of the commitment period.
+     * </p>
+     */
+    private CommitmentInformation commitmentInformation;
     /**
      * <p>
      * The creation time of the network resource.
@@ -88,6 +95,12 @@ public class NetworkResource implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private Position position;
+    /**
+     * <p>
+     * Information about a request to return the network resource.
+     * </p>
+     */
+    private ReturnInformation returnInformation;
     /**
      * <p>
      * The serial number of the network resource.
@@ -186,6 +199,52 @@ public class NetworkResource implements Serializable, Cloneable, StructuredPojo 
 
     public NetworkResource withAttributes(java.util.Collection<NameValuePair> attributes) {
         setAttributes(attributes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the commitment period for the radio unit. Shows the duration, the date and time that the
+     * contract started and ends, and the renewal status of the commitment period.
+     * </p>
+     * 
+     * @param commitmentInformation
+     *        Information about the commitment period for the radio unit. Shows the duration, the date and time that the
+     *        contract started and ends, and the renewal status of the commitment period.
+     */
+
+    public void setCommitmentInformation(CommitmentInformation commitmentInformation) {
+        this.commitmentInformation = commitmentInformation;
+    }
+
+    /**
+     * <p>
+     * Information about the commitment period for the radio unit. Shows the duration, the date and time that the
+     * contract started and ends, and the renewal status of the commitment period.
+     * </p>
+     * 
+     * @return Information about the commitment period for the radio unit. Shows the duration, the date and time that
+     *         the contract started and ends, and the renewal status of the commitment period.
+     */
+
+    public CommitmentInformation getCommitmentInformation() {
+        return this.commitmentInformation;
+    }
+
+    /**
+     * <p>
+     * Information about the commitment period for the radio unit. Shows the duration, the date and time that the
+     * contract started and ends, and the renewal status of the commitment period.
+     * </p>
+     * 
+     * @param commitmentInformation
+     *        Information about the commitment period for the radio unit. Shows the duration, the date and time that the
+     *        contract started and ends, and the renewal status of the commitment period.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkResource withCommitmentInformation(CommitmentInformation commitmentInformation) {
+        setCommitmentInformation(commitmentInformation);
         return this;
     }
 
@@ -570,6 +629,46 @@ public class NetworkResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * Information about a request to return the network resource.
+     * </p>
+     * 
+     * @param returnInformation
+     *        Information about a request to return the network resource.
+     */
+
+    public void setReturnInformation(ReturnInformation returnInformation) {
+        this.returnInformation = returnInformation;
+    }
+
+    /**
+     * <p>
+     * Information about a request to return the network resource.
+     * </p>
+     * 
+     * @return Information about a request to return the network resource.
+     */
+
+    public ReturnInformation getReturnInformation() {
+        return this.returnInformation;
+    }
+
+    /**
+     * <p>
+     * Information about a request to return the network resource.
+     * </p>
+     * 
+     * @param returnInformation
+     *        Information about a request to return the network resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkResource withReturnInformation(ReturnInformation returnInformation) {
+        setReturnInformation(returnInformation);
+        return this;
+    }
+
+    /**
+     * <p>
      * The serial number of the network resource.
      * </p>
      * 
@@ -820,6 +919,8 @@ public class NetworkResource implements Serializable, Cloneable, StructuredPojo 
         sb.append("{");
         if (getAttributes() != null)
             sb.append("Attributes: ").append(getAttributes()).append(",");
+        if (getCommitmentInformation() != null)
+            sb.append("CommitmentInformation: ").append(getCommitmentInformation()).append(",");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getDescription() != null)
@@ -838,6 +939,8 @@ public class NetworkResource implements Serializable, Cloneable, StructuredPojo 
             sb.append("OrderArn: ").append(getOrderArn()).append(",");
         if (getPosition() != null)
             sb.append("Position: ").append(getPosition()).append(",");
+        if (getReturnInformation() != null)
+            sb.append("ReturnInformation: ").append(getReturnInformation()).append(",");
         if (getSerialNumber() != null)
             sb.append("SerialNumber: ").append(getSerialNumber()).append(",");
         if (getStatus() != null)
@@ -865,6 +968,10 @@ public class NetworkResource implements Serializable, Cloneable, StructuredPojo 
         if (other.getAttributes() == null ^ this.getAttributes() == null)
             return false;
         if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
+            return false;
+        if (other.getCommitmentInformation() == null ^ this.getCommitmentInformation() == null)
+            return false;
+        if (other.getCommitmentInformation() != null && other.getCommitmentInformation().equals(this.getCommitmentInformation()) == false)
             return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
@@ -902,6 +1009,10 @@ public class NetworkResource implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getPosition() != null && other.getPosition().equals(this.getPosition()) == false)
             return false;
+        if (other.getReturnInformation() == null ^ this.getReturnInformation() == null)
+            return false;
+        if (other.getReturnInformation() != null && other.getReturnInformation().equals(this.getReturnInformation()) == false)
+            return false;
         if (other.getSerialNumber() == null ^ this.getSerialNumber() == null)
             return false;
         if (other.getSerialNumber() != null && other.getSerialNumber().equals(this.getSerialNumber()) == false)
@@ -931,6 +1042,7 @@ public class NetworkResource implements Serializable, Cloneable, StructuredPojo 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
+        hashCode = prime * hashCode + ((getCommitmentInformation() == null) ? 0 : getCommitmentInformation().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getHealth() == null) ? 0 : getHealth().hashCode());
@@ -940,6 +1052,7 @@ public class NetworkResource implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getNetworkSiteArn() == null) ? 0 : getNetworkSiteArn().hashCode());
         hashCode = prime * hashCode + ((getOrderArn() == null) ? 0 : getOrderArn().hashCode());
         hashCode = prime * hashCode + ((getPosition() == null) ? 0 : getPosition().hashCode());
+        hashCode = prime * hashCode + ((getReturnInformation() == null) ? 0 : getReturnInformation().hashCode());
         hashCode = prime * hashCode + ((getSerialNumber() == null) ? 0 : getSerialNumber().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());

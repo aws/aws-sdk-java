@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,8 +30,9 @@ public enum Permission {
     CREATE_DATABASE("CREATE_DATABASE"),
     CREATE_TABLE("CREATE_TABLE"),
     DATA_LOCATION_ACCESS("DATA_LOCATION_ACCESS"),
-    CREATE_TAG("CREATE_TAG"),
-    ASSOCIATE("ASSOCIATE");
+    CREATE_LF_TAG("CREATE_LF_TAG"),
+    ASSOCIATE("ASSOCIATE"),
+    GRANT_WITH_LF_TAG_EXPRESSION("GRANT_WITH_LF_TAG_EXPRESSION");
 
     private String value;
 

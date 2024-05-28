@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,12 @@ public class ListEnvironmentOutputsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
+     * The ID of the deployment whose outputs you want.
+     * </p>
+     */
+    private String deploymentId;
+    /**
+     * <p>
      * The environment name.
      * </p>
      */
@@ -38,6 +44,46 @@ public class ListEnvironmentOutputsRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String nextToken;
+
+    /**
+     * <p>
+     * The ID of the deployment whose outputs you want.
+     * </p>
+     * 
+     * @param deploymentId
+     *        The ID of the deployment whose outputs you want.
+     */
+
+    public void setDeploymentId(String deploymentId) {
+        this.deploymentId = deploymentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the deployment whose outputs you want.
+     * </p>
+     * 
+     * @return The ID of the deployment whose outputs you want.
+     */
+
+    public String getDeploymentId() {
+        return this.deploymentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the deployment whose outputs you want.
+     * </p>
+     * 
+     * @param deploymentId
+     *        The ID of the deployment whose outputs you want.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListEnvironmentOutputsRequest withDeploymentId(String deploymentId) {
+        setDeploymentId(deploymentId);
+        return this;
+    }
 
     /**
      * <p>
@@ -137,6 +183,8 @@ public class ListEnvironmentOutputsRequest extends com.amazonaws.AmazonWebServic
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getDeploymentId() != null)
+            sb.append("DeploymentId: ").append(getDeploymentId()).append(",");
         if (getEnvironmentName() != null)
             sb.append("EnvironmentName: ").append(getEnvironmentName()).append(",");
         if (getNextToken() != null)
@@ -155,6 +203,10 @@ public class ListEnvironmentOutputsRequest extends com.amazonaws.AmazonWebServic
         if (obj instanceof ListEnvironmentOutputsRequest == false)
             return false;
         ListEnvironmentOutputsRequest other = (ListEnvironmentOutputsRequest) obj;
+        if (other.getDeploymentId() == null ^ this.getDeploymentId() == null)
+            return false;
+        if (other.getDeploymentId() != null && other.getDeploymentId().equals(this.getDeploymentId()) == false)
+            return false;
         if (other.getEnvironmentName() == null ^ this.getEnvironmentName() == null)
             return false;
         if (other.getEnvironmentName() != null && other.getEnvironmentName().equals(this.getEnvironmentName()) == false)
@@ -171,6 +223,7 @@ public class ListEnvironmentOutputsRequest extends com.amazonaws.AmazonWebServic
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getDeploymentId() == null) ? 0 : getDeploymentId().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentName() == null) ? 0 : getEnvironmentName().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;

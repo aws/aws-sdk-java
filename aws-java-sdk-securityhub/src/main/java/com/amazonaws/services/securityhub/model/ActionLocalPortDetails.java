@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,9 @@ public class ActionLocalPortDetails implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The port name of the local connection.
+     * </p>
+     * <p>
+     * Length Constraints: 128.
      * </p>
      */
     private String portName;
@@ -86,9 +89,14 @@ public class ActionLocalPortDetails implements Serializable, Cloneable, Structur
      * <p>
      * The port name of the local connection.
      * </p>
+     * <p>
+     * Length Constraints: 128.
+     * </p>
      * 
      * @param portName
-     *        The port name of the local connection.
+     *        The port name of the local connection.</p>
+     *        <p>
+     *        Length Constraints: 128.
      */
 
     public void setPortName(String portName) {
@@ -99,8 +107,13 @@ public class ActionLocalPortDetails implements Serializable, Cloneable, Structur
      * <p>
      * The port name of the local connection.
      * </p>
+     * <p>
+     * Length Constraints: 128.
+     * </p>
      * 
-     * @return The port name of the local connection.
+     * @return The port name of the local connection.</p>
+     *         <p>
+     *         Length Constraints: 128.
      */
 
     public String getPortName() {
@@ -111,9 +124,14 @@ public class ActionLocalPortDetails implements Serializable, Cloneable, Structur
      * <p>
      * The port name of the local connection.
      * </p>
+     * <p>
+     * Length Constraints: 128.
+     * </p>
      * 
      * @param portName
-     *        The port name of the local connection.
+     *        The port name of the local connection.</p>
+     *        <p>
+     *        Length Constraints: 128.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

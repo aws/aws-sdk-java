@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class ClassificationResult implements Serializable, Cloneable, Structured
      * <p>
      * This value can help you determine whether to investigate additional occurrences of sensitive data in an object.
      * You can do this by referring to the corresponding sensitive data discovery result for the finding
-     * (ClassificationDetails.detailedResultsLocation).
+     * (classificationDetails.detailedResultsLocation).
      * </p>
      */
     private Boolean additionalOccurrences;
@@ -82,7 +82,7 @@ public class ClassificationResult implements Serializable, Cloneable, Structured
      * <p>
      * This value can help you determine whether to investigate additional occurrences of sensitive data in an object.
      * You can do this by referring to the corresponding sensitive data discovery result for the finding
-     * (ClassificationDetails.detailedResultsLocation).
+     * (classificationDetails.detailedResultsLocation).
      * </p>
      * 
      * @param additionalOccurrences
@@ -91,7 +91,7 @@ public class ClassificationResult implements Serializable, Cloneable, Structured
      *        <p>
      *        This value can help you determine whether to investigate additional occurrences of sensitive data in an
      *        object. You can do this by referring to the corresponding sensitive data discovery result for the finding
-     *        (ClassificationDetails.detailedResultsLocation).
+     *        (classificationDetails.detailedResultsLocation).
      */
 
     public void setAdditionalOccurrences(Boolean additionalOccurrences) {
@@ -106,7 +106,7 @@ public class ClassificationResult implements Serializable, Cloneable, Structured
      * <p>
      * This value can help you determine whether to investigate additional occurrences of sensitive data in an object.
      * You can do this by referring to the corresponding sensitive data discovery result for the finding
-     * (ClassificationDetails.detailedResultsLocation).
+     * (classificationDetails.detailedResultsLocation).
      * </p>
      * 
      * @return Specifies whether Amazon Macie detected additional occurrences of sensitive data in the S3 object. A
@@ -114,7 +114,7 @@ public class ClassificationResult implements Serializable, Cloneable, Structured
      *         <p>
      *         This value can help you determine whether to investigate additional occurrences of sensitive data in an
      *         object. You can do this by referring to the corresponding sensitive data discovery result for the finding
-     *         (ClassificationDetails.detailedResultsLocation).
+     *         (classificationDetails.detailedResultsLocation).
      */
 
     public Boolean getAdditionalOccurrences() {
@@ -129,7 +129,7 @@ public class ClassificationResult implements Serializable, Cloneable, Structured
      * <p>
      * This value can help you determine whether to investigate additional occurrences of sensitive data in an object.
      * You can do this by referring to the corresponding sensitive data discovery result for the finding
-     * (ClassificationDetails.detailedResultsLocation).
+     * (classificationDetails.detailedResultsLocation).
      * </p>
      * 
      * @param additionalOccurrences
@@ -138,7 +138,7 @@ public class ClassificationResult implements Serializable, Cloneable, Structured
      *        <p>
      *        This value can help you determine whether to investigate additional occurrences of sensitive data in an
      *        object. You can do this by referring to the corresponding sensitive data discovery result for the finding
-     *        (ClassificationDetails.detailedResultsLocation).
+     *        (classificationDetails.detailedResultsLocation).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -155,7 +155,7 @@ public class ClassificationResult implements Serializable, Cloneable, Structured
      * <p>
      * This value can help you determine whether to investigate additional occurrences of sensitive data in an object.
      * You can do this by referring to the corresponding sensitive data discovery result for the finding
-     * (ClassificationDetails.detailedResultsLocation).
+     * (classificationDetails.detailedResultsLocation).
      * </p>
      * 
      * @return Specifies whether Amazon Macie detected additional occurrences of sensitive data in the S3 object. A
@@ -163,7 +163,7 @@ public class ClassificationResult implements Serializable, Cloneable, Structured
      *         <p>
      *         This value can help you determine whether to investigate additional occurrences of sensitive data in an
      *         object. You can do this by referring to the corresponding sensitive data discovery result for the finding
-     *         (ClassificationDetails.detailedResultsLocation).
+     *         (classificationDetails.detailedResultsLocation).
      */
 
     public Boolean isAdditionalOccurrences() {

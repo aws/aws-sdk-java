@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,13 @@ public class LaunchTemplateCpuOptions implements Serializable, Cloneable {
      * </p>
      */
     private Integer threadsPerCore;
+    /**
+     * <p>
+     * Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.
+     * </p>
+     */
+    private String amdSevSnp;
 
     /**
      * <p>
@@ -120,6 +127,73 @@ public class LaunchTemplateCpuOptions implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.
+     * </p>
+     * 
+     * @param amdSevSnp
+     *        Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.
+     * @see AmdSevSnpSpecification
+     */
+
+    public void setAmdSevSnp(String amdSevSnp) {
+        this.amdSevSnp = amdSevSnp;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.
+     * </p>
+     * 
+     * @return Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.
+     * @see AmdSevSnpSpecification
+     */
+
+    public String getAmdSevSnp() {
+        return this.amdSevSnp;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.
+     * </p>
+     * 
+     * @param amdSevSnp
+     *        Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AmdSevSnpSpecification
+     */
+
+    public LaunchTemplateCpuOptions withAmdSevSnp(String amdSevSnp) {
+        setAmdSevSnp(amdSevSnp);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.
+     * </p>
+     * 
+     * @param amdSevSnp
+     *        Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AmdSevSnpSpecification
+     */
+
+    public LaunchTemplateCpuOptions withAmdSevSnp(AmdSevSnpSpecification amdSevSnp) {
+        this.amdSevSnp = amdSevSnp.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -134,7 +208,9 @@ public class LaunchTemplateCpuOptions implements Serializable, Cloneable {
         if (getCoreCount() != null)
             sb.append("CoreCount: ").append(getCoreCount()).append(",");
         if (getThreadsPerCore() != null)
-            sb.append("ThreadsPerCore: ").append(getThreadsPerCore());
+            sb.append("ThreadsPerCore: ").append(getThreadsPerCore()).append(",");
+        if (getAmdSevSnp() != null)
+            sb.append("AmdSevSnp: ").append(getAmdSevSnp());
         sb.append("}");
         return sb.toString();
     }
@@ -157,6 +233,10 @@ public class LaunchTemplateCpuOptions implements Serializable, Cloneable {
             return false;
         if (other.getThreadsPerCore() != null && other.getThreadsPerCore().equals(this.getThreadsPerCore()) == false)
             return false;
+        if (other.getAmdSevSnp() == null ^ this.getAmdSevSnp() == null)
+            return false;
+        if (other.getAmdSevSnp() != null && other.getAmdSevSnp().equals(this.getAmdSevSnp()) == false)
+            return false;
         return true;
     }
 
@@ -167,6 +247,7 @@ public class LaunchTemplateCpuOptions implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getCoreCount() == null) ? 0 : getCoreCount().hashCode());
         hashCode = prime * hashCode + ((getThreadsPerCore() == null) ? 0 : getThreadsPerCore().hashCode());
+        hashCode = prime * hashCode + ((getAmdSevSnp() == null) ? 0 : getAmdSevSnp().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,6 +73,12 @@ public class GetAttributeGroupResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The service principal that created the attribute group.
+     * </p>
+     */
+    private String createdBy;
 
     /**
      * <p>
@@ -435,6 +441,46 @@ public class GetAttributeGroupResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * The service principal that created the attribute group.
+     * </p>
+     * 
+     * @param createdBy
+     *        The service principal that created the attribute group.
+     */
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    /**
+     * <p>
+     * The service principal that created the attribute group.
+     * </p>
+     * 
+     * @return The service principal that created the attribute group.
+     */
+
+    public String getCreatedBy() {
+        return this.createdBy;
+    }
+
+    /**
+     * <p>
+     * The service principal that created the attribute group.
+     * </p>
+     * 
+     * @param createdBy
+     *        The service principal that created the attribute group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetAttributeGroupResult withCreatedBy(String createdBy) {
+        setCreatedBy(createdBy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -461,7 +507,9 @@ public class GetAttributeGroupResult extends com.amazonaws.AmazonWebServiceResul
         if (getLastUpdateTime() != null)
             sb.append("LastUpdateTime: ").append(getLastUpdateTime()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getCreatedBy() != null)
+            sb.append("CreatedBy: ").append(getCreatedBy());
         sb.append("}");
         return sb.toString();
     }
@@ -508,6 +556,10 @@ public class GetAttributeGroupResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getCreatedBy() == null ^ this.getCreatedBy() == null)
+            return false;
+        if (other.getCreatedBy() != null && other.getCreatedBy().equals(this.getCreatedBy()) == false)
+            return false;
         return true;
     }
 
@@ -524,6 +576,7 @@ public class GetAttributeGroupResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdateTime() == null) ? 0 : getLastUpdateTime().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getCreatedBy() == null) ? 0 : getCreatedBy().hashCode());
         return hashCode;
     }
 

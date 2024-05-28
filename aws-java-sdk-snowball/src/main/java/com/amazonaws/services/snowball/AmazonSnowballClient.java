@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.snowball.AmazonSnowballClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.snowball.model.*;
+
 import com.amazonaws.services.snowball.model.transform.*;
 
 /**
@@ -449,7 +450,9 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      * <p>
      * Creates an address for a Snow device to be shipped to. In most regions, addresses are validated at the time of
      * creation. The address you provide must be located within the serviceable area of your region. If the address is
-     * invalid or unsupported, then an exception is thrown.
+     * invalid or unsupported, then an exception is thrown. If providing an address as a JSON file through the
+     * <code>cli-input-json</code> option, include the full file path. For example,
+     * <code>--cli-input-json file://create-address.json</code>.
      * </p>
      * 
      * @param createAddressRequest
@@ -527,7 +530,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *         <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try
      *         again.
      * @throws Ec2RequestFailedException
-     *         Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.
+     *         Your user lacks the necessary Amazon EC2 permissions to perform the attempted action.
      * @sample AmazonSnowball.CreateCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateCluster" target="_top">AWS API
      *      Documentation</a>
@@ -604,7 +607,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      * <ul>
      * <li>
      * <p>
-     * Snow Family device type: <b>SNC1_SSD</b>
+     * Device type: <b>SNC1_SSD</b>
      * </p>
      * <ul>
      * <li>
@@ -621,7 +624,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      * <p/></li>
      * <li>
      * <p>
-     * Snow Family device type: <b>SNC1_HDD</b>
+     * Device type: <b>SNC1_HDD</b>
      * </p>
      * <ul>
      * <li>
@@ -703,23 +706,11 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      * </p>
      * </li>
      * </ul>
-     * <p/></li>
-     * <li>
+     * <note>
      * <p>
-     * Device type: <b>V3_5C</b>
+     * This device is replaced with T98.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Capacity: T32
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Description: Snowball Edge Compute Optimized without GPU
-     * </p>
-     * </li>
-     * </ul>
+     * </note>
      * <p/></li>
      * <li>
      * <p>
@@ -763,6 +754,40 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      * </note></li>
      * </ul>
      * <p/></li>
+     * <li>
+     * <p>
+     * Snow Family device type: <b>RACK_5U_C</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T13
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowblade.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Device type: <b>V3_5S</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T240
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowball Edge Storage Optimized 210TB
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
      * </ul>
      * 
      * @param createJobRequest
@@ -782,7 +807,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *         cluster and you have more nodes to create for this cluster, try again and create jobs until your cluster
      *         has exactly five nodes.
      * @throws Ec2RequestFailedException
-     *         Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.
+     *         Your user lacks the necessary Amazon EC2 permissions to perform the attempted action.
      * @sample AmazonSnowball.CreateJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob" target="_top">AWS API
      *      Documentation</a>
@@ -1664,10 +1689,11 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * This action returns a list of the different Amazon EC2 Amazon Machine Images (AMIs) that are owned by your Amazon
-     * Web Services accountthat would be supported for use on a Snow device. Currently, supported AMIs are based on the
-     * CentOS 7 (x86_64) - with Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS - Xenial (HVM) images,
-     * available on the Amazon Web Services Marketplace.
+     * This action returns a list of the different Amazon EC2-compatible Amazon Machine Images (AMIs) that are owned by
+     * your Amazon Web Services accountthat would be supported for use on a Snow device. Currently, supported AMIs are
+     * based on the Amazon Linux-2, Ubuntu 20.04 LTS - Focal, or Ubuntu 22.04 LTS - Jammy images, available on the
+     * Amazon Web Services Marketplace. Ubuntu 16.04 LTS - Xenial (HVM) images are no longer supported in the Market,
+     * but still supported for use on devices through Amazon EC2 VM Import/Export and running locally in AMIs.
      * </p>
      * 
      * @param listCompatibleImagesRequest
@@ -1676,7 +1702,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *         The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the
      *         operation without changing the <code>NextToken</code> string, and try again.
      * @throws Ec2RequestFailedException
-     *         Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.
+     *         Your user lacks the necessary Amazon EC2 permissions to perform the attempted action.
      * @sample AmazonSnowball.ListCompatibleImages
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListCompatibleImages" target="_top">AWS
      *      API Documentation</a>
@@ -1849,6 +1875,126 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * A list of locations from which the customer can choose to pickup a device.
+     * </p>
+     * 
+     * @param listPickupLocationsRequest
+     * @return Result of the ListPickupLocations operation returned by the service.
+     * @throws InvalidResourceException
+     *         The specified resource can't be found. Check the information you provided in your last request, and try
+     *         again.
+     * @sample AmazonSnowball.ListPickupLocations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListPickupLocations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListPickupLocationsResult listPickupLocations(ListPickupLocationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPickupLocations(request);
+    }
+
+    @SdkInternalApi
+    final ListPickupLocationsResult executeListPickupLocations(ListPickupLocationsRequest listPickupLocationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listPickupLocationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPickupLocationsRequest> request = null;
+        Response<ListPickupLocationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPickupLocationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPickupLocationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Snowball");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPickupLocations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListPickupLocationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListPickupLocationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all supported versions for Snow on-device services. Returns an array of <code>ServiceVersion</code> object
+     * containing the supported versions for a particular service.
+     * </p>
+     * 
+     * @param listServiceVersionsRequest
+     * @return Result of the ListServiceVersions operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the
+     *         operation without changing the <code>NextToken</code> string, and try again.
+     * @throws InvalidResourceException
+     *         The specified resource can't be found. Check the information you provided in your last request, and try
+     *         again.
+     * @sample AmazonSnowball.ListServiceVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListServiceVersions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListServiceVersionsResult listServiceVersions(ListServiceVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListServiceVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListServiceVersionsResult executeListServiceVersions(ListServiceVersionsRequest listServiceVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listServiceVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListServiceVersionsRequest> request = null;
+        Response<ListServiceVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListServiceVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listServiceVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Snowball");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListServiceVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListServiceVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListServiceVersionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * While a cluster's <code>ClusterState</code> value is in the <code>AwaitingQuorum</code> state, you can update
      * some of the information associated with a cluster. Once the cluster changes to a different job state, usually 60
      * minutes after the cluster being created, this action is no longer available.
@@ -1869,7 +2015,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *         <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try
      *         again.
      * @throws Ec2RequestFailedException
-     *         Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.
+     *         Your user lacks the necessary Amazon EC2 permissions to perform the attempted action.
      * @sample AmazonSnowball.UpdateCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateCluster" target="_top">AWS API
      *      Documentation</a>
@@ -1944,7 +2090,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *         cluster and you have more nodes to create for this cluster, try again and create jobs until your cluster
      *         has exactly five nodes.
      * @throws Ec2RequestFailedException
-     *         Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.
+     *         Your user lacks the necessary Amazon EC2 permissions to perform the attempted action.
      * @sample AmazonSnowball.UpdateJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateJob" target="_top">AWS API
      *      Documentation</a>

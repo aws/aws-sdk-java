@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -130,6 +130,31 @@ public class AssumeRoleRequestMarshaller implements Marshaller<Request<AssumeRol
 
         if (assumeRoleRequest.getSourceIdentity() != null) {
             request.addParameter("SourceIdentity", StringUtils.fromString(assumeRoleRequest.getSourceIdentity()));
+        }
+
+        if (assumeRoleRequest.getProvidedContexts() != null) {
+            java.util.List<ProvidedContext> providedContextsList = assumeRoleRequest.getProvidedContexts();
+            if (providedContextsList.isEmpty()) {
+                request.addParameter("ProvidedContexts", "");
+            } else {
+                int providedContextsListIndex = 1;
+
+                for (ProvidedContext providedContextsListValue : providedContextsList) {
+                    if (providedContextsListValue != null) {
+
+                        if (providedContextsListValue.getProviderArn() != null) {
+                            request.addParameter("ProvidedContexts.member." + providedContextsListIndex + ".ProviderArn",
+                                    StringUtils.fromString(providedContextsListValue.getProviderArn()));
+                        }
+
+                        if (providedContextsListValue.getContextAssertion() != null) {
+                            request.addParameter("ProvidedContexts.member." + providedContextsListIndex + ".ContextAssertion",
+                                    StringUtils.fromString(providedContextsListValue.getContextAssertion()));
+                        }
+                    }
+                    providedContextsListIndex++;
+                }
+            }
         }
 
         return request;

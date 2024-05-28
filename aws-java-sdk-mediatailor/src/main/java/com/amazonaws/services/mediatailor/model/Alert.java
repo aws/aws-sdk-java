@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,12 @@ public class Alert implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String alertMessage;
+    /**
+     * <p>
+     * The category that MediaTailor assigns to the alert.
+     * </p>
+     */
+    private String category;
     /**
      * <p>
      * The timestamp when the alert was last modified.
@@ -136,6 +142,65 @@ public class Alert implements Serializable, Cloneable, StructuredPojo {
 
     public Alert withAlertMessage(String alertMessage) {
         setAlertMessage(alertMessage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The category that MediaTailor assigns to the alert.
+     * </p>
+     * 
+     * @param category
+     *        The category that MediaTailor assigns to the alert.
+     * @see AlertCategory
+     */
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    /**
+     * <p>
+     * The category that MediaTailor assigns to the alert.
+     * </p>
+     * 
+     * @return The category that MediaTailor assigns to the alert.
+     * @see AlertCategory
+     */
+
+    public String getCategory() {
+        return this.category;
+    }
+
+    /**
+     * <p>
+     * The category that MediaTailor assigns to the alert.
+     * </p>
+     * 
+     * @param category
+     *        The category that MediaTailor assigns to the alert.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AlertCategory
+     */
+
+    public Alert withCategory(String category) {
+        setCategory(category);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The category that MediaTailor assigns to the alert.
+     * </p>
+     * 
+     * @param category
+     *        The category that MediaTailor assigns to the alert.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AlertCategory
+     */
+
+    public Alert withCategory(AlertCategory category) {
+        this.category = category.toString();
         return this;
     }
 
@@ -305,6 +370,8 @@ public class Alert implements Serializable, Cloneable, StructuredPojo {
             sb.append("AlertCode: ").append(getAlertCode()).append(",");
         if (getAlertMessage() != null)
             sb.append("AlertMessage: ").append(getAlertMessage()).append(",");
+        if (getCategory() != null)
+            sb.append("Category: ").append(getCategory()).append(",");
         if (getLastModifiedTime() != null)
             sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
         if (getRelatedResourceArns() != null)
@@ -333,6 +400,10 @@ public class Alert implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAlertMessage() != null && other.getAlertMessage().equals(this.getAlertMessage()) == false)
             return false;
+        if (other.getCategory() == null ^ this.getCategory() == null)
+            return false;
+        if (other.getCategory() != null && other.getCategory().equals(this.getCategory()) == false)
+            return false;
         if (other.getLastModifiedTime() == null ^ this.getLastModifiedTime() == null)
             return false;
         if (other.getLastModifiedTime() != null && other.getLastModifiedTime().equals(this.getLastModifiedTime()) == false)
@@ -355,6 +426,7 @@ public class Alert implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getAlertCode() == null) ? 0 : getAlertCode().hashCode());
         hashCode = prime * hashCode + ((getAlertMessage() == null) ? 0 : getAlertMessage().hashCode());
+        hashCode = prime * hashCode + ((getCategory() == null) ? 0 : getCategory().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getRelatedResourceArns() == null) ? 0 : getRelatedResourceArns().hashCode());
         hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());

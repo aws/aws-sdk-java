@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,7 +15,10 @@ package com.amazonaws.services.route53resolver.model;
 import javax.annotation.Generated;
 
 /**
- * <p/>
+ * <p>
+ * The requested state transition isn't valid. For example, you can't delete a firewall domain list if it is in the
+ * process of being deleted, or you can't import domains into a domain list that is in the process of being deleted.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConflictException extends com.amazonaws.services.route53resolver.model.AmazonRoute53ResolverException {

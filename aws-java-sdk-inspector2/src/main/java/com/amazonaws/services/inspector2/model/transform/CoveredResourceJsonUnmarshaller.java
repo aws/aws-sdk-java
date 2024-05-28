@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,10 @@ public class CoveredResourceJsonUnmarshaller implements Unmarshaller<CoveredReso
                     context.nextToken();
                     coveredResource.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("lastScannedAt", targetDepth)) {
+                    context.nextToken();
+                    coveredResource.setLastScannedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("resourceId", targetDepth)) {
                     context.nextToken();
                     coveredResource.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -63,6 +67,10 @@ public class CoveredResourceJsonUnmarshaller implements Unmarshaller<CoveredReso
                 if (context.testExpression("resourceType", targetDepth)) {
                     context.nextToken();
                     coveredResource.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("scanMode", targetDepth)) {
+                    context.nextToken();
+                    coveredResource.setScanMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scanStatus", targetDepth)) {
                     context.nextToken();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,10 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the configuration settings for retrieving occurrences of sensitive data reported by findings, and the
- * status of the configuration for an Amazon Macie account. When you enable the configuration for the first time, your
- * request must specify an Key Management Service (KMS) key. Otherwise, an error occurs. Macie uses the specified key to
- * encrypt the sensitive data that you retrieve.
+ * Specifies the status of the Amazon Macie configuration for retrieving occurrences of sensitive data reported by
+ * findings, and the Key Management Service (KMS) key to use to encrypt sensitive data that's retrieved. When you enable
+ * the configuration for the first time, your request must specify an KMS key. Otherwise, an error occurs.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/RevealConfiguration" target="_top">AWS API
@@ -34,8 +33,8 @@ public class RevealConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The Amazon Resource Name (ARN), ID, or alias of the KMS key to use to encrypt sensitive data that's retrieved.
-     * The key must be an existing, customer managed, symmetric encryption key that's in the same Amazon Web Services
-     * Region as the Amazon Macie account.
+     * The key must be an existing, customer managed, symmetric encryption key that's enabled in the same Amazon Web
+     * Services Region as the Amazon Macie account.
      * </p>
      * <p>
      * If this value specifies an alias, it must include the following prefix: alias/. If this value specifies a key
@@ -46,19 +45,26 @@ public class RevealConfiguration implements Serializable, Cloneable, StructuredP
     private String kmsKeyId;
     /**
      * <p>
-     * The status of the configuration for the Amazon Macie account. In a request, valid values are: ENABLED, enable the
-     * configuration for the account; and, DISABLED, disable the configuration for the account. In a response, possible
-     * values are: ENABLED, the configuration is currently enabled for the account; and, DISABLED, the configuration is
-     * currently disabled for the account.
+     * The status of the configuration for the Amazon Macie account. In a response, possible values are: ENABLED, the
+     * configuration is currently enabled for the account; and, DISABLED, the configuration is currently disabled for
+     * the account. In a request, valid values are: ENABLED, enable the configuration for the account; and, DISABLED,
+     * disable the configuration for the account.
      * </p>
+     * <important>
+     * <p>
+     * If you disable the configuration, you also permanently delete current settings that specify how to access
+     * affected S3 objects. If your current access method is ASSUME_ROLE, Macie also deletes the external ID and role
+     * name currently specified for the configuration. These settings can't be recovered after they're deleted.
+     * </p>
+     * </important>
      */
     private String status;
 
     /**
      * <p>
      * The Amazon Resource Name (ARN), ID, or alias of the KMS key to use to encrypt sensitive data that's retrieved.
-     * The key must be an existing, customer managed, symmetric encryption key that's in the same Amazon Web Services
-     * Region as the Amazon Macie account.
+     * The key must be an existing, customer managed, symmetric encryption key that's enabled in the same Amazon Web
+     * Services Region as the Amazon Macie account.
      * </p>
      * <p>
      * If this value specifies an alias, it must include the following prefix: alias/. If this value specifies a key
@@ -68,8 +74,8 @@ public class RevealConfiguration implements Serializable, Cloneable, StructuredP
      * 
      * @param kmsKeyId
      *        The Amazon Resource Name (ARN), ID, or alias of the KMS key to use to encrypt sensitive data that's
-     *        retrieved. The key must be an existing, customer managed, symmetric encryption key that's in the same
-     *        Amazon Web Services Region as the Amazon Macie account.</p>
+     *        retrieved. The key must be an existing, customer managed, symmetric encryption key that's enabled in the
+     *        same Amazon Web Services Region as the Amazon Macie account.</p>
      *        <p>
      *        If this value specifies an alias, it must include the following prefix: alias/. If this value specifies a
      *        key that's owned by another Amazon Web Services account, it must specify the ARN of the key or the ARN of
@@ -83,8 +89,8 @@ public class RevealConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The Amazon Resource Name (ARN), ID, or alias of the KMS key to use to encrypt sensitive data that's retrieved.
-     * The key must be an existing, customer managed, symmetric encryption key that's in the same Amazon Web Services
-     * Region as the Amazon Macie account.
+     * The key must be an existing, customer managed, symmetric encryption key that's enabled in the same Amazon Web
+     * Services Region as the Amazon Macie account.
      * </p>
      * <p>
      * If this value specifies an alias, it must include the following prefix: alias/. If this value specifies a key
@@ -93,8 +99,8 @@ public class RevealConfiguration implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @return The Amazon Resource Name (ARN), ID, or alias of the KMS key to use to encrypt sensitive data that's
-     *         retrieved. The key must be an existing, customer managed, symmetric encryption key that's in the same
-     *         Amazon Web Services Region as the Amazon Macie account.</p>
+     *         retrieved. The key must be an existing, customer managed, symmetric encryption key that's enabled in the
+     *         same Amazon Web Services Region as the Amazon Macie account.</p>
      *         <p>
      *         If this value specifies an alias, it must include the following prefix: alias/. If this value specifies a
      *         key that's owned by another Amazon Web Services account, it must specify the ARN of the key or the ARN of
@@ -108,8 +114,8 @@ public class RevealConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The Amazon Resource Name (ARN), ID, or alias of the KMS key to use to encrypt sensitive data that's retrieved.
-     * The key must be an existing, customer managed, symmetric encryption key that's in the same Amazon Web Services
-     * Region as the Amazon Macie account.
+     * The key must be an existing, customer managed, symmetric encryption key that's enabled in the same Amazon Web
+     * Services Region as the Amazon Macie account.
      * </p>
      * <p>
      * If this value specifies an alias, it must include the following prefix: alias/. If this value specifies a key
@@ -119,8 +125,8 @@ public class RevealConfiguration implements Serializable, Cloneable, StructuredP
      * 
      * @param kmsKeyId
      *        The Amazon Resource Name (ARN), ID, or alias of the KMS key to use to encrypt sensitive data that's
-     *        retrieved. The key must be an existing, customer managed, symmetric encryption key that's in the same
-     *        Amazon Web Services Region as the Amazon Macie account.</p>
+     *        retrieved. The key must be an existing, customer managed, symmetric encryption key that's enabled in the
+     *        same Amazon Web Services Region as the Amazon Macie account.</p>
      *        <p>
      *        If this value specifies an alias, it must include the following prefix: alias/. If this value specifies a
      *        key that's owned by another Amazon Web Services account, it must specify the ARN of the key or the ARN of
@@ -135,17 +141,30 @@ public class RevealConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the configuration for the Amazon Macie account. In a request, valid values are: ENABLED, enable the
-     * configuration for the account; and, DISABLED, disable the configuration for the account. In a response, possible
-     * values are: ENABLED, the configuration is currently enabled for the account; and, DISABLED, the configuration is
-     * currently disabled for the account.
+     * The status of the configuration for the Amazon Macie account. In a response, possible values are: ENABLED, the
+     * configuration is currently enabled for the account; and, DISABLED, the configuration is currently disabled for
+     * the account. In a request, valid values are: ENABLED, enable the configuration for the account; and, DISABLED,
+     * disable the configuration for the account.
      * </p>
+     * <important>
+     * <p>
+     * If you disable the configuration, you also permanently delete current settings that specify how to access
+     * affected S3 objects. If your current access method is ASSUME_ROLE, Macie also deletes the external ID and role
+     * name currently specified for the configuration. These settings can't be recovered after they're deleted.
+     * </p>
+     * </important>
      * 
      * @param status
-     *        The status of the configuration for the Amazon Macie account. In a request, valid values are: ENABLED,
-     *        enable the configuration for the account; and, DISABLED, disable the configuration for the account. In a
-     *        response, possible values are: ENABLED, the configuration is currently enabled for the account; and,
-     *        DISABLED, the configuration is currently disabled for the account.
+     *        The status of the configuration for the Amazon Macie account. In a response, possible values are: ENABLED,
+     *        the configuration is currently enabled for the account; and, DISABLED, the configuration is currently
+     *        disabled for the account. In a request, valid values are: ENABLED, enable the configuration for the
+     *        account; and, DISABLED, disable the configuration for the account.</p> <important>
+     *        <p>
+     *        If you disable the configuration, you also permanently delete current settings that specify how to access
+     *        affected S3 objects. If your current access method is ASSUME_ROLE, Macie also deletes the external ID and
+     *        role name currently specified for the configuration. These settings can't be recovered after they're
+     *        deleted.
+     *        </p>
      * @see RevealStatus
      */
 
@@ -155,16 +174,29 @@ public class RevealConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the configuration for the Amazon Macie account. In a request, valid values are: ENABLED, enable the
-     * configuration for the account; and, DISABLED, disable the configuration for the account. In a response, possible
-     * values are: ENABLED, the configuration is currently enabled for the account; and, DISABLED, the configuration is
-     * currently disabled for the account.
+     * The status of the configuration for the Amazon Macie account. In a response, possible values are: ENABLED, the
+     * configuration is currently enabled for the account; and, DISABLED, the configuration is currently disabled for
+     * the account. In a request, valid values are: ENABLED, enable the configuration for the account; and, DISABLED,
+     * disable the configuration for the account.
      * </p>
+     * <important>
+     * <p>
+     * If you disable the configuration, you also permanently delete current settings that specify how to access
+     * affected S3 objects. If your current access method is ASSUME_ROLE, Macie also deletes the external ID and role
+     * name currently specified for the configuration. These settings can't be recovered after they're deleted.
+     * </p>
+     * </important>
      * 
-     * @return The status of the configuration for the Amazon Macie account. In a request, valid values are: ENABLED,
-     *         enable the configuration for the account; and, DISABLED, disable the configuration for the account. In a
-     *         response, possible values are: ENABLED, the configuration is currently enabled for the account; and,
-     *         DISABLED, the configuration is currently disabled for the account.
+     * @return The status of the configuration for the Amazon Macie account. In a response, possible values are:
+     *         ENABLED, the configuration is currently enabled for the account; and, DISABLED, the configuration is
+     *         currently disabled for the account. In a request, valid values are: ENABLED, enable the configuration for
+     *         the account; and, DISABLED, disable the configuration for the account.</p> <important>
+     *         <p>
+     *         If you disable the configuration, you also permanently delete current settings that specify how to access
+     *         affected S3 objects. If your current access method is ASSUME_ROLE, Macie also deletes the external ID and
+     *         role name currently specified for the configuration. These settings can't be recovered after they're
+     *         deleted.
+     *         </p>
      * @see RevealStatus
      */
 
@@ -174,17 +206,30 @@ public class RevealConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the configuration for the Amazon Macie account. In a request, valid values are: ENABLED, enable the
-     * configuration for the account; and, DISABLED, disable the configuration for the account. In a response, possible
-     * values are: ENABLED, the configuration is currently enabled for the account; and, DISABLED, the configuration is
-     * currently disabled for the account.
+     * The status of the configuration for the Amazon Macie account. In a response, possible values are: ENABLED, the
+     * configuration is currently enabled for the account; and, DISABLED, the configuration is currently disabled for
+     * the account. In a request, valid values are: ENABLED, enable the configuration for the account; and, DISABLED,
+     * disable the configuration for the account.
      * </p>
+     * <important>
+     * <p>
+     * If you disable the configuration, you also permanently delete current settings that specify how to access
+     * affected S3 objects. If your current access method is ASSUME_ROLE, Macie also deletes the external ID and role
+     * name currently specified for the configuration. These settings can't be recovered after they're deleted.
+     * </p>
+     * </important>
      * 
      * @param status
-     *        The status of the configuration for the Amazon Macie account. In a request, valid values are: ENABLED,
-     *        enable the configuration for the account; and, DISABLED, disable the configuration for the account. In a
-     *        response, possible values are: ENABLED, the configuration is currently enabled for the account; and,
-     *        DISABLED, the configuration is currently disabled for the account.
+     *        The status of the configuration for the Amazon Macie account. In a response, possible values are: ENABLED,
+     *        the configuration is currently enabled for the account; and, DISABLED, the configuration is currently
+     *        disabled for the account. In a request, valid values are: ENABLED, enable the configuration for the
+     *        account; and, DISABLED, disable the configuration for the account.</p> <important>
+     *        <p>
+     *        If you disable the configuration, you also permanently delete current settings that specify how to access
+     *        affected S3 objects. If your current access method is ASSUME_ROLE, Macie also deletes the external ID and
+     *        role name currently specified for the configuration. These settings can't be recovered after they're
+     *        deleted.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RevealStatus
      */
@@ -196,17 +241,30 @@ public class RevealConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the configuration for the Amazon Macie account. In a request, valid values are: ENABLED, enable the
-     * configuration for the account; and, DISABLED, disable the configuration for the account. In a response, possible
-     * values are: ENABLED, the configuration is currently enabled for the account; and, DISABLED, the configuration is
-     * currently disabled for the account.
+     * The status of the configuration for the Amazon Macie account. In a response, possible values are: ENABLED, the
+     * configuration is currently enabled for the account; and, DISABLED, the configuration is currently disabled for
+     * the account. In a request, valid values are: ENABLED, enable the configuration for the account; and, DISABLED,
+     * disable the configuration for the account.
      * </p>
+     * <important>
+     * <p>
+     * If you disable the configuration, you also permanently delete current settings that specify how to access
+     * affected S3 objects. If your current access method is ASSUME_ROLE, Macie also deletes the external ID and role
+     * name currently specified for the configuration. These settings can't be recovered after they're deleted.
+     * </p>
+     * </important>
      * 
      * @param status
-     *        The status of the configuration for the Amazon Macie account. In a request, valid values are: ENABLED,
-     *        enable the configuration for the account; and, DISABLED, disable the configuration for the account. In a
-     *        response, possible values are: ENABLED, the configuration is currently enabled for the account; and,
-     *        DISABLED, the configuration is currently disabled for the account.
+     *        The status of the configuration for the Amazon Macie account. In a response, possible values are: ENABLED,
+     *        the configuration is currently enabled for the account; and, DISABLED, the configuration is currently
+     *        disabled for the account. In a request, valid values are: ENABLED, enable the configuration for the
+     *        account; and, DISABLED, disable the configuration for the account.</p> <important>
+     *        <p>
+     *        If you disable the configuration, you also permanently delete current settings that specify how to access
+     *        affected S3 objects. If your current access method is ASSUME_ROLE, Macie also deletes the external ID and
+     *        role name currently specified for the configuration. These settings can't be recovered after they're
+     *        deleted.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RevealStatus
      */

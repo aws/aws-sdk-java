@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,10 @@ public class NumberFilterMarshaller {
             .marshallLocationName("Gte").build();
     private static final MarshallingInfo<Double> LTE_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Lte").build();
+    private static final MarshallingInfo<Double> GT_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Gt").build();
+    private static final MarshallingInfo<Double> LT_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Lt").build();
     private static final MarshallingInfo<Double> EQ_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Eq").build();
 
@@ -52,6 +56,8 @@ public class NumberFilterMarshaller {
         try {
             protocolMarshaller.marshall(numberFilter.getGte(), GTE_BINDING);
             protocolMarshaller.marshall(numberFilter.getLte(), LTE_BINDING);
+            protocolMarshaller.marshall(numberFilter.getGt(), GT_BINDING);
+            protocolMarshaller.marshall(numberFilter.getLt(), LT_BINDING);
             protocolMarshaller.marshall(numberFilter.getEq(), EQ_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

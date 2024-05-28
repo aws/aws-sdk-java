@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,8 +31,8 @@ public class ListModelBiasJobDefinitionsResult extends com.amazonaws.AmazonWebSe
     private java.util.List<MonitoringJobDefinitionSummary> jobDefinitionSummaries;
     /**
      * <p>
-     * If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in
-     * the subsequent request.
+     * The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next
+     * request.
      * </p>
      */
     private String nextToken;
@@ -109,13 +109,13 @@ public class ListModelBiasJobDefinitionsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in
-     * the subsequent request.
+     * The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next
+     * request.
      * </p>
      * 
      * @param nextToken
-     *        If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use
-     *        it in the subsequent request.
+     *        The token returned if the response is truncated. To retrieve the next set of job executions, use it in the
+     *        next request.
      */
 
     public void setNextToken(String nextToken) {
@@ -124,12 +124,12 @@ public class ListModelBiasJobDefinitionsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in
-     * the subsequent request.
+     * The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next
+     * request.
      * </p>
      * 
-     * @return If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use
-     *         it in the subsequent request.
+     * @return The token returned if the response is truncated. To retrieve the next set of job executions, use it in
+     *         the next request.
      */
 
     public String getNextToken() {
@@ -138,13 +138,13 @@ public class ListModelBiasJobDefinitionsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in
-     * the subsequent request.
+     * The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next
+     * request.
      * </p>
      * 
      * @param nextToken
-     *        If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use
-     *        it in the subsequent request.
+     *        The token returned if the response is truncated. To retrieve the next set of job executions, use it in the
+     *        next request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

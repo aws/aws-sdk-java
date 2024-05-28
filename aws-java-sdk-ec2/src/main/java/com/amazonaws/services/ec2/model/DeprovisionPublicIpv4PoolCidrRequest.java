@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,10 @@ public class DeprovisionPublicIpv4PoolCidrRequest extends AmazonWebServiceReques
     private String poolId;
     /**
      * <p>
-     * The CIDR you want to deprovision from the pool.
+     * The CIDR you want to deprovision from the pool. Enter the CIDR you want to deprovision with a netmask of
+     * <code>/32</code>. You must rerun this command for each IP address in the CIDR range. If your CIDR is a
+     * <code>/24</code>, you will have to run this command to deprovision each of the 256 IP addresses in the
+     * <code>/24</code> CIDR.
      * </p>
      */
     private String cidr;
@@ -81,11 +84,17 @@ public class DeprovisionPublicIpv4PoolCidrRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The CIDR you want to deprovision from the pool.
+     * The CIDR you want to deprovision from the pool. Enter the CIDR you want to deprovision with a netmask of
+     * <code>/32</code>. You must rerun this command for each IP address in the CIDR range. If your CIDR is a
+     * <code>/24</code>, you will have to run this command to deprovision each of the 256 IP addresses in the
+     * <code>/24</code> CIDR.
      * </p>
      * 
      * @param cidr
-     *        The CIDR you want to deprovision from the pool.
+     *        The CIDR you want to deprovision from the pool. Enter the CIDR you want to deprovision with a netmask of
+     *        <code>/32</code>. You must rerun this command for each IP address in the CIDR range. If your CIDR is a
+     *        <code>/24</code>, you will have to run this command to deprovision each of the 256 IP addresses in the
+     *        <code>/24</code> CIDR.
      */
 
     public void setCidr(String cidr) {
@@ -94,10 +103,16 @@ public class DeprovisionPublicIpv4PoolCidrRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The CIDR you want to deprovision from the pool.
+     * The CIDR you want to deprovision from the pool. Enter the CIDR you want to deprovision with a netmask of
+     * <code>/32</code>. You must rerun this command for each IP address in the CIDR range. If your CIDR is a
+     * <code>/24</code>, you will have to run this command to deprovision each of the 256 IP addresses in the
+     * <code>/24</code> CIDR.
      * </p>
      * 
-     * @return The CIDR you want to deprovision from the pool.
+     * @return The CIDR you want to deprovision from the pool. Enter the CIDR you want to deprovision with a netmask of
+     *         <code>/32</code>. You must rerun this command for each IP address in the CIDR range. If your CIDR is a
+     *         <code>/24</code>, you will have to run this command to deprovision each of the 256 IP addresses in the
+     *         <code>/24</code> CIDR.
      */
 
     public String getCidr() {
@@ -106,11 +121,17 @@ public class DeprovisionPublicIpv4PoolCidrRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The CIDR you want to deprovision from the pool.
+     * The CIDR you want to deprovision from the pool. Enter the CIDR you want to deprovision with a netmask of
+     * <code>/32</code>. You must rerun this command for each IP address in the CIDR range. If your CIDR is a
+     * <code>/24</code>, you will have to run this command to deprovision each of the 256 IP addresses in the
+     * <code>/24</code> CIDR.
      * </p>
      * 
      * @param cidr
-     *        The CIDR you want to deprovision from the pool.
+     *        The CIDR you want to deprovision from the pool. Enter the CIDR you want to deprovision with a netmask of
+     *        <code>/32</code>. You must rerun this command for each IP address in the CIDR range. If your CIDR is a
+     *        <code>/24</code>, you will have to run this command to deprovision each of the 256 IP addresses in the
+     *        <code>/24</code> CIDR.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

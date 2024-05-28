@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,18 @@ public class DeleteCustomLineItemResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Then ARN of the deleted custom line item.
+     * The ARN of the deleted custom line item.
      * </p>
      */
     private String arn;
 
     /**
      * <p>
-     * Then ARN of the deleted custom line item.
+     * The ARN of the deleted custom line item.
      * </p>
      * 
      * @param arn
-     *        Then ARN of the deleted custom line item.
+     *        The ARN of the deleted custom line item.
      */
 
     public void setArn(String arn) {
@@ -45,10 +45,10 @@ public class DeleteCustomLineItemResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Then ARN of the deleted custom line item.
+     * The ARN of the deleted custom line item.
      * </p>
      * 
-     * @return Then ARN of the deleted custom line item.
+     * @return The ARN of the deleted custom line item.
      */
 
     public String getArn() {
@@ -57,11 +57,11 @@ public class DeleteCustomLineItemResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Then ARN of the deleted custom line item.
+     * The ARN of the deleted custom line item.
      * </p>
      * 
      * @param arn
-     *        Then ARN of the deleted custom line item.
+     *        The ARN of the deleted custom line item.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

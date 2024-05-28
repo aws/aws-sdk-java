@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,14 @@ public class DescribeSnapshotsRequest extends com.amazonaws.AmazonWebServiceRequ
     private Integer maxResults;
 
     private String nextToken;
+    /**
+     * <p>
+     * Set to <code>false</code> (default) if you want to only see the snapshots owned by your Amazon Web Services
+     * account. Set to <code>true</code> if you want to see the snapshots in your account and the ones shared with you
+     * from another account.
+     * </p>
+     */
+    private Boolean includeShared;
 
     /**
      * <p>
@@ -244,6 +252,74 @@ public class DescribeSnapshotsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Set to <code>false</code> (default) if you want to only see the snapshots owned by your Amazon Web Services
+     * account. Set to <code>true</code> if you want to see the snapshots in your account and the ones shared with you
+     * from another account.
+     * </p>
+     * 
+     * @param includeShared
+     *        Set to <code>false</code> (default) if you want to only see the snapshots owned by your Amazon Web
+     *        Services account. Set to <code>true</code> if you want to see the snapshots in your account and the ones
+     *        shared with you from another account.
+     */
+
+    public void setIncludeShared(Boolean includeShared) {
+        this.includeShared = includeShared;
+    }
+
+    /**
+     * <p>
+     * Set to <code>false</code> (default) if you want to only see the snapshots owned by your Amazon Web Services
+     * account. Set to <code>true</code> if you want to see the snapshots in your account and the ones shared with you
+     * from another account.
+     * </p>
+     * 
+     * @return Set to <code>false</code> (default) if you want to only see the snapshots owned by your Amazon Web
+     *         Services account. Set to <code>true</code> if you want to see the snapshots in your account and the ones
+     *         shared with you from another account.
+     */
+
+    public Boolean getIncludeShared() {
+        return this.includeShared;
+    }
+
+    /**
+     * <p>
+     * Set to <code>false</code> (default) if you want to only see the snapshots owned by your Amazon Web Services
+     * account. Set to <code>true</code> if you want to see the snapshots in your account and the ones shared with you
+     * from another account.
+     * </p>
+     * 
+     * @param includeShared
+     *        Set to <code>false</code> (default) if you want to only see the snapshots owned by your Amazon Web
+     *        Services account. Set to <code>true</code> if you want to see the snapshots in your account and the ones
+     *        shared with you from another account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSnapshotsRequest withIncludeShared(Boolean includeShared) {
+        setIncludeShared(includeShared);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to <code>false</code> (default) if you want to only see the snapshots owned by your Amazon Web Services
+     * account. Set to <code>true</code> if you want to see the snapshots in your account and the ones shared with you
+     * from another account.
+     * </p>
+     * 
+     * @return Set to <code>false</code> (default) if you want to only see the snapshots owned by your Amazon Web
+     *         Services account. Set to <code>true</code> if you want to see the snapshots in your account and the ones
+     *         shared with you from another account.
+     */
+
+    public Boolean isIncludeShared() {
+        return this.includeShared;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -262,7 +338,9 @@ public class DescribeSnapshotsRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getIncludeShared() != null)
+            sb.append("IncludeShared: ").append(getIncludeShared());
         sb.append("}");
         return sb.toString();
     }
@@ -293,6 +371,10 @@ public class DescribeSnapshotsRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getIncludeShared() == null ^ this.getIncludeShared() == null)
+            return false;
+        if (other.getIncludeShared() != null && other.getIncludeShared().equals(this.getIncludeShared()) == false)
+            return false;
         return true;
     }
 
@@ -305,6 +387,7 @@ public class DescribeSnapshotsRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getIncludeShared() == null) ? 0 : getIncludeShared().hashCode());
         return hashCode;
     }
 

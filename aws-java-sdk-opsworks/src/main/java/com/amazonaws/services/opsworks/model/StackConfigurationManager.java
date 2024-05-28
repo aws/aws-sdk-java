@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,25 +30,25 @@ public class StackConfigurationManager implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The name. This parameter must be set to "Chef".
+     * The name. This parameter must be set to <code>Chef</code>.
      * </p>
      */
     private String name;
     /**
      * <p>
      * The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux stacks, and to 12.2 for Windows
-     * stacks. The default value for Linux stacks is 11.4.
+     * stacks. The default value for Linux stacks is 12.
      * </p>
      */
     private String version;
 
     /**
      * <p>
-     * The name. This parameter must be set to "Chef".
+     * The name. This parameter must be set to <code>Chef</code>.
      * </p>
      * 
      * @param name
-     *        The name. This parameter must be set to "Chef".
+     *        The name. This parameter must be set to <code>Chef</code>.
      */
 
     public void setName(String name) {
@@ -57,10 +57,10 @@ public class StackConfigurationManager implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The name. This parameter must be set to "Chef".
+     * The name. This parameter must be set to <code>Chef</code>.
      * </p>
      * 
-     * @return The name. This parameter must be set to "Chef".
+     * @return The name. This parameter must be set to <code>Chef</code>.
      */
 
     public String getName() {
@@ -69,11 +69,11 @@ public class StackConfigurationManager implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The name. This parameter must be set to "Chef".
+     * The name. This parameter must be set to <code>Chef</code>.
      * </p>
      * 
      * @param name
-     *        The name. This parameter must be set to "Chef".
+     *        The name. This parameter must be set to <code>Chef</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -85,12 +85,12 @@ public class StackConfigurationManager implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux stacks, and to 12.2 for Windows
-     * stacks. The default value for Linux stacks is 11.4.
+     * stacks. The default value for Linux stacks is 12.
      * </p>
      * 
      * @param version
      *        The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux stacks, and to 12.2 for
-     *        Windows stacks. The default value for Linux stacks is 11.4.
+     *        Windows stacks. The default value for Linux stacks is 12.
      */
 
     public void setVersion(String version) {
@@ -100,11 +100,11 @@ public class StackConfigurationManager implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux stacks, and to 12.2 for Windows
-     * stacks. The default value for Linux stacks is 11.4.
+     * stacks. The default value for Linux stacks is 12.
      * </p>
      * 
      * @return The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux stacks, and to 12.2 for
-     *         Windows stacks. The default value for Linux stacks is 11.4.
+     *         Windows stacks. The default value for Linux stacks is 12.
      */
 
     public String getVersion() {
@@ -114,12 +114,12 @@ public class StackConfigurationManager implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux stacks, and to 12.2 for Windows
-     * stacks. The default value for Linux stacks is 11.4.
+     * stacks. The default value for Linux stacks is 12.
      * </p>
      * 
      * @param version
      *        The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux stacks, and to 12.2 for
-     *        Windows stacks. The default value for Linux stacks is 11.4.
+     *        Windows stacks. The default value for Linux stacks is 12.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

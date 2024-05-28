@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,8 @@ public class EksAttemptDetailMarshaller {
 
     private static final MarshallingInfo<List> CONTAINERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("containers").build();
+    private static final MarshallingInfo<List> INITCONTAINERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("initContainers").build();
     private static final MarshallingInfo<String> PODNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("podName").build();
     private static final MarshallingInfo<String> NODENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -58,6 +60,7 @@ public class EksAttemptDetailMarshaller {
 
         try {
             protocolMarshaller.marshall(eksAttemptDetail.getContainers(), CONTAINERS_BINDING);
+            protocolMarshaller.marshall(eksAttemptDetail.getInitContainers(), INITCONTAINERS_BINDING);
             protocolMarshaller.marshall(eksAttemptDetail.getPodName(), PODNAME_BINDING);
             protocolMarshaller.marshall(eksAttemptDetail.getNodeName(), NODENAME_BINDING);
             protocolMarshaller.marshall(eksAttemptDetail.getStartedAt(), STARTEDAT_BINDING);

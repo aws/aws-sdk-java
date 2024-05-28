@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class UserContextMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserProfileName").build();
     private static final MarshallingInfo<String> DOMAINID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("DomainId").build();
+    private static final MarshallingInfo<StructuredPojo> IAMIDENTITY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IamIdentity").build();
 
     private static final UserContextMarshaller instance = new UserContextMarshaller();
 
@@ -53,6 +55,7 @@ public class UserContextMarshaller {
             protocolMarshaller.marshall(userContext.getUserProfileArn(), USERPROFILEARN_BINDING);
             protocolMarshaller.marshall(userContext.getUserProfileName(), USERPROFILENAME_BINDING);
             protocolMarshaller.marshall(userContext.getDomainId(), DOMAINID_BINDING);
+            protocolMarshaller.marshall(userContext.getIamIdentity(), IAMIDENTITY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

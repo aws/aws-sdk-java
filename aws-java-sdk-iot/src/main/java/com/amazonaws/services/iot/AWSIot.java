@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -339,8 +339,8 @@ public interface AWSIot {
 
     /**
      * <p>
-     * Attaches the specified principal to the specified thing. A principal can be X.509 certificates, IAM users,
-     * groups, and roles, Amazon Cognito identities or federated identities.
+     * Attaches the specified principal to the specified thing. A principal can be X.509 certificates, Amazon Cognito
+     * identities or federated identities.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -680,59 +680,57 @@ public interface AWSIot {
      * Creates an X.509 certificate using the specified certificate signing request.
      * </p>
      * <p>
-     * <b>Note:</b> The CSR must include a public key that is either an RSA key with a length of at least 2048 bits or
-     * an ECC key from NIST P-256, NIST P-384, or NIST P-512 curves. For supported certificates, consult <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
-     * Certificate signing algorithms supported by IoT</a>.
-     * </p>
-     * <p>
-     * <b>Note:</b> Reusing the same certificate signing request (CSR) results in a distinct certificate.
-     * </p>
-     * <p>
      * Requires permission to access the <a href=
      * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
      * >CreateCertificateFromCsr</a> action.
      * </p>
+     * <note>
      * <p>
-     * You can create multiple certificates in a batch by creating a directory, copying multiple .csr files into that
-     * directory, and then specifying that directory on the command line. The following commands show how to create a
-     * batch of certificates given a batch of CSRs.
+     * The CSR must include a public key that is either an RSA key with a length of at least 2048 bits or an ECC key
+     * from NIST P-256, NIST P-384, or NIST P-521 curves. For supported certificates, consult <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
+     * Certificate signing algorithms supported by IoT</a>.
      * </p>
+     * </note> <note>
      * <p>
-     * Assuming a set of CSRs are located inside of the directory my-csr-directory:
+     * Reusing the same certificate signing request (CSR) results in a distinct certificate.
+     * </p>
+     * </note>
+     * <p>
+     * You can create multiple certificates in a batch by creating a directory, copying multiple <code>.csr</code> files
+     * into that directory, and then specifying that directory on the command line. The following commands show how to
+     * create a batch of certificates given a batch of CSRs. In the following commands, we assume that a set of CSRs are
+     * located inside of the directory my-csr-directory:
      * </p>
      * <p>
      * On Linux and OS X, the command is:
      * </p>
      * <p>
-     * $ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr --certificate-signing-request
-     * file://my-csr-directory/{}
+     * <code>$ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{}</code>
      * </p>
      * <p>
-     * This command lists all of the CSRs in my-csr-directory and pipes each CSR file name to the aws iot
-     * create-certificate-from-csr Amazon Web Services CLI command to create a certificate for the corresponding CSR.
+     * This command lists all of the CSRs in my-csr-directory and pipes each CSR file name to the
+     * <code>aws iot create-certificate-from-csr</code> Amazon Web Services CLI command to create a certificate for the
+     * corresponding CSR.
      * </p>
      * <p>
-     * The aws iot create-certificate-from-csr part of the command can also be run in parallel to speed up the
-     * certificate creation process:
+     * You can also run the <code>aws iot create-certificate-from-csr</code> part of the command in parallel to speed up
+     * the certificate creation process:
      * </p>
      * <p>
-     * $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request
-     * file://my-csr-directory/{}
+     * <code>$ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{} </code>
      * </p>
      * <p>
      * On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory is:
      * </p>
      * <p>
-     * &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request
-     * file://my-csr-directory/$_}
+     * <code>&gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/$_} </code>
      * </p>
      * <p>
      * On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory is:
      * </p>
      * <p>
-     * &gt; forfiles /p my-csr-directory /c
-     * "cmd /c aws iot create-certificate-from-csr --certificate-signing-request file://@path"
+     * <code>&gt; forfiles /p my-csr-directory /c "cmd /c aws iot create-certificate-from-csr --certificate-signing-request file://@path" </code>
      * </p>
      * 
      * @param createCertificateFromCsrRequest
@@ -751,6 +749,50 @@ public interface AWSIot {
      * @sample AWSIot.CreateCertificateFromCsr
      */
     CreateCertificateFromCsrResult createCertificateFromCsr(CreateCertificateFromCsrRequest createCertificateFromCsrRequest);
+
+    /**
+     * <p>
+     * Creates an Amazon Web Services IoT Core certificate provider. You can use Amazon Web Services IoT Core
+     * certificate provider to customize how to sign a certificate signing request (CSR) in IoT fleet provisioning. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provisioning-cert-provider.html">Customizing
+     * certificate signing using Amazon Web Services IoT Core certificate provider</a> from <i>Amazon Web Services IoT
+     * Core Developer Guide</i>.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >CreateCertificateProvider</a> action.
+     * </p>
+     * <important>
+     * <p>
+     * After you create a certificate provider, the behavior of <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/fleet-provision-api.html#create-cert-csr">
+     * <code>CreateCertificateFromCsr</code> API for fleet provisioning</a> will change and all API calls to
+     * <code>CreateCertificateFromCsr</code> will invoke the certificate provider to create the certificates. It can
+     * take up to a few minutes for this behavior to change after a certificate provider is created.
+     * </p>
+     * </important>
+     * 
+     * @param createCertificateProviderRequest
+     * @return Result of the CreateCertificateProvider operation returned by the service.
+     * @throws LimitExceededException
+     *         A limit has been exceeded.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.CreateCertificateProvider
+     */
+    CreateCertificateProviderResult createCertificateProvider(CreateCertificateProviderRequest createCertificateProviderRequest);
 
     /**
      * <p>
@@ -1060,6 +1102,62 @@ public interface AWSIot {
      * @sample AWSIot.CreateOTAUpdate
      */
     CreateOTAUpdateResult createOTAUpdate(CreateOTAUpdateRequest createOTAUpdateRequest);
+
+    /**
+     * <p>
+     * Creates an IoT software package that can be deployed to your fleet.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >CreatePackage</a> and <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetIndexingConfiguration</a> actions.
+     * </p>
+     * 
+     * @param createPackageRequest
+     * @return Result of the CreatePackage operation returned by the service.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ConflictException
+     *         A resource with the same name already exists.
+     * @throws InternalServerException
+     *         Internal error from the service that indicates an unexpected error or that the service is unavailable.
+     * @throws ValidationException
+     *         The request is not valid.
+     * @throws ServiceQuotaExceededException
+     *         A limit has been exceeded.
+     * @sample AWSIot.CreatePackage
+     */
+    CreatePackageResult createPackage(CreatePackageRequest createPackageRequest);
+
+    /**
+     * <p>
+     * Creates a new version for an existing IoT software package.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >CreatePackageVersion</a> and <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetIndexingConfiguration</a> actions.
+     * </p>
+     * 
+     * @param createPackageVersionRequest
+     * @return Result of the CreatePackageVersion operation returned by the service.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ConflictException
+     *         A resource with the same name already exists.
+     * @throws InternalServerException
+     *         Internal error from the service that indicates an unexpected error or that the service is unavailable.
+     * @throws ValidationException
+     *         The request is not valid.
+     * @throws ServiceQuotaExceededException
+     *         A limit has been exceeded.
+     * @sample AWSIot.CreatePackageVersion
+     */
+    CreatePackageVersionResult createPackageVersion(CreatePackageVersionRequest createPackageVersionRequest);
 
     /**
      * <p>
@@ -1386,6 +1484,10 @@ public interface AWSIot {
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-authorization.html">Authorization</a> for
      * information about authorizing control plane actions.
      * </p>
+     * <p>
+     * If the <code>ThingGroup</code> that you create has the exact same attributes as an existing
+     * <code>ThingGroup</code>, you will get a 200 success response.
+     * </p>
      * </note>
      * <p>
      * Requires permission to access the <a href=
@@ -1667,6 +1769,40 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Deletes a certificate provider.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >DeleteCertificateProvider</a> action.
+     * </p>
+     * <p>
+     * If you delete the certificate provider resource, the behavior of <code>CreateCertificateFromCsr</code> will
+     * resume, and IoT will create certificates signed by IoT from a certificate signing request (CSR).
+     * </p>
+     * 
+     * @param deleteCertificateProviderRequest
+     * @return Result of the DeleteCertificateProvider operation returned by the service.
+     * @throws DeleteConflictException
+     *         You can't delete the resource because it is attached to one or more resources.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DeleteCertificateProvider
+     */
+    DeleteCertificateProviderResult deleteCertificateProvider(DeleteCertificateProviderRequest deleteCertificateProviderRequest);
+
+    /**
+     * <p>
      * Deletes a Device Defender detect custom metric.
      * </p>
      * <p>
@@ -1935,6 +2071,52 @@ public interface AWSIot {
      * @sample AWSIot.DeleteOTAUpdate
      */
     DeleteOTAUpdateResult deleteOTAUpdate(DeleteOTAUpdateRequest deleteOTAUpdateRequest);
+
+    /**
+     * <p>
+     * Deletes a specific version from a software package.
+     * </p>
+     * <p>
+     * <b>Note:</b> All package versions must be deleted before deleting the software package.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >DeletePackageVersion</a> action.
+     * </p>
+     * 
+     * @param deletePackageRequest
+     * @return Result of the DeletePackage operation returned by the service.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalServerException
+     *         Internal error from the service that indicates an unexpected error or that the service is unavailable.
+     * @throws ValidationException
+     *         The request is not valid.
+     * @sample AWSIot.DeletePackage
+     */
+    DeletePackageResult deletePackage(DeletePackageRequest deletePackageRequest);
+
+    /**
+     * <p>
+     * Deletes a specific version from a software package.
+     * </p>
+     * <p>
+     * <b>Note:</b> If a package version is designated as default, you must remove the designation from the software
+     * package using the <a>UpdatePackage</a> action.
+     * </p>
+     * 
+     * @param deletePackageVersionRequest
+     * @return Result of the DeletePackageVersion operation returned by the service.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalServerException
+     *         Internal error from the service that indicates an unexpected error or that the service is unavailable.
+     * @throws ValidationException
+     *         The request is not valid.
+     * @sample AWSIot.DeletePackageVersion
+     */
+    DeletePackageVersionResult deletePackageVersion(DeletePackageVersionRequest deletePackageVersionRequest);
 
     /**
      * <p>
@@ -2634,6 +2816,34 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Describes a certificate provider.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >DescribeCertificateProvider</a> action.
+     * </p>
+     * 
+     * @param describeCertificateProviderRequest
+     * @return Result of the DescribeCertificateProvider operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DescribeCertificateProvider
+     */
+    DescribeCertificateProviderResult describeCertificateProvider(DescribeCertificateProviderRequest describeCertificateProviderRequest);
+
+    /**
+     * <p>
      * Gets information about a Device Defender detect custom metric.
      * </p>
      * <p>
@@ -2763,8 +2973,14 @@ public interface AWSIot {
 
     /**
      * <p>
-     * Returns a unique endpoint specific to the Amazon Web Services account making the call.
+     * Returns or creates a unique endpoint specific to the Amazon Web Services account making the call.
      * </p>
+     * <note>
+     * <p>
+     * The first time <code>DescribeEndpoint</code> is called, an endpoint is created. All subsequent calls to
+     * <code>DescribeEndpoint</code> return the same endpoint.
+     * </p>
+     * </note>
      * <p>
      * Requires permission to access the <a href=
      * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
@@ -3649,6 +3865,74 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Gets information about the specified software package.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetPackage</a> action.
+     * </p>
+     * 
+     * @param getPackageRequest
+     * @return Result of the GetPackage operation returned by the service.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalServerException
+     *         Internal error from the service that indicates an unexpected error or that the service is unavailable.
+     * @throws ValidationException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.GetPackage
+     */
+    GetPackageResult getPackage(GetPackageRequest getPackageRequest);
+
+    /**
+     * <p>
+     * Gets information about the specified software package's configuration.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetPackageConfiguration</a> action.
+     * </p>
+     * 
+     * @param getPackageConfigurationRequest
+     * @return Result of the GetPackageConfiguration operation returned by the service.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalServerException
+     *         Internal error from the service that indicates an unexpected error or that the service is unavailable.
+     * @sample AWSIot.GetPackageConfiguration
+     */
+    GetPackageConfigurationResult getPackageConfiguration(GetPackageConfigurationRequest getPackageConfigurationRequest);
+
+    /**
+     * <p>
+     * Gets information about the specified package version.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetPackageVersion</a> action.
+     * </p>
+     * 
+     * @param getPackageVersionRequest
+     * @return Result of the GetPackageVersion operation returned by the service.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalServerException
+     *         Internal error from the service that indicates an unexpected error or that the service is unavailable.
+     * @throws ValidationException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.GetPackageVersion
+     */
+    GetPackageVersionResult getPackageVersion(GetPackageVersionRequest getPackageVersionRequest);
+
+    /**
+     * <p>
      * Groups the aggregated values that match the query into percentile groupings. The default percentile groupings
      * are: 1,5,25,50,75,95,99, although you can specify your own when you call <code>GetPercentiles</code>. This
      * function returns a value for each percentile group specified (or the default percentile groupings). The
@@ -3748,6 +4032,10 @@ public interface AWSIot {
     /**
      * <p>
      * Gets a registration code used to register a CA certificate with IoT.
+     * </p>
+     * <p>
+     * IoT will create a registration code as part of this API call if the registration code doesn't exist or has been
+     * deleted. If you already have a registration code, this API call will return the same registration code.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -4125,6 +4413,32 @@ public interface AWSIot {
      * @sample AWSIot.ListCACertificates
      */
     ListCACertificatesResult listCACertificates(ListCACertificatesRequest listCACertificatesRequest);
+
+    /**
+     * <p>
+     * Lists all your certificate providers in your Amazon Web Services account.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >ListCertificateProviders</a> action.
+     * </p>
+     * 
+     * @param listCertificateProvidersRequest
+     * @return Result of the ListCertificateProviders operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListCertificateProviders
+     */
+    ListCertificateProvidersResult listCertificateProviders(ListCertificateProvidersRequest listCertificateProvidersRequest);
 
     /**
      * <p>
@@ -4562,6 +4876,50 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Lists the software package versions associated to the account.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >ListPackageVersions</a> action.
+     * </p>
+     * 
+     * @param listPackageVersionsRequest
+     * @return Result of the ListPackageVersions operation returned by the service.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalServerException
+     *         Internal error from the service that indicates an unexpected error or that the service is unavailable.
+     * @throws ValidationException
+     *         The request is not valid.
+     * @sample AWSIot.ListPackageVersions
+     */
+    ListPackageVersionsResult listPackageVersions(ListPackageVersionsRequest listPackageVersionsRequest);
+
+    /**
+     * <p>
+     * Lists the software packages associated to the account.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >ListPackages</a> action.
+     * </p>
+     * 
+     * @param listPackagesRequest
+     * @return Result of the ListPackages operation returned by the service.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalServerException
+     *         Internal error from the service that indicates an unexpected error or that the service is unavailable.
+     * @throws ValidationException
+     *         The request is not valid.
+     * @sample AWSIot.ListPackages
+     */
+    ListPackagesResult listPackages(ListPackagesRequest listPackagesRequest);
+
+    /**
+     * <p>
      * Lists your policies.
      * </p>
      * <p>
@@ -4766,6 +5124,83 @@ public interface AWSIot {
      * @sample AWSIot.ListProvisioningTemplates
      */
     ListProvisioningTemplatesResult listProvisioningTemplates(ListProvisioningTemplatesRequest listProvisioningTemplatesRequest);
+
+    /**
+     * <p>
+     * The related resources of an Audit finding. The following resources can be returned from calling this API:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DEVICE_CERTIFICATE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CA_CERTIFICATE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IOT_POLICY
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * COGNITO_IDENTITY_POOL
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CLIENT_ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ACCOUNT_SETTINGS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ROLE_ALIAS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IAM_ROLE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ISSUER_CERTIFICATE
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * This API is similar to DescribeAuditFinding's <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditFinding.html">RelatedResources</a> but
+     * provides pagination and is not limited to 10 resources. When calling <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditFinding.html">DescribeAuditFinding</a>
+     * for the intermediate CA revoked for active device certificates check, RelatedResources will not be populated. You
+     * must use this API, ListRelatedResourcesForAuditFinding, to list the certificates.
+     * </p>
+     * </note>
+     * 
+     * @param listRelatedResourcesForAuditFindingRequest
+     * @return Result of the ListRelatedResourcesForAuditFinding operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListRelatedResourcesForAuditFinding
+     */
+    ListRelatedResourcesForAuditFindingResult listRelatedResourcesForAuditFinding(
+            ListRelatedResourcesForAuditFindingRequest listRelatedResourcesForAuditFindingRequest);
 
     /**
      * <p>
@@ -5125,7 +5560,9 @@ public interface AWSIot {
      * <p>
      * Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b> parameters to filter your things. For
      * example, calling <code>ListThings</code> with attributeName=Color and attributeValue=Red retrieves all things in
-     * the registry that contain an attribute <b>Color</b> with the value <b>Red</b>.
+     * the registry that contain an attribute <b>Color</b> with the value <b>Red</b>. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html#list-things">List Things</a> from
+     * the <i>Amazon Web Services IoT Core Developer Guide</i>.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -6213,6 +6650,34 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Updates a certificate provider.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >UpdateCertificateProvider</a> action.
+     * </p>
+     * 
+     * @param updateCertificateProviderRequest
+     * @return Result of the UpdateCertificateProvider operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.UpdateCertificateProvider
+     */
+    UpdateCertificateProviderResult updateCertificateProvider(UpdateCertificateProviderRequest updateCertificateProviderRequest);
+
+    /**
+     * <p>
      * Updates a Device Defender detect custom metric.
      * </p>
      * <p>
@@ -6451,6 +6916,87 @@ public interface AWSIot {
      * @sample AWSIot.UpdateMitigationAction
      */
     UpdateMitigationActionResult updateMitigationAction(UpdateMitigationActionRequest updateMitigationActionRequest);
+
+    /**
+     * <p>
+     * Updates the supported fields for a specific software package.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >UpdatePackage</a> and <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetIndexingConfiguration</a> actions.
+     * </p>
+     * 
+     * @param updatePackageRequest
+     * @return Result of the UpdatePackage operation returned by the service.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ConflictException
+     *         A resource with the same name already exists.
+     * @throws InternalServerException
+     *         Internal error from the service that indicates an unexpected error or that the service is unavailable.
+     * @throws ValidationException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.UpdatePackage
+     */
+    UpdatePackageResult updatePackage(UpdatePackageRequest updatePackageRequest);
+
+    /**
+     * <p>
+     * Updates the software package configuration.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >UpdatePackageConfiguration</a> and <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">iam:PassRole</a> actions.
+     * </p>
+     * 
+     * @param updatePackageConfigurationRequest
+     * @return Result of the UpdatePackageConfiguration operation returned by the service.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ConflictException
+     *         A resource with the same name already exists.
+     * @throws InternalServerException
+     *         Internal error from the service that indicates an unexpected error or that the service is unavailable.
+     * @throws ValidationException
+     *         The request is not valid.
+     * @sample AWSIot.UpdatePackageConfiguration
+     */
+    UpdatePackageConfigurationResult updatePackageConfiguration(UpdatePackageConfigurationRequest updatePackageConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates the supported fields for a specific package version.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >UpdatePackageVersion</a> and <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetIndexingConfiguration</a> actions.
+     * </p>
+     * 
+     * @param updatePackageVersionRequest
+     * @return Result of the UpdatePackageVersion operation returned by the service.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ConflictException
+     *         A resource with the same name already exists.
+     * @throws InternalServerException
+     *         Internal error from the service that indicates an unexpected error or that the service is unavailable.
+     * @throws ValidationException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.UpdatePackageVersion
+     */
+    UpdatePackageVersionResult updatePackageVersion(UpdatePackageVersionRequest updatePackageVersionRequest);
 
     /**
      * <p>

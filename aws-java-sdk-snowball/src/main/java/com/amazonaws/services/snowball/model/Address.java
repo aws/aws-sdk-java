@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -116,6 +116,12 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Boolean isRestricted;
+    /**
+     * <p>
+     * Differentiates between delivery address and pickup address in the customer account. Provided at job creation.
+     * </p>
+     */
+    private String type;
 
     /**
      * <p>
@@ -698,6 +704,69 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Differentiates between delivery address and pickup address in the customer account. Provided at job creation.
+     * </p>
+     * 
+     * @param type
+     *        Differentiates between delivery address and pickup address in the customer account. Provided at job
+     *        creation.
+     * @see AddressType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * Differentiates between delivery address and pickup address in the customer account. Provided at job creation.
+     * </p>
+     * 
+     * @return Differentiates between delivery address and pickup address in the customer account. Provided at job
+     *         creation.
+     * @see AddressType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * Differentiates between delivery address and pickup address in the customer account. Provided at job creation.
+     * </p>
+     * 
+     * @param type
+     *        Differentiates between delivery address and pickup address in the customer account. Provided at job
+     *        creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AddressType
+     */
+
+    public Address withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Differentiates between delivery address and pickup address in the customer account. Provided at job creation.
+     * </p>
+     * 
+     * @param type
+     *        Differentiates between delivery address and pickup address in the customer account. Provided at job
+     *        creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AddressType
+     */
+
+    public Address withType(AddressType type) {
+        this.type = type.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -736,7 +805,9 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
         if (getPhoneNumber() != null)
             sb.append("PhoneNumber: ").append(getPhoneNumber()).append(",");
         if (getIsRestricted() != null)
-            sb.append("IsRestricted: ").append(getIsRestricted());
+            sb.append("IsRestricted: ").append(getIsRestricted()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType());
         sb.append("}");
         return sb.toString();
     }
@@ -807,6 +878,10 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getIsRestricted() != null && other.getIsRestricted().equals(this.getIsRestricted()) == false)
             return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
         return true;
     }
 
@@ -829,6 +904,7 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPostalCode() == null) ? 0 : getPostalCode().hashCode());
         hashCode = prime * hashCode + ((getPhoneNumber() == null) ? 0 : getPhoneNumber().hashCode());
         hashCode = prime * hashCode + ((getIsRestricted() == null) ? 0 : getIsRestricted().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }
 

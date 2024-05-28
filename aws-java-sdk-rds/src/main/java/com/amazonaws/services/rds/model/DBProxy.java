@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -117,10 +117,10 @@ public class DBProxy implements Serializable, Cloneable {
     private Integer idleClientTimeout;
     /**
      * <p>
-     * Whether the proxy includes detailed information about SQL statements in its logs. This information helps you to
-     * debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug
-     * information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting
-     * when needed for debugging, and only when you have security measures in place to safeguard any sensitive
+     * Indicates whether the proxy includes detailed information about SQL statements in its logs. This information
+     * helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The
+     * debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this
+     * setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive
      * information that appears in the logs.
      * </p>
      */
@@ -848,19 +848,19 @@ public class DBProxy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the proxy includes detailed information about SQL statements in its logs. This information helps you to
-     * debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug
-     * information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting
-     * when needed for debugging, and only when you have security measures in place to safeguard any sensitive
+     * Indicates whether the proxy includes detailed information about SQL statements in its logs. This information
+     * helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The
+     * debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this
+     * setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive
      * information that appears in the logs.
      * </p>
      * 
      * @param debugLogging
-     *        Whether the proxy includes detailed information about SQL statements in its logs. This information helps
-     *        you to debug issues involving SQL behavior or the performance and scalability of the proxy connections.
-     *        The debug information includes the text of SQL statements that you submit through the proxy. Thus, only
-     *        enable this setting when needed for debugging, and only when you have security measures in place to
-     *        safeguard any sensitive information that appears in the logs.
+     *        Indicates whether the proxy includes detailed information about SQL statements in its logs. This
+     *        information helps you to debug issues involving SQL behavior or the performance and scalability of the
+     *        proxy connections. The debug information includes the text of SQL statements that you submit through the
+     *        proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures
+     *        in place to safeguard any sensitive information that appears in the logs.
      */
 
     public void setDebugLogging(Boolean debugLogging) {
@@ -869,18 +869,18 @@ public class DBProxy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the proxy includes detailed information about SQL statements in its logs. This information helps you to
-     * debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug
-     * information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting
-     * when needed for debugging, and only when you have security measures in place to safeguard any sensitive
+     * Indicates whether the proxy includes detailed information about SQL statements in its logs. This information
+     * helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The
+     * debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this
+     * setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive
      * information that appears in the logs.
      * </p>
      * 
-     * @return Whether the proxy includes detailed information about SQL statements in its logs. This information helps
-     *         you to debug issues involving SQL behavior or the performance and scalability of the proxy connections.
-     *         The debug information includes the text of SQL statements that you submit through the proxy. Thus, only
-     *         enable this setting when needed for debugging, and only when you have security measures in place to
-     *         safeguard any sensitive information that appears in the logs.
+     * @return Indicates whether the proxy includes detailed information about SQL statements in its logs. This
+     *         information helps you to debug issues involving SQL behavior or the performance and scalability of the
+     *         proxy connections. The debug information includes the text of SQL statements that you submit through the
+     *         proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures
+     *         in place to safeguard any sensitive information that appears in the logs.
      */
 
     public Boolean getDebugLogging() {
@@ -889,19 +889,19 @@ public class DBProxy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the proxy includes detailed information about SQL statements in its logs. This information helps you to
-     * debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug
-     * information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting
-     * when needed for debugging, and only when you have security measures in place to safeguard any sensitive
+     * Indicates whether the proxy includes detailed information about SQL statements in its logs. This information
+     * helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The
+     * debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this
+     * setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive
      * information that appears in the logs.
      * </p>
      * 
      * @param debugLogging
-     *        Whether the proxy includes detailed information about SQL statements in its logs. This information helps
-     *        you to debug issues involving SQL behavior or the performance and scalability of the proxy connections.
-     *        The debug information includes the text of SQL statements that you submit through the proxy. Thus, only
-     *        enable this setting when needed for debugging, and only when you have security measures in place to
-     *        safeguard any sensitive information that appears in the logs.
+     *        Indicates whether the proxy includes detailed information about SQL statements in its logs. This
+     *        information helps you to debug issues involving SQL behavior or the performance and scalability of the
+     *        proxy connections. The debug information includes the text of SQL statements that you submit through the
+     *        proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures
+     *        in place to safeguard any sensitive information that appears in the logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -912,18 +912,18 @@ public class DBProxy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the proxy includes detailed information about SQL statements in its logs. This information helps you to
-     * debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug
-     * information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting
-     * when needed for debugging, and only when you have security measures in place to safeguard any sensitive
+     * Indicates whether the proxy includes detailed information about SQL statements in its logs. This information
+     * helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The
+     * debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this
+     * setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive
      * information that appears in the logs.
      * </p>
      * 
-     * @return Whether the proxy includes detailed information about SQL statements in its logs. This information helps
-     *         you to debug issues involving SQL behavior or the performance and scalability of the proxy connections.
-     *         The debug information includes the text of SQL statements that you submit through the proxy. Thus, only
-     *         enable this setting when needed for debugging, and only when you have security measures in place to
-     *         safeguard any sensitive information that appears in the logs.
+     * @return Indicates whether the proxy includes detailed information about SQL statements in its logs. This
+     *         information helps you to debug issues involving SQL behavior or the performance and scalability of the
+     *         proxy connections. The debug information includes the text of SQL statements that you submit through the
+     *         proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures
+     *         in place to safeguard any sensitive information that appears in the logs.
      */
 
     public Boolean isDebugLogging() {

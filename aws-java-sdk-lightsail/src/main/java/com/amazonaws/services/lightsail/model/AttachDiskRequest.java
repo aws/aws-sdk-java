@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class AttachDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique Lightsail disk name (e.g., <code>my-disk</code>).
+     * The unique Lightsail disk name (<code>my-disk</code>).
      * </p>
      */
     private String diskName;
@@ -39,18 +39,30 @@ public class AttachDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String instanceName;
     /**
      * <p>
-     * The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).
+     * The disk path to expose to the instance (<code>/dev/xvdf</code>).
      * </p>
      */
     private String diskPath;
+    /**
+     * <p>
+     * A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The default
+     * value is <code>False</code>.
+     * </p>
+     * <important>
+     * <p>
+     * This value only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     */
+    private Boolean autoMounting;
 
     /**
      * <p>
-     * The unique Lightsail disk name (e.g., <code>my-disk</code>).
+     * The unique Lightsail disk name (<code>my-disk</code>).
      * </p>
      * 
      * @param diskName
-     *        The unique Lightsail disk name (e.g., <code>my-disk</code>).
+     *        The unique Lightsail disk name (<code>my-disk</code>).
      */
 
     public void setDiskName(String diskName) {
@@ -59,10 +71,10 @@ public class AttachDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique Lightsail disk name (e.g., <code>my-disk</code>).
+     * The unique Lightsail disk name (<code>my-disk</code>).
      * </p>
      * 
-     * @return The unique Lightsail disk name (e.g., <code>my-disk</code>).
+     * @return The unique Lightsail disk name (<code>my-disk</code>).
      */
 
     public String getDiskName() {
@@ -71,11 +83,11 @@ public class AttachDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique Lightsail disk name (e.g., <code>my-disk</code>).
+     * The unique Lightsail disk name (<code>my-disk</code>).
      * </p>
      * 
      * @param diskName
-     *        The unique Lightsail disk name (e.g., <code>my-disk</code>).
+     *        The unique Lightsail disk name (<code>my-disk</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +138,11 @@ public class AttachDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).
+     * The disk path to expose to the instance (<code>/dev/xvdf</code>).
      * </p>
      * 
      * @param diskPath
-     *        The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).
+     *        The disk path to expose to the instance (<code>/dev/xvdf</code>).
      */
 
     public void setDiskPath(String diskPath) {
@@ -139,10 +151,10 @@ public class AttachDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).
+     * The disk path to expose to the instance (<code>/dev/xvdf</code>).
      * </p>
      * 
-     * @return The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).
+     * @return The disk path to expose to the instance (<code>/dev/xvdf</code>).
      */
 
     public String getDiskPath() {
@@ -151,17 +163,109 @@ public class AttachDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).
+     * The disk path to expose to the instance (<code>/dev/xvdf</code>).
      * </p>
      * 
      * @param diskPath
-     *        The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).
+     *        The disk path to expose to the instance (<code>/dev/xvdf</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AttachDiskRequest withDiskPath(String diskPath) {
         setDiskPath(diskPath);
         return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The default
+     * value is <code>False</code>.
+     * </p>
+     * <important>
+     * <p>
+     * This value only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * 
+     * @param autoMounting
+     *        A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The
+     *        default value is <code>False</code>.</p> <important>
+     *        <p>
+     *        This value only applies to Lightsail for Research resources.
+     *        </p>
+     */
+
+    public void setAutoMounting(Boolean autoMounting) {
+        this.autoMounting = autoMounting;
+    }
+
+    /**
+     * <p>
+     * A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The default
+     * value is <code>False</code>.
+     * </p>
+     * <important>
+     * <p>
+     * This value only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * 
+     * @return A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The
+     *         default value is <code>False</code>.</p> <important>
+     *         <p>
+     *         This value only applies to Lightsail for Research resources.
+     *         </p>
+     */
+
+    public Boolean getAutoMounting() {
+        return this.autoMounting;
+    }
+
+    /**
+     * <p>
+     * A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The default
+     * value is <code>False</code>.
+     * </p>
+     * <important>
+     * <p>
+     * This value only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * 
+     * @param autoMounting
+     *        A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The
+     *        default value is <code>False</code>.</p> <important>
+     *        <p>
+     *        This value only applies to Lightsail for Research resources.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AttachDiskRequest withAutoMounting(Boolean autoMounting) {
+        setAutoMounting(autoMounting);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The default
+     * value is <code>False</code>.
+     * </p>
+     * <important>
+     * <p>
+     * This value only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * 
+     * @return A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The
+     *         default value is <code>False</code>.</p> <important>
+     *         <p>
+     *         This value only applies to Lightsail for Research resources.
+     *         </p>
+     */
+
+    public Boolean isAutoMounting() {
+        return this.autoMounting;
     }
 
     /**
@@ -181,7 +285,9 @@ public class AttachDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getInstanceName() != null)
             sb.append("InstanceName: ").append(getInstanceName()).append(",");
         if (getDiskPath() != null)
-            sb.append("DiskPath: ").append(getDiskPath());
+            sb.append("DiskPath: ").append(getDiskPath()).append(",");
+        if (getAutoMounting() != null)
+            sb.append("AutoMounting: ").append(getAutoMounting());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +314,10 @@ public class AttachDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getDiskPath() != null && other.getDiskPath().equals(this.getDiskPath()) == false)
             return false;
+        if (other.getAutoMounting() == null ^ this.getAutoMounting() == null)
+            return false;
+        if (other.getAutoMounting() != null && other.getAutoMounting().equals(this.getAutoMounting()) == false)
+            return false;
         return true;
     }
 
@@ -219,6 +329,7 @@ public class AttachDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getDiskName() == null) ? 0 : getDiskName().hashCode());
         hashCode = prime * hashCode + ((getInstanceName() == null) ? 0 : getInstanceName().hashCode());
         hashCode = prime * hashCode + ((getDiskPath() == null) ? 0 : getDiskPath().hashCode());
+        hashCode = prime * hashCode + ((getAutoMounting() == null) ? 0 : getAutoMounting().hashCode());
         return hashCode;
     }
 
