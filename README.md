@@ -1,3 +1,5 @@
+[![Open in DevZero](https://assets.devzero.io/open-in-devzero.svg)](https://www.devzero.io/dashboard/recipes/new?repo-url=https://github.com/aws/aws-sdk-java)
+
 # AWS SDK for Java
 
 The **AWS SDK for Java** enables Java developers to easily work with [Amazon Web Services][aws] and
