@@ -26,7 +26,7 @@ public class StsAuthUtils {
     }
 
     public static String accountIdFromArn(AssumedRoleUser assumedRoleUser) throws IllegalArgumentException {
-        if (assumedRoleUser == null || assumedRoleUser.getArn() == null) {
+        if (assumedRoleUser == null || assumedRoleUser.getArn() == null || assumedRoleUser.getArn() == "") {
             return null;
         }
 
