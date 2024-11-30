@@ -58,7 +58,7 @@ dependencies.
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-bom</artifactId>
-      <version>1.12.777</version>
+      <version>1.12.779</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>

@@ -130,6 +130,8 @@ public abstract class AbstractPutObjectRequest extends AmazonWebServiceRequest i
 
     private String ifNoneMatch;
 
+    private String ifMatch;
+
     /**
      * Constructs a new
      * {@link AbstractPutObjectRequest} object to upload a file to the
@@ -1224,6 +1226,14 @@ public abstract class AbstractPutObjectRequest extends AmazonWebServiceRequest i
     }
 
     /**
+     *
+     * Returns the value for the header If-Match.
+     */
+    public String getIfMatch() {
+        return this.ifMatch;
+    }
+
+    /**
      * <p>
      *     Uploads the object only if the object key name does not already exist in the bucket specified. Otherwise,
      *     S3 returns a {@code 412 Precondition Failed} error.
@@ -1250,6 +1260,31 @@ public abstract class AbstractPutObjectRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
+     *     Uploads the object only if the ETag (entity tag) value provided during the WRITE operation matches the ETag
+     *     of the object in S3. If the ETag values do not match, the operation returns a {@code 412 Precondition Failed} error.
+     * </p>
+     * <p>
+     *     If a conflicting operation occurs during the upload, S3 returns a {@code 409 ConditionalRequestConflict}
+     *     response. On a 409 failure, you should fetch the object's ETag and retry the upload.
+     * </p>
+     * <p>
+     *     Expects the ETag value as a string.
+     * </p>
+     * <p>
+     *     For more information about conditional requests, see
+     *     <a href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>, or
+     *     <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/conditional-requests.html">Conditional requests</a>
+     *     in the <em>Amazon S3 User Guide</em>.
+     * </p>
+     *
+     * @param eTag the ETag value to match against the object in S3.
+     */
+    public void setIfMatch(String eTag) {
+        this.ifMatch = eTag;
+    }
+
+    /**
+     * <p>
      *     Uploads the object only if the object key name does not already exist in the bucket specified. Otherwise,
      *     S3 returns a {@code 412 Precondition Failed} error.
      * </p>
@@ -1272,6 +1307,35 @@ public abstract class AbstractPutObjectRequest extends AmazonWebServiceRequest i
     public <T extends AbstractPutObjectRequest> T ifNoneMatch(String eTag) {
         setIfNoneMatch(eTag);
         @SuppressWarnings("unchecked") T t = (T)this;
+        return t;
+    }
+
+    /**
+     * <p>
+     *     Uploads the object only if the ETag (entity tag) value provided during the WRITE operation matches the ETag
+     *     of the object in S3. If the ETag values do not match, the operation returns a {@code 412 Precondition Failed} error.
+     * </p>
+     * <p>
+     *     If a conflicting operation occurs during the upload, S3 returns a {@code 409 ConditionalRequestConflict}
+     *     response. On a 409 failure, you should fetch the object's ETag and retry the upload.
+     * </p>
+     * <p>
+     *     Expects the ETag value as a string.
+     * </p>
+     * <p>
+     *     For more information about conditional requests, see
+     *     <a href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>, or
+     *     <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/conditional-requests.html">Conditional requests</a>
+     *     in the <em>Amazon S3 User Guide</em>.
+     * </p>
+     *
+     * @param eTag the ETag value to match against the object in S3.
+     * @param <T>  The type of the request object extending {@code AbstractPutObjectRequest}.
+     * @return This {@code AbstractPutObjectRequest} instance, for method chaining.
+     */
+    public <T extends AbstractPutObjectRequest> T ifMatch(String eTag) {
+        setIfMatch(eTag);
+        @SuppressWarnings("unchecked") T t = (T) this;
         return t;
     }
 

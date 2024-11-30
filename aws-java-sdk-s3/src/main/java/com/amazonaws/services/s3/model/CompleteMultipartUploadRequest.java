@@ -78,6 +78,7 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest impl
 
     private String ifNoneMatch;
 
+    private String ifMatch;
 
     public CompleteMultipartUploadRequest() {}
 
@@ -460,6 +461,14 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest impl
     }
 
     /**
+     *
+     * Returns the value for the header If-Match.
+     */
+    public String getIfMatch() {
+        return this.ifMatch;
+    }
+
+    /**
      * <p>
      *     Uploads the object only if the object key name does not already exist in the bucket specified. Otherwise,
      *     S3 returns a {@code 412 Precondition Failed} error.
@@ -486,6 +495,32 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
+     *     Uploads the object only if the ETag (entity tag) value provided during the WRITE operation matches the ETag
+     *     of the object in S3. If the ETag values do not match, the operation returns a {@code 412 Precondition Failed} error.
+     * </p>
+     * <p>
+     *     If a conflicting operation occurs during the upload, S3 returns a {@code 409 ConditionalRequestConflict}
+     *     response. On a 409 failure, you should fetch the object's ETag, re-initiate the multipart upload with
+     *     <code>CreateMultipartUpload</code>, and re-upload each part.
+     * </p>
+     * <p>
+     *     Expects the ETag value as a string.
+     * </p>
+     * <p>
+     *     For more information about conditional requests, see
+     *     <a href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>, or
+     *     <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/conditional-requests.html">Conditional requests</a>
+     *     in the <em>Amazon S3 User Guide</em>.
+     * </p>
+     *
+     * @param eTag the ETag value to match against the object in S3.
+     */
+    public void setIfMatch(String eTag) {
+        this.ifMatch = eTag;
+    }
+
+    /**
+     * <p>
      *     Uploads the object only if the object key name does not already exist in the bucket specified. Otherwise,
      *     S3 returns a {@code 412 Precondition Failed} error.
      * </p>
@@ -507,6 +542,35 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest impl
      */
     public CompleteMultipartUploadRequest ifNoneMatch(String eTag) {
         setIfNoneMatch(eTag);
+        return this;
+    }
+
+    /**
+     * <p>
+     *     Uploads the object only if the ETag (entity tag) value provided during the WRITE operation matches the ETag
+     *     of the object in the specified bucket. If the ETag values do not match, the operation returns a
+     *     {@code 412 Precondition Failed} error.
+     * </p>
+     * <p>
+     *     If a conflicting operation occurs during the upload, S3 returns a {@code 409 ConditionalRequestConflict}
+     *     response. On a 409 failure, you should fetch the object's ETag, re-initiate the multipart upload with
+     *     <code>CreateMultipartUpload</code>, and re-upload each part.
+     * </p>
+     * <p>
+     *     Expects the ETag value as a string.
+     * </p>
+     * <p>
+     *     For more information about conditional requests, see
+     *     <a href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>, or
+     *     <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/conditional-requests.html">Conditional requests</a>
+     *     in the <em>Amazon S3 User Guide</em>.
+     * </p>
+     *
+     * @param eTag the ETag value to match against the object in the specified bucket.
+     * @return This {@code CompleteMultipartUploadRequest} instance, for method chaining.
+     */
+    public CompleteMultipartUploadRequest ifMatch(String eTag) {
+        setIfMatch(eTag);
         return this;
     }
 

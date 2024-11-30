@@ -333,5 +333,7 @@ public interface Headers {
 
     String PUT_OBJECT_IF_NONE_MATCH = "If-None-Match";
 
+    String PUT_OBJECT_IF_MATCH = "If-Match";
+
     String TRANSITION_DEFAULT_MINIMUM_OBJECT_SIZE = "x-amz-transition-default-minimum-object-size";
 }

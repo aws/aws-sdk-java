@@ -1088,7 +1088,7 @@ public class XmlResponsesSaxParser {
                     Date creationDate = DateUtils.parseISO8601Date(getText());
                     currentBucket.setCreationDate(creationDate);
                 }
-                else if (name.equals("Region")) {
+                else if (name.equals("BucketRegion")) {
                     currentBucket.setRegion(getText());
                 }
             }

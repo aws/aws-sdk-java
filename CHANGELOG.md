@@ -1,3 +1,8 @@
+# __1.12.778__ __2024-11-13__
+## __Amazon Kinesis Video Streams__
+  - ### Features
+    - Update Netty version to `4.1.115.Final`
+
 # __1.12.774__ __2024-10-16__
 ## __Amazon Simple Storage Service__
   - ### Features
