@@ -51,7 +51,7 @@
         <artifactId>commons-lang3</artifactId>
         <groupId>org.apache.commons</groupId>
         <optional>false</optional>
-        <version>3.4</version>
+        <version>3.18.0</version>
     </dependency>
 </dependencies>
 
