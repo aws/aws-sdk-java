@@ -63,7 +63,7 @@ public class VersionInfoUtils {
     private static void printDeprecationAnnouncement() {
         String disableAnnouncementEnvVar = System.getenv(DISABLE_DEPRECATION_ANNOUNCEMENT_ENV_VAR);
         String disableAnnouncementSysProp = System.getProperty(DISABLE_DEPRECATION_ANNOUNCEMENT_SYS_PROP);
-        boolean printDeprecationAnnouncement = !isTrue(disableAnnouncementEnvVar) && !isTrue(disableAnnouncementSysProp);
+        boolean printDeprecationAnnouncement = !isTrue(disableAnnouncementEnvVar) || !isTrue(disableAnnouncementSysProp);
 
         if (printDeprecationAnnouncement) {
             StringBuilder message = new StringBuilder(
