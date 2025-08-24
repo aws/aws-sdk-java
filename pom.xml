@@ -455,7 +455,7 @@
       <cucumber.guice.version>4.2.3</cucumber.guice.version>
       <unitils.version>3.3</unitils.version>
       <!-- Netty is used by Kinesis Video -->
-      <netty.version>4.1.118.Final</netty.version>
+      <netty.version>4.1.124.Final</netty.version>
       <versions-maven-plugin.version>2.13.0</versions-maven-plugin.version>
   </properties>
   <dependencyManagement>
