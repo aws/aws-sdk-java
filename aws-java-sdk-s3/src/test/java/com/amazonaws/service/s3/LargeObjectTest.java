@@ -32,7 +32,7 @@ public class LargeObjectTest {
         tm = TransferManagerBuilder.standard()
                 .withMinimumUploadPartSize(5L * 1000 * 1000 * 1000)
                 .withS3Client(AmazonS3Client.builder()
-                        .withRegion(Regions.US_EAST_2)
+                        .withRegion(Regions.US_WEST_2)
                         .build())
                 .build();
     }
