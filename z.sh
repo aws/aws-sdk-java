@@ -18,7 +18,7 @@
 tm_dl='tm_download'
 tm_ul='tm_upload'
 
-key='6TB'
+key='48TB'
 path="/mnt/raid0/$key"
 
 test=$tm_dl
