@@ -21,7 +21,7 @@ tm_ul='tm_upload'
 key='48TB'
 path="/mnt/raid0/$key"
 
-test=$tm_dl
+test=$tm_ul
 
 mvn test -pl :aws-java-sdk-s3 \
     -Dtest=com.amazonaws.service.s3.LargeObjectTest#$test \
