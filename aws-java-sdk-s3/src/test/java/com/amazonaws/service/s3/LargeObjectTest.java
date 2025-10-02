@@ -19,7 +19,7 @@ public class LargeObjectTest {
     public static final long MB = 1024 * KB;
     public static final long GB = 1024 * MB;
 
-    String bucket = "olapplin-test-bucket";
+    String bucket = "do-not-delete-java-hagrid-test";
     TransferManager tm;
     String testPath;
     String key;
@@ -30,7 +30,7 @@ public class LargeObjectTest {
         testPath = System.getProperty("testpath");
         key = System.getProperty("testkey");
         tm = TransferManagerBuilder.standard()
-                .withMinimumUploadPartSize(5L * 1000L * 1000L * 1000L)
+                .withMinimumUploadPartSize(5L * 1000 * 1000 * 1000)
                 .withS3Client(AmazonS3Client.builder()
                         .withRegion(Regions.US_EAST_2)
                         .build())
