@@ -24,6 +24,6 @@ path="/mnt/raid0/$key"
 test=$tm_dl
 
 mvn test -pl :aws-java-sdk-s3 \
-    -Dtest=com.amazonaws.service.s3.ExpressTest#$test \
+    -Dtest=com.amazonaws.service.s3.LargeObjectTest#$test \
     -Dtestpath=$path \
     -Dtestkey=$key
