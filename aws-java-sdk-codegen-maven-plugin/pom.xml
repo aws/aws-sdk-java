@@ -51,7 +51,7 @@
         <artifactId>plexus-utils</artifactId>
         <groupId>org.codehaus.plexus</groupId>
         <optional>false</optional>
-        <version>3.3.0</version>
+        <version>4.0.3</version>
     </dependency>
     <dependency>
         <artifactId>aws-java-sdk-code-generator</artifactId>
